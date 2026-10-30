@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galleria delle scene</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  body { overflow: auto; }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  figure { margin: 0; border: 1px solid var(--c1); padding: 6px; }
+  figure canvas { width: 100%; height: auto; aspect-ratio: 16/10; }
+  figcaption { font-size: 16px; }
+  figcaption b { color: var(--c2); font-weight: normal; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  select { background: var(--c0); border: 2px solid var(--c3); padding: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2>Galleria delle scene (segnaposto o tavole in art/)</h2>
+  <div class="row">
+    <label>Palette <select id="pal"></select></label>
+    <label>Filtro <select id="filtro"><option value="">tutte</option></select></label>
+    <span class="small">Se esiste il file in art/, viene mostrato quello (convertito nella palette).</span>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+<script type="module">
+  import { SCENE } from '../js/scenedefs.js';
+  import { PALETTES } from '../js/data.js';
+  import { Renderer, urlImmagine } from '../js/render.js';
+  // la galleria sta in tools/: le immagini sono in ../art/
+  const pal = document.getElementById('pal'), filtro = document.getElementById('filtro'), grid = document.getElementById('grid');
+  Object.keys(PALETTES).forEach((k) => pal.insertAdjacentHTML('beforeend', `<option>${k}</option>`));
+  const gruppi = [...new Set(Object.keys(SCENE).map((id) => id.includes('/') ? id.split('/')[0] : 'ui'))];
+  gruppi.forEach((g) => filtro.insertAdjacentHTML('beforeend', `<option>${g}</option>`));
+  const q = new URLSearchParams(location.search); pal.value = q.get('pal') || 'ines'; filtro.value = q.get('filtro') || '';
+  await document.fonts.load('10px PressStart'); await document.fonts.load('16px VT323');
+  async function disegna() {
+    grid.innerHTML = '';
+    document.documentElement.style.cssText = PALETTES[pal.value].colori.map((c, i) => `--c${i}:${c}`).join(';');
+    for (const [id, def] of Object.entries(SCENE)) {
+      const g = id.includes('/') ? id.split('/')[0] : 'ui';
+      if (filtro.value && g !== filtro.value) continue;
+      const f = document.createElement('figure'), cv = document.createElement('canvas'); cv.width = 320; cv.height = 200; cv.className = 'pixel';
+      f.appendChild(cv); f.insertAdjacentHTML('beforeend', `<figcaption><b>${urlImmagine(id)}</b><br>${def.desc || ''}</figcaption>`); grid.appendChild(f);
+      const r = new Renderer(cv); r.setPalette(pal.value);
+      const img = await new Promise((res) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = '../' + urlImmagine(id); });
+      r.def = { id, ...def }; r.img = img; r.k = img ? -1 : -1; r.fx = new Set(def.fx || []); r.t = 1.3; r.sporcoCache = true;
+      r.k = img ? -1 : (def.strati || []).length; // in galleria tutto statico
+      r.frame();
+    }
+  }
+  pal.onchange = disegna; filtro.onchange = disegna; disegna();
+</script>
+</body>
+</html>

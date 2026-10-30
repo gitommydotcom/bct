@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>C'est les ténèbres</title>
+<meta name="description" content="Una giornata di proteste a Parigi, uno scontro, cinque punti di vista. Un gioco narrativo in pixel art.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="crt">
+<div id="app">
+
+  <!-- AVVISO CONTENUTI -->
+  <section id="scr-avviso" class="screen" hidden>
+    <div class="box">
+      <h2 data-t="avviso.titolo"></h2>
+      <p data-t="avviso.testo"></p>
+      <p class="small" data-t="avviso.lampeggi"></p>
+      <label class="check"><input type="checkbox" id="avviso-flash"> <span data-t="opz.flash"></span></label>
+      <button class="btn" id="avviso-ok" data-t="avviso.ok"></button>
+    </div>
+  </section>
+
+  <!-- TITOLO -->
+  <section id="scr-titolo" class="screen" hidden>
+    <canvas id="title-canvas" class="pixel" width="320" height="200"></canvas>
+    <nav class="menu">
+      <button class="btn" data-go="select" data-t="menu.gioca"></button>
+      <button class="btn" data-go="map" data-t="menu.mappa"></button>
+      <button class="btn" id="btn-corale" data-t="menu.corale"></button>
+      <button class="btn" data-go="options" data-t="menu.opzioni"></button>
+      <button class="btn" data-go="credits" data-t="menu.crediti"></button>
+    </nav>
+  </section>
+
+  <!-- SELEZIONE -->
+  <section id="scr-select" class="screen" hidden>
+    <header class="bar"><button class="btn small" data-go="title" data-t="ui.indietro"></button><h2 data-t="select.titolo"></h2></header>
+    <p class="intro" data-t="select.intro"></p>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <!-- GIOCO -->
+  <section id="scr-game" class="screen" hidden>
+    <div class="frame">
+      <div class="viewport" id="viewport">
+        <canvas id="view" class="pixel" width="320" height="200"></canvas>
+        <div class="hud"><span id="hud-cap"></span><span id="hud-ora"></span></div>
+        <div class="badge" id="badge" hidden></div>
+        <div class="mini" id="mini" hidden>
+          <div class="mini-label" id="mini-label"></div>
+          <div class="mini-meter"><div id="mini-fill"></div></div>
+          <button class="btn mini-btn" id="mini-btn"></button>
+        </div>
+      </div>
+      <div class="panel" id="panel">
+        <div class="topbar">
+          <button class="icon" id="g-menu" aria-label="Menu">≡</button>
+          <button class="icon" id="g-map" aria-label="Mappa">◆</button>
+          <button class="icon" id="g-mute" aria-label="Audio">♪</button>
+        </div>
+        <div class="chat" id="chat" hidden>
+          <div class="chat-head" id="chat-head"></div>
+          <div class="chat-log" id="chat-log"></div>
+        </div>
+        <div class="text" id="text" aria-live="polite"></div>
+        <div class="toast" id="toast" hidden></div>
+        <div class="timer" id="timer" hidden><div id="timer-fill"></div></div>
+        <ol class="choices" id="choices"></ol>
+        <button class="continue" id="continue" hidden aria-label="Avanti">▼</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINALE -->
+  <section id="scr-end" class="screen" hidden>
+    <div class="box end">
+      <canvas id="end-canvas" class="pixel" width="320" height="120"></canvas>
+      <h1 id="end-title"></h1>
+      <h3 data-t="end.recap"></h3>
+      <ol id="end-recap" class="recap"></ol>
+      <div class="row">
+        <button class="btn" data-go="map" data-t="menu.mappa"></button>
+        <button class="btn" data-go="select" data-t="end.altri"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPPA DELLA GIORNATA -->
+  <section id="scr-map" class="screen" hidden>
+    <header class="bar"><button class="btn small" id="map-back" data-t="ui.indietro"></button><h2 data-t="map.titolo"></h2></header>
+    <p class="intro" data-t="map.intro"></p>
+    <div id="map" class="map"></div>
+  </section>
+
+  <!-- OPZIONI -->
+  <section id="scr-options" class="screen" hidden>
+    <header class="bar"><button class="btn small" id="opt-back" data-t="ui.indietro"></button><h2 data-t="menu.opzioni"></h2></header>
+    <div class="box options">
+      <label><span data-t="opz.velocita"></span>
+        <select id="opt-speed">
+          <option value="lenta" data-t="opz.lenta"></option>
+          <option value="normale" data-t="opz.normale"></option>
+          <option value="veloce" data-t="opz.veloce"></option>
+          <option value="istantanea" data-t="opz.istantanea"></option>
+        </select></label>
+      <label class="check"><input type="checkbox" id="opt-crt"> <span data-t="opz.crt"></span></label>
+      <label class="check"><input type="checkbox" id="opt-timer"> <span data-t="opz.timer"></span></label>
+      <label class="check"><input type="checkbox" id="opt-flash"> <span data-t="opz.flash"></span></label>
+      <label class="check"><input type="checkbox" id="opt-audio"> <span data-t="opz.audio"></span></label>
+      <button class="btn danger" id="opt-reset" data-t="opz.reset"></button>
+    </div>
+  </section>
+
+  <!-- CREDITI -->
+  <section id="scr-credits" class="screen" hidden>
+    <header class="bar"><button class="btn small" data-go="title" data-t="ui.indietro"></button><h2 data-t="menu.crediti"></h2></header>
+    <div class="box credits" id="credits"></div>
+  </section>
+
+  <!-- MENU DI GIOCO -->
+  <div class="modal" id="game-menu" hidden>
+    <div class="box">
+      <button class="btn" id="gm-resume" data-t="gm.riprendi"></button>
+      <button class="btn" id="gm-options" data-t="menu.opzioni"></button>
+      <button class="btn" id="gm-restart" data-t="gm.ricomincia"></button>
+      <button class="btn" id="gm-quit" data-t="gm.esci"></button>
+    </div>
+  </div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

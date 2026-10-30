@@ -1,0 +1,16 @@
+# Sito statico: nessuna build necessaria (le storie compilate sono già in story/).
+# Se modifichi i file .ink, esegui `npm run build` prima di pubblicare
+# oppure togli il commento a `command` qui sotto.
+[build]
+  publish = "."
+  # command = "npm install && npm run build"
+
+[[headers]]
+  for = "/story/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/art/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600"

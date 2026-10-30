@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convertitore di illustrazioni</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  body { overflow: auto; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 16px; display: grid; grid-template-columns: 320px 1fr; gap: 20px; }
+  @media (max-width: 800px) { .wrap { grid-template-columns: 1fr; } }
+  .ctrl { display: flex; flex-direction: column; gap: 12px; }
+  .ctrl label { display: flex; flex-direction: column; gap: 4px; }
+  .ctrl input[type=range] { accent-color: var(--c2); }
+  .ctrl select, .ctrl input[type=text] { background: var(--c0); border: 2px solid var(--c3); padding: 4px; }
+  .out { display: flex; flex-direction: column; gap: 10px; }
+  .out canvas { width: 100%; height: auto; aspect-ratio: 16/10; border: 2px solid var(--c1); background: #000; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .row2 canvas { aspect-ratio: 16/10; }
+  .drop { border: 2px dashed var(--c2); padding: 18px; text-align: center; cursor: pointer; }
+  .drop.over { background: var(--c1); }
+  .small { font-size: 17px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="ctrl">
+    <h2>Convertitore</h2>
+    <p class="small">Trasforma un disegno, una foto o un collage in un'illustrazione 320×200 per il gioco. Si esporta in <b>4 livelli di grigio</b>: il gioco poi applica da solo la palette del personaggio che guarda.</p>
+    <div class="drop" id="drop">Trascina qui un'immagine<br>o tocca per sceglierla</div>
+    <input type="file" id="file" accept="image/*" hidden>
+    <label>Inquadratura
+      <select id="fit"><option value="cover">Riempi (taglia i bordi)</option><option value="contain">Adatta (bande nere)</option></select></label>
+    <label>Sposta orizzontale <input type="range" id="ox" min="-1" max="1" step="0.01" value="0"></label>
+    <label>Sposta verticale <input type="range" id="oy" min="-1" max="1" step="0.01" value="0"></label>
+    <label>Zoom <input type="range" id="zoom" min="1" max="3" step="0.01" value="1"></label>
+    <label>Luminosità <input type="range" id="lum" min="-0.5" max="0.5" step="0.01" value="0"></label>
+    <label>Contrasto <input type="range" id="con" min="0.3" max="3" step="0.01" value="1.2"></label>
+    <label>Gamma (scurisce le ombre) <input type="range" id="gam" min="0.4" max="2.5" step="0.01" value="1"></label>
+    <label>Dither
+      <select id="dit">
+        <option value="bayer8">Ordinato Bayer 8×8 (come il gioco)</option>
+        <option value="bayer4">Ordinato Bayer 4×4 (più grosso)</option>
+        <option value="fs">Floyd–Steinberg (diffusione)</option>
+        <option value="soglia">Nessuno (solo soglie)</option>
+      </select></label>
+    <label>Soglia (sposta i 4 livelli) <input type="range" id="thr" min="-0.3" max="0.3" step="0.01" value="0"></label>
+    <label>Inverti <select id="inv"><option value="0">No</option><option value="1">Sì</option></select></label>
+    <label>Anteprima con la palette di
+      <select id="pal"></select></label>
+    <label>Nome del file (id della scena)
+      <input type="text" id="nome" placeholder="es. shared/c5_granata" list="scene"></label>
+    <datalist id="scene"></datalist>
+    <p class="small" id="desc"></p>
+    <button class="btn" id="dl">⬇ Scarica PNG (grigi)</button>
+    <p class="small">Metti il file scaricato in <b>art/</b> con il percorso indicato (es. <b>art/shared/c5_granata.png</b>). Al prossimo caricamento il gioco userà la tua tavola al posto del segnaposto.</p>
+  </div>
+  <div class="out">
+    <canvas id="prev" class="pixel" width="320" height="200"></canvas>
+    <div class="row2">
+      <div><p class="small">File esportato (grigi)</p><canvas id="gray" class="pixel" width="320" height="200"></canvas></div>
+      <div><p class="small">Originale</p><canvas id="orig" width="320" height="200"></canvas></div>
+    </div>
+    <p class="small">Le cinque palette:</p>
+    <div class="row2" id="tutte"></div>
+  </div>
+</div>
+<script type="module">
+  import { PALETTES } from '../js/data.js';
+  import { SCENE } from '../js/scenedefs.js';
+  const W = 320, H = 200, $ = (id) => document.getElementById(id);
+  const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const B8 = [[0,32,8,40,2,34,10,42],[48,16,56,24,50,18,58,26],[12,44,4,36,14,46,6,38],[60,28,52,20,62,30,54,22],[3,35,11,43,1,33,9,41],[51,19,59,27,49,17,57,25],[15,47,7,39,13,45,5,37],[63,31,55,23,61,29,53,21]];
+  const B4 = [[0,8,2,10],[12,4,14,6],[3,11,1,9],[15,7,13,5]];
+  Object.keys(PALETTES).forEach((k) => $('pal').insertAdjacentHTML('beforeend', `<option>${k}</option>`));
+  $('pal').value = 'ines';
+  Object.keys(SCENE).forEach((k) => $('scene').insertAdjacentHTML('beforeend', `<option value="${k}">`));
+  let img = null, livelli = null;
+
+  const carica = (f) => { const u = URL.createObjectURL(f); const i = new Image(); i.onload = () => { img = i; aggiorna(); }; i.src = u; };
+  $('drop').onclick = () => $('file').click();
+  $('file').onchange = (e) => e.target.files[0] && carica(e.target.files[0]);
+  $('drop').ondragover = (e) => { e.preventDefault(); $('drop').classList.add('over'); };
+  $('drop').ondragleave = () => $('drop').classList.remove('over');
+  $('drop').ondrop = (e) => { e.preventDefault(); $('drop').classList.remove('over'); const f = e.dataTransfer.files[0]; if (f) carica(f); };
+  document.querySelectorAll('input[type=range], select').forEach((el) => el.addEventListener('input', aggiorna));
+  $('nome').oninput = () => { const d = SCENE[$('nome').value]; $('desc').textContent = d ? d.desc : ''; };
+
+  function aggiorna() {
+    if (!img) return;
+    const o = $('orig').getContext('2d'); o.fillStyle = '#000'; o.fillRect(0, 0, W, H);
+    const cover = $('fit').value === 'cover', z = +$('zoom').value;
+    const s = (cover ? Math.max(W / img.width, H / img.height) : Math.min(W / img.width, H / img.height)) * z;
+    const w = img.width * s, h = img.height * s;
+    o.imageSmoothingQuality = 'high';
+    o.drawImage(img, (W - w) / 2 + (+$('ox').value) * (w - W) / 2, (H - h) / 2 + (+$('oy').value) * (h - H) / 2, w, h);
+    const px = o.getImageData(0, 0, W, H).data;
+    const L = new Float32Array(W * H), lum = +$('lum').value, con = +$('con').value, gam = +$('gam').value, thr = +$('thr').value, inv = $('inv').value === '1';
+    for (let i = 0; i < L.length; i++) {
+      let v = (px[i * 4] * 0.299 + px[i * 4 + 1] * 0.587 + px[i * 4 + 2] * 0.114) / 255;
+      if (inv) v = 1 - v;
+      v = (v - 0.5) * con + 0.5 + lum; v = Math.max(0, Math.min(1, v)); v = Math.pow(v, gam);
+      L[i] = Math.max(0, Math.min(0.9999, v - thr));
+    }
+    livelli = new Uint8Array(W * H);
+    const d = $('dit').value;
+    if (d === 'fs') {
+      const e = Float32Array.from(L, (v) => v * 3);
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+        const i = y * W + x, v = e[i], q = Math.max(0, Math.min(3, Math.round(v))), err = v - q; livelli[i] = q;
+        if (x + 1 < W) e[i + 1] += err * 7 / 16;
+        if (y + 1 < H) { if (x > 0) e[i + W - 1] += err * 3 / 16; e[i + W] += err * 5 / 16; if (x + 1 < W) e[i + W + 1] += err / 16; }
+      }
+    } else {
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+        const i = y * W + x, v = L[i] * 3, b = Math.floor(v), f = v - b;
+        const t = d === 'bayer8' ? (B8[y & 7][x & 7] + 0.5) / 64 : d === 'bayer4' ? (B4[y & 3][x & 3] + 0.5) / 16 : 0.5;
+        livelli[i] = Math.min(3, b + (f > t ? 1 : 0));
+      }
+    }
+    dipingi($('gray'), ['#000000', '#555555', '#aaaaaa', '#ffffff']);
+    dipingi($('prev'), PALETTES[$('pal').value].colori);
+    const box = $('tutte'); box.innerHTML = '';
+    ['ines', 'sacha', 'jerome', 'odile', 'mehdi'].forEach((k) => { const c = document.createElement('canvas'); c.width = W; c.height = H; c.className = 'pixel'; c.style.width = '100%'; c.title = k; box.appendChild(c); dipingi(c, PALETTES[k].colori); });
+  }
+
+  function dipingi(cv, colori) {
+    const c = cv.getContext('2d'), id = c.createImageData(W, H), pal = colori.map(hex);
+    for (let i = 0; i < livelli.length; i++) { const p = pal[livelli[i]]; id.data.set([p[0], p[1], p[2], 255], i * 4); }
+    c.putImageData(id, 0, 0);
+  }
+
+  $('dl').onclick = () => {
+    if (!livelli) return alert('Carica prima un\'immagine.');
+    const nome = ($('nome').value || 'illustrazione').split('/').pop();
+    $('gray').toBlob((b) => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = `${nome}.png`; a.click(); });
+  };
+</script>
+</body>
+</html>

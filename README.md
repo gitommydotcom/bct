@@ -1,0 +1,51 @@
+# C'est les ténèbres
+
+Gioco narrativo web: una giornata di proteste a Parigi (sabato 17 ottobre 2026), uno scontro, cinque punti di vista.
+Pixel art a 4 colori per personaggio, scelte morali, due finali (PACE / VIOLENZA) per ognuno.
+
+- Storia, personaggi e regole: [`STORY_BIBLE.md`](STORY_BIBLE.md)
+- Illustrazioni da disegnare: [`ART_LIST.md`](ART_LIST.md)
+
+## Provarlo in locale
+
+```bash
+npm install      # solo la prima volta (serve per compilare le storie)
+npm run serve    # poi apri http://localhost:8080
+```
+
+Aprire `index.html` con un doppio clic non funziona: i browser bloccano i moduli JavaScript da `file://`.
+Scorciatoia per gli sviluppatori: `http://localhost:8080/?gioca=ines` apre direttamente un personaggio.
+
+## Struttura
+
+| Cartella | Contenuto |
+|---|---|
+| `ink/` | **La storia.** Un file `.ink` per personaggio + `comune.ink` (variabili, regola dei finali, elenco dei tag) |
+| `story/` | Le storie compilate (`npm run build`). Non modificarle a mano |
+| `lang/it.js` | Tutti i testi dell'interfaccia (menu, opzioni, schede dei personaggi) |
+| `art/` | Le illustrazioni definitive (vedi sotto). Se un file manca, il gioco usa il segnaposto |
+| `js/` | Il motore: `engine.js` (Ink, pagine, scelte), `render.js` (palette e dither), `scenes.js` + `scenedefs.js` (segnaposto), `audio.js`, `mini.js` |
+| `tools/` | Compilatore, verifica, convertitore di immagini, galleria, server locale |
+
+## Modificare i testi
+
+1. Apri il file del personaggio in `ink/` (per esempio `ink/ines.ink`). È testo semplice in [Ink](https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md): ogni riga è un paragrafo, `*` è una scelta, `->` un salto.
+   Si può usare anche [Inky](https://github.com/inkle/inky), l'editor gratuito di inkle, per leggere e provare i rami.
+2. `npm run build` compila le storie in `story/`.
+3. `npm run verify` gioca migliaia di partite a caso e segnala vicoli ciechi, finali irraggiungibili, scelte mai prese, variabili inutili, immagini mancanti e pagine troppo lunghe.
+
+I comandi tra `#` (immagine, ora, effetti, suoni, chat, timer…) sono spiegati in cima a `ink/comune.ink`.
+
+## Sostituire le illustrazioni
+
+Ogni scena ha un nome, per esempio `shared/c5_granata`, che corrisponde al file `art/shared/c5_granata.png`.
+
+- **Formato:** 320×200 (o più grande, ma sempre in 16:10), **in scala di grigi**. Il gioco la converte da solo nei 4 colori del personaggio che sta guardando: le scene in `art/shared/` si disegnano una volta sola e cambiano colore per ognuno.
+- **Convertitore:** apri `http://localhost:8080/tools/convertitore.html`, trascina un disegno, una foto o un collage, regola contrasto, gamma, soglia e tipo di dither, guarda l'anteprima nelle cinque palette e scarica il PNG.
+- **Galleria:** `http://localhost:8080/tools/galleria.html` mostra tutte le scene (segnaposto o tavola) con la loro descrizione e il percorso del file.
+- Dopo aver aggiunto delle tavole, `npm run artlist` aggiorna `ART_LIST.md` con lo stato di avanzamento.
+
+## Pubblicare su Netlify
+
+Il sito è statico: si pubblica la cartella così com'è (`netlify.toml` è già configurato, nessuna build necessaria).
+Ricordati di fare `npm run build` prima di pubblicare, se hai modificato i file `.ink`.

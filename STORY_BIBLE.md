@@ -156,7 +156,7 @@ Ogni incrocio è una scena che almeno due personaggi vivono da lati diversi. Ogn
 | X09 | 17:37 | **Il cassonetto sotto il palazzo**, Mme Ferrero alla finestra. | ● | ● | ● | ● | ● |
 | X10 | 17:42 | **La granata che rotola.** | ● | ● | ● | ● | ● |
 | X11 | 17:44 | **La mano tesa verso Nassim.** | ● | ● | ● | ● | ● |
-| X12 | 20:30 | **Commissariato**: Odile cerca i suoi alunni e trova Mehdi al bancone. | | (se fermato) | | ● | ● |
+| X12 | 20:30 | **Commissariato**: Odile cerca i suoi alunni e trova Mehdi al bancone. | (se fermata) (se fermato) | | ● | ● |
 | X13 | 21:00 | **Ospedale Avicenne**: Jérôme accompagna Nassim; Inès arriva di corsa. | ● | | ● | | |
 
 **Dettagli ricorrenti da disseminare** (ognuno visto da almeno due personaggi):
