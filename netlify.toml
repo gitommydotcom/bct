@@ -7,6 +7,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # Il sito ospitava un'app Next.js: il plugin Next.js di Netlify è rimasto attivo
+  # e cerca la cartella .next, che qui non esiste. Questo lo disattiva.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[headers]]
   for = "/story/*"
