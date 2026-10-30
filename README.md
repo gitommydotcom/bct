@@ -3,6 +3,9 @@
 Gioco narrativo web: una giornata di proteste a Parigi (sabato 17 ottobre 2026), uno scontro, cinque punti di vista.
 Pixel art a 4 colori per personaggio, scelte morali, due finali (PACE / VIOLENZA) per ognuno.
 
+**Contenuto:** cinque percorsi completi (Inès, Sacha, Jérôme, Odile, Mehdi), ognuno di 15–25 minuti con 14–18 scelte e due finali,
+13 incroci tra i personaggi, e l'epilogo corale *Lunedì 2 novembre* che si sblocca dopo averli finiti tutti.
+
 - Storia, personaggi e regole: [`STORY_BIBLE.md`](STORY_BIBLE.md)
 - Illustrazioni da disegnare: [`ART_LIST.md`](ART_LIST.md)
 
@@ -45,7 +48,21 @@ Ogni scena ha un nome, per esempio `shared/c5_granata`, che corrisponde al file 
 - **Galleria:** `http://localhost:8080/tools/galleria.html` mostra tutte le scene (segnaposto o tavola) con la loro descrizione e il percorso del file.
 - Dopo aver aggiunto delle tavole, `npm run artlist` aggiorna `ART_LIST.md` con lo stato di avanzamento.
 
+## Comandi in gioco
+
+Tocco o clic sul testo per avanzare (o Invio/Spazio), tasti 1–9 per scegliere, Esc per il menu.
+Le opzioni permettono di cambiare la velocità del testo, togliere le scanline CRT, disattivare le scelte a tempo, ridurre i lampeggi e spegnere l'audio.
+I progressi si salvano da soli nel browser (localStorage): si può chiudere e riprendere dall'ultima scelta.
+
 ## Pubblicare su Netlify
 
-Il sito è statico: si pubblica la cartella così com'è (`netlify.toml` è già configurato, nessuna build necessaria).
-Ricordati di fare `npm run build` prima di pubblicare, se hai modificato i file `.ink`.
+Il sito è statico: si pubblica la cartella così com'è (`netlify.toml` è già configurato, nessuna build necessaria:
+le storie compilate in `story/` sono già nel repository).
+
+**Consigliato — aggiornamento automatico da GitHub:** su Netlify, apri il sito → *Site configuration → Build & deploy →
+Continuous deployment → Link repository*, scegli `gitommydotcom/bct`, branch `master`, *Publish directory* `.` e lascia vuoto il *Build command*.
+Da quel momento ogni push su `master` aggiorna il sito.
+
+**In alternativa:** scarica il repository come ZIP da GitHub, scompattalo e trascina la cartella nella pagina *Deploys* del sito su Netlify.
+
+Se modifichi i file `.ink`, esegui `npm run build` (e possibilmente `npm run verify`) prima di pubblicare.

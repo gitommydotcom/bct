@@ -64,7 +64,7 @@ function costruisciCarte() {
     c.insertAdjacentHTML('beforeend', `<div class="nome">${scheda.nome}</div><div class="ruolo">${scheda.ruolo} · ${scheda.eta}</div><div class="frase">${scheda.frase}</div><div class="stato">${stato}</div>`);
     if (ok) {
       const azioni = document.createElement('div'); azioni.className = 'row';
-      const b1 = document.createElement('button'); b1.className = 'btn small'; b1.textContent = s.stato ? t('select.continua') : t('select.nuovo');
+      const b1 = document.createElement('button'); b1.className = 'btn small'; b1.textContent = s.stato ? t('select.continua') : s.finito ? t('select.rigioca') : t('select.nuovo');
       b1.onclick = (e) => { e.stopPropagation(); iniziaGioco(id); };
       azioni.appendChild(b1);
       if (s.stato) { const b2 = document.createElement('button'); b2.className = 'btn small'; b2.textContent = '↺'; b2.title = t('select.ricomincia');

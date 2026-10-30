@@ -151,12 +151,12 @@ Ogni incrocio è una scena che almeno due personaggi vivono da lati diversi. Ogn
 | X04 | 7:35 | **La prof e la visiera**: Odile riconosce Mehdi sotto il casco. Lo chiama per nome. | ● | | | ● | ● |
 | X05 | 11:00 | **Lo screenshot**: il messaggio "Bismillah" circola. In commissariato ci ridono sopra. | ● (chat) | ● (sospetto) | ● (battuta) | | ● |
 | X06 | 13:10 | **La maschera nella metro** (linea 5): Sacha dà a Nassim un passamontagna. | ● | ● | | ● | |
-| X07 | 15:20 | **Gli applausi** sul boulevard Voltaire: i ragazzi applaudono i pompieri in sciopero. | ● | | ● | ● | ● (dal cordone) |
-| X08 | 15:40 | **Il volantino 1961**: Odile lo dà a Jérôme, poi lo tende verso il cordone. | ● | | ● | ● | ● |
+| X07 | 15:20 | **Gli applausi** sul boulevard Voltaire: i ragazzi applaudono i pompieri in sciopero. | ● | ● (dietro) | ● | ● | ● (dal cordone) |
+| X08 | 15:40 | **Il volantino 1961**: Odile lo dà a Jérôme, poi lo tende verso il cordone. | ● | ● (a terra) | ● | ● | ● |
 | X09 | 17:37 | **Il cassonetto sotto il palazzo**, Mme Ferrero alla finestra. | ● | ● | ● | ● | ● |
 | X10 | 17:42 | **La granata che rotola.** | ● | ● | ● | ● | ● |
 | X11 | 17:44 | **La mano tesa verso Nassim.** | ● | ● | ● | ● | ● |
-| X12 | 20:30 | **Commissariato**: Odile cerca i suoi alunni e trova Mehdi al bancone. | (se fermata) (se fermato) | | ● | ● |
+| X12 | 20:30 | **Commissariato**: Odile cerca i suoi alunni e trova Mehdi al bancone. | (se fermata) | (se fermato) | | ● | ● |
 | X13 | 21:00 | **Ospedale Avicenne**: Jérôme accompagna Nassim; Inès arriva di corsa. | ● | | ● | | |
 
 **Dettagli ricorrenti da disseminare** (ognuno visto da almeno due personaggi):

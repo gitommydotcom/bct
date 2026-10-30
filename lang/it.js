@@ -31,6 +31,7 @@ export default {
     nuovo: 'Inizia',
     continua: 'Continua',
     ricomincia: 'Ricomincia da capo',
+    rigioca: 'Rigioca',
     non_iniziato: 'Non ancora vissuto',
     in_corso: 'In corso',
     prossimamente: 'In arrivo',
