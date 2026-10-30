@@ -252,4 +252,44 @@ export const SCENE = {
   'odile/09_ehpad_mattina': { desc: 'Odile, il giorno dopo. L\'EHPAD all\'alba: il padre lucido per un minuto, gli occhi aperti, la mano su quella fasciata della figlia.', strati: [
     ['stanza', { lum: 120, pav: 90, y: 150 }], ['finestra', { x: 30, y: 20, w: 110, h: 100, lum: 200 }], ['luce', { x: 80, y: 60, r: 120, a: 0.3 }],
     ['figura', { x: 200, y: 175, h: 100, lum: 40, tipo: 'anziana' }], ['figura', { x: 250, y: 185, h: 120, lum: 15, tipo: 'prof' }], ['pieno', { x: 214, y: 130, w: 30, h: 6, lum: 230 }]] },
+  // ---------------- MEHDI ----------------
+  'mehdi/01_briefing': { desc: 'Mehdi, 6:00. La sala briefing del commissariato di Bobigny: neon, agenti in tenuta antisommossa seduti, il brigadier-chef Carrel in piedi con il tablet.', strati: [
+    ['stanza', { lum: 90, pav: 50, y: 150 }], ['luce', { x: 160, y: 0, r: 160, a: 0.35 }], ['pieno', { x: 30, y: 30, w: 120, h: 70, lum: 170 }],
+    ['figura', { x: 230, y: 180, h: 130, lum: 15, tipo: 'adulto', braccio: 'avanti', dir: -1 }], ['folla', { y: 210, n: 6, s: 1.3, lum: 10, tipi: ['casco'], cartelli: 0 }]] },
+  'mehdi/02_furgone': { desc: 'Mehdi, 6:50. Dentro il furgone della CSI: caschi sulle ginocchia, Fabre che mastica la gomma, la radio sul cruscotto, le luci blu che entrano dai finestrini con la grata.', strati: [
+    ['pieno', { lum: 20 }], ['pieno', { x: 30, y: 30, w: 100, h: 50, lum: 60 }], ['sbarre', { x0: 30, x1: 130, y: 30, h: 50, passo: 8, spessore: 2, lum: 10 }],
+    ['figura', { x: 90, y: 230, h: 180, lum: 5, tipo: 'casco', scudo: false, dettaglio: 120 }], ['figura', { x: 230, y: 235, h: 180, lum: 12, tipo: 'adulto' }], ['pieno', { x: 40, y: 175, w: 50, h: 20, lum: 160 }]], fx: ['lampeggianti'] },
+  'mehdi/03_palazzo_c': { desc: 'Mehdi, 7:05. Dal finestrino del furgone, attraverso la grata: il palazzo C della cité della Folie, la finestra del quarto piano accesa.', strati: [
+    ['cielo', { a: 30, b: 80 }], ['pieno', { x: 60, y: 20, w: 200, h: 170, lum: 50 }], ['scritta', { testo: 'C', x: 80, y: 30, size: 16, lum: 200 }],
+    ['sbarre', { x0: 70, x1: 250, y: 50, h: 140, passo: 18, spessore: 10, lum: 30 }], ['pieno', { x: 160, y: 80, w: 12, h: 12, lum: 230 }], ['luce', { x: 166, y: 86, r: 30, a: 0.4 }],
+    ['sbarre', { x0: 0, x1: 320, passo: 14, spessore: 3, lum: 5 }], ['vignetta', { a: 0.8 }]] },
+  'mehdi/04_nassim': { desc: 'Mehdi, 7:40. Nassim, felpa grigia e mani nere di fumo, ghigna e sputa a dieci centimetri dagli stivali dell\'agente; inquadratura dal basso.', strati: [
+    ['cielo', { a: 60, b: 130 }], ['grata', { y: 120, h: 60, insegna: false, muro: 80 }], ['suolo', { y: 120, a: 70, b: 100 }],
+    ['figura', { x: 170, y: 210, h: 170, lum: 15, tipo: 'cappuccio', dir: -1 }], ['pieno', { x: 20, y: 160, w: 40, h: 40, lum: 5 }], ['pieno', { x: 70, y: 166, w: 36, h: 34, lum: 5 }]] },
+  'mehdi/05_commissariato': { desc: 'Mehdi, 9:30. L\'open space del commissariato: scrivanie, schermi, Fabre in piedi con il telefono che legge ad alta voce, colleghi che ridono.', strati: [
+    ['stanza', { lum: 110, pav: 70, y: 150 }], ['luce', { x: 160, y: 0, r: 160, a: 0.3 }], ['tavolo', { x: 20, y: 140, w: 120 }], ['tavolo', { x: 180, y: 140, w: 120 }],
+    ['pieno', { x: 40, y: 110, w: 40, h: 30, lum: 40 }], ['pieno', { x: 220, y: 110, w: 40, h: 30, lum: 40 }],
+    ['figura', { x: 160, y: 170, h: 130, lum: 15, tipo: 'adulto', braccio: 'alto' }], ['figura', { x: 80, y: 190, h: 110, lum: 25, tipo: 'adulto' }], ['figura', { x: 260, y: 190, h: 110, lum: 25, tipo: 'adulto' }]] },
+  'mehdi/06_estate': { desc: 'Mehdi, ricordo di luglio: un mortaio d\'artificio che esplode su uno scudo a mezzo metro dalla visiera, una luce verde che riempie tutto.', contrasto: 1.4, strati: [
+    ['pieno', { lum: 10 }], ['bagliore', { x: 170, y: 90, r: 160, a: 0.8 }], ['luce', { x: 170, y: 90, r: 60, a: 0.9 }], ['visiera', { lum: 0 }]] },
+  'mehdi/07_panino': { desc: 'Mehdi, 12:30. Dentro il furgone parcheggiato a Nation, un panino in mano; dal parabrezza la piazza vuota, le transenne, e all\'angolo il palazzo della farmacia con la signora che annaffia i gerani.', strati: [
+    giorno(130, 200), ['facciata', { x: 140, w: 170, lum: 110, riga: 3, col: 1 }], ['suolo', { y: 170, a: 120, b: 150 }],
+    ['pieno', { x: 0, y: 0, w: 320, h: 20, lum: 20 }], ['pieno', { x: 0, y: 150, w: 320, h: 50, lum: 25 }], ['pieno', { x: 0, y: 0, w: 20, h: 200, lum: 20 }], ['mano', { x: 80, y: 210, s: 0.9, lum: 10 }]] },
+  'mehdi/08_cordone': { desc: 'Mehdi, 15:20. Il corteo visto da dentro il casco (soggettiva attraverso la visiera rigata): i pompieri in divisa applauditi, il cartello di Inès.', strati: [
+    giorno(130, 200), ['haussmann', { top: 20, y: 150, lum: 100 }], ['suolo', { y: 150, a: 110, b: 140 }], ['folla', { y: 200, n: 14, s: 1, lum: 30, braccia: 0.5, cartelli: 0.3 }],
+    ['figura', { x: 200, y: 210, h: 100, lum: 15, tipo: 'pompiere', braccio: 'alto' }], ['visiera', { lum: 5 }]] },
+  'mehdi/09_casco': { desc: 'Mehdi, 17:38. Il mondo da dentro il casco con la maschera antigas: il respiro appannato sulla visiera, il fuoco e la folla sfocati, il bordo nero che si stringe.', strati: [
+    ['cielo', { a: 70, b: 120 }], ['folla', { y: 200, n: 14, s: 1.1, lum: 20 }], ['cassonetto', { x: 250, y: 160, s: 0.8, lum: 20 }], ['fuoco', { x: 250, y: 140, w: 30, h: 30 }],
+    ['luce', { x: 160, y: 150, r: 80, a: 0.3 }], ['visiera', { lum: 0 }], ['vignetta', { a: 0.9 }]], fx: ['gas'] },
+  'mehdi/10_verbale': { desc: 'Mehdi, 20:00. Davanti allo schermo del verbale, la casella «Usage de la force — circonstances»; il casco appoggiato sulla scrivania.', strati: [
+    ['stanza', { lum: 60, pav: 35, y: 150 }], ['luce', { x: 160, y: 80, r: 120, a: 0.4 }], ['tavolo', { x: 40, y: 140, w: 240 }], ['pieno', { x: 100, y: 60, w: 120, h: 80, lum: 30 }], ['pieno', { x: 106, y: 66, w: 108, h: 66, lum: 190 }],
+    ['scritta', { testo: 'Usage de la force', x: 112, y: 72, size: 10, lum: 30, font: 'VT323', align: 'left' }], ['scritta', { testo: '_', x: 112, y: 90, size: 10, lum: 30, font: 'VT323', align: 'left' }], ['figura', { x: 250, y: 140, h: 40, lum: 15, tipo: 'casco', scudo: false }]] },
+  'mehdi/11_parcheggio': { desc: 'Mehdi, notte. Il parcheggio sotterraneo del commissariato: Mehdi in macchina, il casco sul sedile, un neon che sfarfalla, un volantino sul sedile del passeggero.', strati: [
+    ['pieno', { lum: 25 }], ['pieno', { x: 0, y: 0, w: 320, h: 30, lum: 15 }], ['pieno', { x: 120, y: 4, w: 80, h: 6, lum: 240 }], ['luce', { x: 160, y: 6, r: 120, a: 0.3 }],
+    ['pieno', { x: 40, y: 90, w: 240, h: 90, lum: 40 }], ['pieno', { x: 60, y: 100, w: 200, h: 50, lum: 70 }], ['figura', { x: 120, y: 190, h: 100, lum: 10, tipo: 'adulto' }], ['pieno', { x: 190, y: 140, w: 26, h: 16, lum: 220 }]] },
+  'mehdi/12_muro': { desc: 'Mehdi, il giorno dopo. Il muro del palazzo C accanto al portone: a spray nero, una sola parola, SAÏDI.', strati: [
+    ['cielo', { a: 110, b: 170 }], ['pieno', { x: 0, y: 10, w: 320, h: 190, lum: 150 }], ['pieno', { x: 230, y: 70, w: 60, h: 130, lum: 40 }],
+    ['scritta', { testo: 'SAÏDI', x: 110, y: 90, size: 24, lum: 10 }], ['figura', { x: 60, y: 210, h: 160, lum: 20, tipo: 'adulto' }]] },
+  'mehdi/13_telefono': { desc: 'Mehdi: il telefono in mano, i guanti tattici sul ginocchio. (Usata per le chat con la madre.)', strati: [
+    ['pieno', { lum: 12 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 15 }], ['vignetta', { a: 0.6 }]] },
 };
