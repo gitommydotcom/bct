@@ -292,4 +292,12 @@ export const SCENE = {
     ['scritta', { testo: 'SAÏDI', x: 110, y: 90, size: 24, lum: 10 }], ['figura', { x: 60, y: 210, h: 160, lum: 20, tipo: 'adulto' }]] },
   'mehdi/13_telefono': { desc: 'Mehdi: il telefono in mano, i guanti tattici sul ginocchio. (Usata per le chat con la madre.)', strati: [
     ['pieno', { lum: 12 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 15 }], ['vignetta', { a: 0.6 }]] },
+  // ---------------- EPILOGO CORALE ----------------
+  'shared/c8_grata_lunedi': { desc: 'Epilogo corale, lunedì 2 novembre, 7:55. La grata del Dumont ridipinta di verde; sotto la vernice fresca si intravede ancora la scritta ON EST PAS VOS ENNEMIS. Ragazzi con gli zaini, luce fredda del mattino.', strati: [
+    ['cielo', { a: 130, b: 210 }], ['grata', { y: 170, h: 80, muro: 120, finestre: 80, lum: 70 }], ['suolo', { y: 170, a: 110, b: 150 }],
+    ['scritta', { testo: 'ON EST PAS', y: 110, size: 14, lum: 95 }], ['scritta', { testo: 'VOS ENNEMIS', y: 132, size: 14, lum: 95 }],
+    ['folla', { y: 205, n: 12, s: 0.9, lum: 25, cartelli: 0, var: 20 }]] },
+  'shared/c8_aula_lunedi': { desc: 'Epilogo corale, 8:20. L\'aula 204 piena: trentacinque ragazzi stretti nei banchi, la macchia d\'umido a forma di Africa sul soffitto, la lavagna.', strati: [
+    ['stanza', { lum: 140, pav: 100, y: 150 }], ['pieno', { x: 200, y: 4, w: 50, h: 16, lum: 105 }], ['lavagna', { x: 40, y: 26, w: 240, h: 80, testo: ['17 OCTOBRE 1961', '17 OCTOBRE 2026'] }],
+    ['banchi', { y: 145, lum: 100 }], ['folla', { y: 210, n: 10, s: 1.1, lum: 20, cartelli: 0 }]] },
 };

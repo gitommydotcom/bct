@@ -96,7 +96,7 @@ for (const id of ids) {
   // nodi mai visitati
   const s0 = new Story(json);
   const tutti = contenitori(s0.mainContentContainer);
-  const mai = [...tutti].filter((n) => !visitati.has(n) && !['su', 'giu', 'decisiva', 'violente', 'calcola_esito'].includes(n));
+  const mai = [...tutti].filter((n) => !visitati.has(n) && !['su', 'giu', 'decisiva', 'violente', 'calcola_esito', 'quante_paci'].includes(n));
   mai.forEach((n) => avvisi.add(`nodo mai visitato: ${n}`));
   // scelte mai prese (escluse quelle bloccate per costruzione)
   for (const [k, v] of sceltePrese) if (v === 0) avvisi.add(`scelta mai presa: ${k}`);
