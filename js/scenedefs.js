@@ -226,4 +226,30 @@ export const SCENE = {
     ['stanza', { lum: 30, pav: 20, y: 150 }], ['pieno', { x: 100, y: 40, w: 140, h: 90, lum: 15 }], ['pieno', { x: 106, y: 46, w: 128, h: 78, lum: 140 }],
     ['figura', { x: 160, y: 120, h: 60, lum: 30, tipo: 'pompiere', braccio: 'avanti' }], ['figura', { x: 200, y: 124, h: 56, lum: 40, tipo: 'casco', scudo: false }],
     ['luce', { x: 170, y: 90, r: 120, a: 0.3 }], ['pieno', { x: 60, y: 150, w: 200, h: 30, lum: 50 }], ['figura', { x: 160, y: 170, h: 50, lum: 10, tipo: 'ragazza' }]] },
+  // ---------------- ODILE ----------------
+  'odile/01_thermos': { desc: 'Odile, 7:05. L\'angolo della rue de la Folie all\'alba: una donna con sciarpa e thermos che si mette a correre; in fondo alla strada il fumo nero e le luci blu.', strati: [
+    ['cielo', { a: 30, b: 90 }], ['cite', { y: 150, lum: 35, finestre: 0.2, flum: 150 }], ['suolo', { y: 150, a: 40, b: 70, linee: true, lineeLum: 60 }],
+    ['colonna', { x: 170, y: 140, h: 130, r: 26, lum: 40 }], ['furgone', { x: 150, y: 152, s: 0.4, lum: 30 }], ['figura', { x: 90, y: 215, h: 160, lum: 10, tipo: 'prof' }]], fx: ['lampeggianti'] },
+  'odile/02_telefono': { desc: 'Odile: il telefono in mano, occhiali da lettura appoggiati sul naso. (Usata per le chat con la preside e l\'EHPAD.)', strati: [
+    ['pieno', { lum: 30 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 50 }], ['vignetta', { a: 0.5 }]] },
+  'odile/03_aula': { desc: 'Odile, 9:30. L\'aula 204 vuota: trentacinque sedie strette, la macchia d\'umido a forma di Africa sul soffitto, la lavagna dove Odile scrive (il gioco ci scrive sopra le parole scelte: lasciare la lavagna libera).', strati: [
+    ['stanza', { lum: 130, pav: 90, y: 150 }], ['pieno', { x: 220, y: 4, w: 40, h: 14, lum: 100 }], ['lavagna', { x: 40, y: 26, w: 240, h: 84 }], ['banchi', { y: 150, lum: 100 }],
+    ['figura', { x: 285, y: 160, h: 110, lum: 15, tipo: 'prof', braccio: 'alto', dir: -1 }]] },
+  'odile/04_ehpad': { desc: 'Odile, 10:30. Una stanza dell\'EHPAD di Vincennes: Lucien, 88 anni, in poltrona davanti alla finestra; Odile seduta accanto che gli tiene la mano.', strati: [
+    ['stanza', { lum: 160, pav: 120, y: 150 }], ['finestra', { x: 180, y: 20, w: 110, h: 100, lum: 230 }], ['letto', { x: 10, y: 170, lum: 210 }],
+    ['figura', { x: 210, y: 175, h: 100, lum: 40, tipo: 'anziana' }], ['figura', { x: 130, y: 180, h: 110, lum: 20, tipo: 'prof' }]] },
+  'odile/05_bancone': { desc: 'Odile, 20:30. Il bancone del commissariato del 12°: dietro il vetro Mehdi, senza casco, davanti a uno schermo; Odile di spalle con la borsa.', strati: [
+    ['stanza', { lum: 100, pav: 60, y: 150 }], ['luce', { x: 200, y: 0, r: 140, a: 0.4 }], ['pieno', { x: 120, y: 100, w: 200, h: 60, lum: 70 }], ['pieno', { x: 120, y: 40, w: 200, h: 60, lum: 150 }],
+    ['figura', { x: 230, y: 110, h: 70, lum: 20, tipo: 'adulto' }], ['pieno', { x: 260, y: 80, w: 30, h: 22, lum: 200 }], ['figura', { x: 70, y: 230, h: 190, lum: 10, tipo: 'prof' }]] },
+  'odile/06_pont': { desc: 'Odile, mezzanotte. Il ponte Saint-Michel, la Senna nera, Notre-Dame sullo sfondo; poche persone con cartelli scritti a mano; un garofano che cade nell\'acqua.', strati: [
+    notte(5, 30), ['haussmann', { top: 60, y: 110, lum: 25, accese: 0.25 }], ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 15 }], ['luce', { x: 160, y: 140, r: 100, a: 0.2 }],
+    ['pieno', { x: 0, y: 100, w: 320, h: 8, lum: 60 }], ['folla', { y: 102, n: 5, s: 0.7, lum: 5, x0: 40, x1: 280, cartelli: 0.5 }], ['pieno', { x: 170, y: 150, w: 4, h: 4, lum: 230 }], ['lampione', { x: 30, y: 102, h: 60 }]] },
+  'odile/07_aula_dopo': { desc: 'Odile, lunedì 2 novembre. L\'aula 204 al mattino: sulla lavagna, sotto le parole di Odile, una scritta in un\'altra calligrafia.', strati: [
+    ['stanza', { lum: 150, pav: 100, y: 150 }], ['finestra', { x: 250, y: 20, w: 60, h: 90, lum: 240 }], ['lavagna', { x: 20, y: 26, w: 220, h: 84, testo: ['17 OCTOBRE 2026 :', 'NOUS AUSSI', "ON S'EN SOUVIENDRA.", '(et merci madame)'] }], ['banchi', { y: 150, lum: 110 }]] },
+  'odile/08_cella': { desc: 'Odile, notte. La cella del commissariato: una donna di cinquantadue anni seduta sulla panca con il braccio fasciato, la sciarpa verde persa.', strati: [
+    ['stanza', { lum: 40, pav: 25, y: 150 }], ['luce', { x: 160, y: 10, r: 90, a: 0.35 }], ['pieno', { x: 50, y: 140, w: 220, h: 10, lum: 75 }], ['figura', { x: 160, y: 146, h: 70, lum: 10, tipo: 'prof' }],
+    ['sbarre', { x0: 4, x1: 320, passo: 30, spessore: 6, lum: 5 }]] },
+  'odile/09_ehpad_mattina': { desc: 'Odile, il giorno dopo. L\'EHPAD all\'alba: il padre lucido per un minuto, gli occhi aperti, la mano su quella fasciata della figlia.', strati: [
+    ['stanza', { lum: 120, pav: 90, y: 150 }], ['finestra', { x: 30, y: 20, w: 110, h: 100, lum: 200 }], ['luce', { x: 80, y: 60, r: 120, a: 0.3 }],
+    ['figura', { x: 200, y: 175, h: 100, lum: 40, tipo: 'anziana' }], ['figura', { x: 250, y: 185, h: 120, lum: 15, tipo: 'prof' }], ['pieno', { x: 214, y: 130, w: 30, h: 6, lum: 230 }]] },
 };
