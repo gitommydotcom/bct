@@ -1,9 +1,12 @@
-# Sito statico: nessuna build necessaria (le storie compilate sono già in story/).
-# Se modifichi i file .ink, esegui `npm run build` prima di pubblicare
-# oppure togli il commento a `command` qui sotto.
+# Sito statico. Queste impostazioni hanno la precedenza su quelle dell'interfaccia di Netlify
+# (utile perché il sito in passato ospitava un progetto Next.js con impostazioni diverse).
+# La build compila i file .ink in story/ (le storie compilate sono comunque già nel repository).
 [build]
   publish = "."
-  # command = "npm install && npm run build"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
 
 [[headers]]
   for = "/story/*"
