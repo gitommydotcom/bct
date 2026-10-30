@@ -153,4 +153,39 @@ export const SCENE = {
   'ines/11_cella': { desc: 'Inès, 3:10. La cella di garde à vue: piastrelle, una panca, una luce al neon dietro una grata, le sbarre in primo piano.', strati: [
     ['stanza', { lum: 50, pav: 30, y: 150 }], ['luce', { x: 160, y: 10, r: 90, a: 0.4 }], ['pieno', { x: 60, y: 140, w: 200, h: 10, lum: 80 }],
     ['figura', { x: 160, y: 150, h: 60, lum: 10, tipo: 'ragazza' }], ['sbarre', { x0: 4, x1: 320, passo: 30, spessore: 6, lum: 5 }]] },
+  // ---------------- SACHA ----------------
+  'sacha/01_magazzino': { desc: 'Sacha, 4:50. Il parcheggio del magazzino di Aulnay sotto i lampioni al sodio: operai in gilet catarifrangente che escono dal turno di notte. Sacha di spalle si toglie il gilet.', strati: [
+    notte(5, 35), ['pieno', { x: 0, y: 40, w: 320, h: 110, lum: 50 }], ['pieno', { x: 120, y: 90, w: 80, h: 60, lum: 160 }], ['scritta', { testo: 'QUAI 14', x: 160, y: 50, size: 8, lum: 200 }],
+    ['suolo', { y: 150, a: 30, b: 55 }], ['lampione', { x: 40, y: 175, h: 120, r: 60 }], ['lampione', { x: 280, y: 175, h: 120, r: 60 }],
+    ['folla', { y: 185, n: 10, s: 0.6, lum: 20, x0: 60, x1: 260, cartelli: 0 }], ['figura', { x: 160, y: 215, h: 150, lum: 5, tipo: 'cappuccio' }]] },
+  'sacha/02_telefono': { desc: 'Sacha: il telefono in una mano guantata nera, lo schermo della chat Signal. (Usata per le schermate di chat.)', strati: [
+    ['pieno', { lum: 8 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 5 }], ['vignetta', { a: 0.7 }]] },
+  'sacha/03_appartamento': { desc: 'Sacha, 9:30. L\'appartamento di Lou a Pantin: ombrelli neri contro il muro, una scatola di occhialini da piscina, tazze di caffè solubile, tre ragazzi sui telefoni.', strati: [
+    ['stanza', { lum: 70, pav: 40, y: 150 }], ['finestra', { x: 220, y: 25, w: 70, h: 75, lum: 160 }], ['tavolo', { x: 60, y: 140, w: 150, tazza: true }],
+    ['pieno', { x: 20, y: 70, w: 4, h: 80, lum: 10 }], ['pieno', { x: 30, y: 74, w: 4, h: 76, lum: 10 }], ['pieno', { x: 40, y: 72, w: 4, h: 78, lum: 10 }],
+    ['figura', { x: 120, y: 200, h: 100, lum: 15, tipo: 'cappuccio' }], ['figura', { x: 190, y: 205, h: 95, lum: 18, tipo: 'ragazza' }], ['luce', { x: 150, y: 130, r: 30, a: 0.5 }]] },
+  'sacha/04_furgone': { desc: 'Sacha, ricordo: a 17 anni, la guancia schiacciata sul pavimento di gomma di un furgone di polizia, un ginocchio sulla schiena, gli stivali in primo piano.', contrasto: 1.3, strati: [
+    ['pieno', { lum: 20 }], ['pieno', { x: 0, y: 130, w: 320, h: 70, lum: 45 }], ['sbarre', { x0: 0, x1: 320, y: 130, h: 70, passo: 12, spessore: 2, lum: 30 }],
+    ['figura', { x: 160, y: 150, h: 160, lum: 5, tipo: 'a_terra' }], ['pieno', { x: 230, y: 40, w: 40, h: 110, lum: 10 }], ['pieno', { x: 220, y: 140, w: 60, h: 14, lum: 8 }], ['vignetta', { a: 0.8 }]] },
+  'sacha/05_vetrina': { desc: 'Sacha, 15:55. La vetrina di una banca all\'angolo con la rue de la Roquette che riflette la testa del corteo vestita di nero; un ragazzino con un pezzo di pavé in mano.', strati: [
+    ['pieno', { lum: 90 }], ['pieno', { x: 20, y: 20, w: 280, h: 150, lum: 140 }], ['scritta', { testo: 'BANQUE', y: 30, size: 10, lum: 40 }],
+    ['folla', { y: 170, n: 10, s: 1, lum: 70, tipi: ['maschera', 'cappuccio'], cartelli: 0 }], ['figura', { x: 240, y: 215, h: 150, lum: 5, tipo: 'cappuccio', braccio: 'alto' }]] },
+  'sacha/06_volantino_terra': { desc: 'Sacha, 16:30. Il volantino del 1961 per terra, calpestato da un\'impronta di scarpa, sull\'asfalto del boulevard. Una mano guantata lo raccoglie.', strati: [
+    ['pieno', { lum: 60 }], ['pieno', { x: 70, y: 40, w: 180, h: 110, lum: 220 }], ['scritta', { testo: '17 OCTOBRE 1961', y: 60, size: 8, lum: 30 }], ['scritta', { testo: '17 OCTOBRE 2026', y: 92, size: 8, lum: 30 }],
+    ['scritta', { testo: 'ni oubli, ni pardon', y: 118, size: 14, lum: 80, font: 'VT323' }], ['pieno', { x: 130, y: 60, w: 50, h: 80, lum: 120 }], ['mano', { x: 260, y: 210, s: 1, lum: 5 }]] },
+  'sacha/07_cella': { desc: 'Sacha, notte. La cella del commissariato del 12°: panca di metallo, Sacha seduto a viso scoperto, la luce del corridoio che entra dalla grata della porta.', strati: [
+    ['stanza', { lum: 35, pav: 20, y: 150 }], ['luce', { x: 260, y: 60, r: 80, a: 0.4 }], ['pieno', { x: 240, y: 40, w: 40, h: 40, lum: 150 }], ['sbarre', { x0: 240, x1: 280, y: 40, h: 40, passo: 8, spessore: 2, lum: 20 }],
+    ['pieno', { x: 30, y: 140, w: 160, h: 10, lum: 70 }], ['figura', { x: 100, y: 145, h: 70, lum: 10, tipo: 'adulto' }]] },
+  'sacha/08_palestra': { desc: 'Sacha, il giorno dopo. La palestra di boxe del quartiere: il ring, i sacchi appesi, Nassim seduto sulle corde con il gesso al polso che tende un paio di guantoni.', strati: [
+    ['stanza', { lum: 90, pav: 60, y: 150 }], ['finestra', { x: 20, y: 20, w: 120, h: 50, lum: 210, croce: false }], ['pieno', { x: 60, y: 120, w: 220, h: 6, lum: 200 }], ['pieno', { x: 60, y: 104, w: 220, h: 3, lum: 200 }],
+    ['pieno', { x: 290, y: 0, w: 4, h: 60, lum: 30 }], ['pieno', { x: 280, y: 60, w: 24, h: 50, lum: 30 }], ['figura', { x: 170, y: 160, h: 90, lum: 15, tipo: 'cappuccio', braccio: 'avanti' }], ['pieno', { x: 196, y: 108, w: 14, h: 10, lum: 230 }]] },
+  'sacha/09_portone': { desc: 'Sacha, 19:30. Rue des Pyrénées: un portone socchiuso, Sacha nell\'androne che si toglie il k-way nero; fuori, le sirene che passano.', strati: [
+    ['pieno', { lum: 25 }], ['pieno', { x: 200, y: 0, w: 120, h: 200, lum: 70 }], ['luce', { x: 260, y: 80, r: 90, a: 0.3 }], ['pieno', { x: 190, y: 0, w: 14, h: 200, lum: 10 }],
+    ['figura', { x: 110, y: 210, h: 170, lum: 5, tipo: 'cappuccio', braccio: 'alto' }]], fx: ['lampeggianti'] },
+  'sacha/10_kebab': { desc: 'Sacha, 21:10. Un kebab di Ménilmontant: il televisore sopra il frigo delle bibite che trasmette in loop il video di Nation; Sacha di spalle al bancone.', strati: [
+    ['stanza', { lum: 120, pav: 70, y: 150 }], ['pieno', { x: 180, y: 70, w: 120, h: 80, lum: 200 }], ['pieno', { x: 190, y: 20, w: 100, h: 60, lum: 15 }], ['pieno', { x: 196, y: 26, w: 88, h: 48, lum: 120 }],
+    ['colonna', { x: 230, y: 70, h: 40, r: 8, lum: 200 }], ['pieno', { x: 0, y: 140, w: 170, h: 30, lum: 60 }], ['figura', { x: 90, y: 230, h: 180, lum: 10, tipo: 'cappuccio' }]] },
+  'sacha/11_canale': { desc: 'Sacha, il giorno dopo all\'alba. Il canale dell\'Ourcq, acqua grigia, i magazzini sull\'altra riva; un passamontagna nero che galleggia.', strati: [
+    ['cielo', { a: 90, b: 170 }], ['cite', { y: 110, lum: 60, finestre: 0.05, flum: 200, hmin: 20, hvar: 30 }], ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 100 }],
+    ['luce', { x: 200, y: 110, r: 120, a: 0.25 }], ['pieno', { x: 150, y: 150, w: 26, h: 8, lum: 5 }], ['pieno', { x: 0, y: 180, w: 320, h: 20, lum: 50 }]] },
 };
