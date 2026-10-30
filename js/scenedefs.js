@@ -188,4 +188,42 @@ export const SCENE = {
   'sacha/11_canale': { desc: 'Sacha, il giorno dopo all\'alba. Il canale dell\'Ourcq, acqua grigia, i magazzini sull\'altra riva; un passamontagna nero che galleggia.', strati: [
     ['cielo', { a: 90, b: 170 }], ['cite', { y: 110, lum: 60, finestre: 0.05, flum: 200, hmin: 20, hvar: 30 }], ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 100 }],
     ['luce', { x: 200, y: 110, r: 120, a: 0.25 }], ['pieno', { x: 150, y: 150, w: 26, h: 8, lum: 5 }], ['pieno', { x: 0, y: 180, w: 320, h: 20, lum: 50 }]] },
+  // ---------------- JÉRÔME ----------------
+  'jerome/01_cabina': { desc: 'Jérôme, 6:15. La cabina del camion SDIS 77 di notte sulla N3: il cruscotto illuminato, Hugo al volante, i lampioni che scorrono, la radio.', strati: [
+    ['pieno', { lum: 10 }], ['pieno', { x: 20, y: 20, w: 280, h: 90, lum: 30 }], ['lampione', { x: 90, y: 110, h: 70, r: 30 }], ['lampione', { x: 230, y: 110, h: 60, r: 25 }],
+    ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 20 }], ['luce', { x: 160, y: 130, r: 60, a: 0.35 }], ['pieno', { x: 130, y: 120, w: 60, h: 14, lum: 120 }],
+    ['figura', { x: 70, y: 230, h: 170, lum: 5, tipo: 'pompiere' }], ['pieno', { x: 220, y: 130, w: 70, h: 8, lum: 5 }]] },
+  'jerome/02_parabrezza': { desc: 'Jérôme, 6:48. Dall\'interno della cabina: il parabrezza stellato dal sasso, dietro le crepe il fuoco del cassonetto e le silhouette dei ragazzi.', strati: [
+    notte(10, 45), ['grata', { y: 168, h: 62, insegna: false, muro: 40 }], ['cassonetto', { x: 160, y: 180, lum: 30 }], ['bagliore', { x: 160, y: 160, r: 110, a: 0.4 }], ['fuoco', { x: 160, y: 156, w: 40, h: 40 }],
+    ['folla', { y: 200, n: 8, s: 1, lum: 0, braccia: 0.5, cartelli: 0 }], ['scritta', { testo: '*', x: 150, y: 50, size: 30, lum: 240, font: 'VT323' }],
+    ['pieno', { x: 0, y: 0, w: 320, h: 14, lum: 15 }], ['pieno', { x: 0, y: 180, w: 320, h: 20, lum: 15 }]] },
+  'jerome/03_getto': { desc: 'Jérôme, 6:50. In primo piano le mani guantate sulla lancia, il getto d\'acqua che colpisce il cassonetto in fiamme, il vapore; un sasso che vola nel controluce.', strati: [
+    notte(10, 50), ['grata', { y: 168, h: 62, insegna: false, muro: 40 }], ['cassonetto', { x: 220, y: 182, lum: 30 }], ['bagliore', { x: 220, y: 160, r: 100, a: 0.4 }], ['fuoco', { x: 220, y: 158, w: 40, h: 36 }],
+    ['colonna', { x: 220, y: 150, h: 140, r: 30, lum: 170 }], ['pieno', { x: 40, y: 160, w: 6, h: 3, lum: 230 }], ['figura', { x: 70, y: 240, h: 190, lum: 5, tipo: 'pompiere', braccio: 'avanti' }]] },
+  'jerome/04_caserma': { desc: 'Jérôme, 8:40. Il centro di soccorso di Chelles: un ufficio con un vecchio computer, il cursore nella casella «Observations», dalla finestra il camion col parabrezza rotto.', strati: [
+    ['stanza', { lum: 120, pav: 80, y: 150 }], ['finestra', { x: 200, y: 25, w: 100, h: 70, lum: 190 }], ['camion', { x: 205, y: 90, s: 0.55, lum: 80, crepa: true }],
+    ['tavolo', { x: 30, y: 130, w: 160 }], ['pieno', { x: 60, y: 80, w: 70, h: 50, lum: 40 }], ['pieno', { x: 65, y: 85, w: 60, h: 38, lum: 180 }], ['scritta', { testo: 'Observations: _', x: 70, y: 98, size: 10, lum: 30, font: 'VT323', align: 'left' }]] },
+  'jerome/05_telefono': { desc: 'Jérôme: il telefono in una mano con un cerotto, lo sfondo con la foto di Jade vestita da pompiere. (Usata per le chat.)', strati: [
+    ['pieno', { lum: 20 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 30 }], ['vignetta', { a: 0.6 }]] },
+  'jerome/06_armadietto': { desc: 'Jérôme, 10:30. Lo spogliatoio della caserma: un armadietto aperto, il casco di riserva, una busta bianca «Lettre de démission».', strati: [
+    ['stanza', { lum: 100, pav: 60, y: 160 }], ['armadietti', { x: 10, n: 11, lum: 90 }], ['pieno', { x: 122, y: 40, w: 26, h: 110, lum: 30 }], ['pieno', { x: 126, y: 60, w: 18, h: 12, lum: 200 }],
+    ['pieno', { x: 126, y: 90, w: 18, h: 10, lum: 240 }], ['luce', { x: 135, y: 95, r: 30, a: 0.4 }]] },
+  'jerome/07_rer': { desc: 'Jérôme, 12:40. Il vagone della RER E: una decina di pompieri in divisa con i bracciali arancioni POMPIERS EN GRÈVE, una signora che offre una clementina, il cartello di Samia.', strati: [
+    ['metro', { lum: 110 }], ['folla', { y: 210, n: 6, s: 1.8, lum: 20, tipi: ['pompiere'], cartelli: 0.3 }]] },
+  'jerome/08_cordone': { desc: 'Jérôme, 16:10. Sul boulevard Voltaire un giovane agente con la visiera alzata (Mehdi) guarda il bracciale di Jérôme. I due si guardano.', strati: [
+    giorno(110, 180), ['haussmann', { top: 20, y: 150, lum: 100 }], ['cordone', { y: 175, n: 6, s: 0.9, lum: 30 }], ['vignetta', { a: 0.4 }],
+    ['figura', { x: 230, y: 240, h: 200, lum: 10, tipo: 'casco', dir: -1, scudo: false, dettaglio: 200 }], ['figura', { x: 80, y: 250, h: 200, lum: 25, tipo: 'pompiere', dir: 1 }]] },
+  'jerome/09_vsav': { desc: 'Jérôme, 18:10. Dentro l\'ambulanza VSAV della Brigata: Nassim sulla barella con la maschera d\'ossigeno, Maxime che controlla il monitor, Jérôme seduto con gli occhi rossi.', strati: [
+    ['stanza', { lum: 150, pav: 100, y: 160 }], ['luce', { x: 160, y: 0, r: 150, a: 0.4 }], ['letto', { x: 60, y: 160, persona: true, lum: 210 }], ['pieno', { x: 240, y: 40, w: 50, h: 34, lum: 30 }], ['pieno', { x: 245, y: 45, w: 40, h: 24, lum: 200 }],
+    ['figura', { x: 270, y: 200, h: 120, lum: 25, tipo: 'pompiere' }]], fx: ['lampeggianti'] },
+  'jerome/10_cucina_notte': { desc: 'Jérôme, 0:40. La cucina di casa a Chelles: Sandrine in pigiama al tavolo, un bicchiere d\'acqua, le mani fasciate di Jérôme.', strati: [
+    ['stanza', { lum: 40, pav: 25, y: 150 }], ['luce', { x: 160, y: 30, r: 120, a: 0.5 }], ['tavolo', { x: 70, y: 140, w: 180 }], ['pieno', { x: 150, y: 128, w: 8, h: 12, lum: 200 }],
+    ['figura', { x: 100, y: 190, h: 110, lum: 15, tipo: 'ragazza' }], ['figura', { x: 220, y: 195, h: 120, lum: 10, tipo: 'adulto' }]] },
+  'jerome/11_cameretta': { desc: 'Jérôme, il giorno dopo. Mattina, il letto: Jade di quattro anni che guarda le mani fasciate del papà. Luce morbida.', strati: [
+    ['stanza', { lum: 170, pav: 120, y: 150 }], ['finestra', { x: 220, y: 20, w: 80, h: 80, lum: 240 }], ['letto', { x: 30, y: 170, persona: true, lum: 220 }],
+    ['figura', { x: 170, y: 160, h: 60, lum: 20, tipo: 'ragazza' }]] },
+  'jerome/12_tv': { desc: 'Jérôme, notte/mattina. Il soggiorno: il televisore acceso con il video in loop di un pompiere che colpisce un poliziotto; Jade sul divano di spalle.', strati: [
+    ['stanza', { lum: 30, pav: 20, y: 150 }], ['pieno', { x: 100, y: 40, w: 140, h: 90, lum: 15 }], ['pieno', { x: 106, y: 46, w: 128, h: 78, lum: 140 }],
+    ['figura', { x: 160, y: 120, h: 60, lum: 30, tipo: 'pompiere', braccio: 'avanti' }], ['figura', { x: 200, y: 124, h: 56, lum: 40, tipo: 'casco', scudo: false }],
+    ['luce', { x: 170, y: 90, r: 120, a: 0.3 }], ['pieno', { x: 60, y: 150, w: 200, h: 30, lum: 50 }], ['figura', { x: 160, y: 170, h: 50, lum: 10, tipo: 'ragazza' }]] },
 };

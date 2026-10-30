@@ -91,10 +91,10 @@ Fonti consultate: [France 24 sui codici web nella mobilitazione](https://www.fra
 - **Mini-interazione:** togliersi o rimettersi la maschera; il gesto è lento e il volto resta visibile per qualche istante.
 
 ### JÉRÔME FERRAND — il pompiere
-- **34 anni**, **caporal-chef SDIS 77**, pompiere professionista civile. Sei anni nella BSPP prima di passare in Seine-et-Marne. Compagna Sandrine (infermiera), figlia Lou (4 anni).
+- **34 anni**, **caporal-chef SDIS 77**, pompiere professionista civile. Sei anni nella BSPP prima di passare in Seine-et-Marne. Compagna Sandrine (infermiera), figlia Jade (4 anni).
 - **Palette:** nero · rosso · arancio · bianco.
 - **Voce:** pratica, gentile, battute da caserma, parla per procedure quando ha paura. *"Prima la vita, poi i beni, poi il resto. Il resto siete voi che urlate."*
-- **Desiderio:** più mezzi e più persone (l'equipaggio è in 3 invece che in 4) e tornare a casa da Lou tutte le sere.
+- **Desiderio:** più mezzi e più persone (l'equipaggio è in 3 invece che in 4) e tornare a casa da Jade tutte le sere.
 - **Paura:** un palazzo che brucia con dentro qualcuno che non riesce a raggiungere. Questa estate, in Gironda, è già successo.
 - **Segreto:** nell'armadietto ha una lettera di dimissioni, già firmata. Sandrine non lo sa.
 - **Conflitto:** stamattina spegne i fuochi dei ragazzi e loro gli tirano i sassi. Oggi pomeriggio sfila con loro. Lui odia il pericolo, eppure è la figura che può fare da ponte.
@@ -311,7 +311,7 @@ Formato: capitoli → scene chiave → scelte (con effetto) → scontro (D1/D2/D
 
 **7. Finali.**
 - **PACE.** Mani bruciate, polmoni che fischiano. Mme Ferrero sta bene. Sandrine ti aspetta sveglia. *Il giorno dopo: strappi la lettera, oppure la consegni (variante), ma senza vergogna.*
-- **VIOLENZA.** Sospeso, procedimento disciplinare. Il sindacato si divide su di te. *Il giorno dopo: Lou ti chiede perché la gente in tv dice cose cattive sui pompieri.*
+- **VIOLENZA.** Sospeso, procedimento disciplinare. Il sindacato si divide su di te. *Il giorno dopo: Jade ti chiede perché la gente in tv dice cose cattive sui pompieri.*
 
 ### 8.4 ODILE — "Ni oubli"
 **1. Alba.** 7:00, il thermos di caffè per il picchetto. Il fumo, i ragazzi, le sirene.
