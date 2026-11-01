@@ -30,7 +30,7 @@ VAR visiera_corteo = ""       // occhi | abbassata
 # img: mehdi/01_briefing
 # amb: interno
 Commissariato di Bobigny, sala briefing, 6:00. Odore di caffè della macchinetta e di ginocchiere sudate. Il brigadier-chef Carrel legge dal tablet senza occhiali, tenendolo lontano.
-« Blocage au lycée Ernestine-Dumont. Feu de conteneurs. On dégage la grille, on interpelle si jets de projectiles. Pas de zèle, pas de vidéo, pas de conneries. »
+«Blocco al liceo Ernestine-Dumont. Cassonetti in fiamme. Liberiamo il cancello, fermiamo chi lancia oggetti. Niente zelo, niente video, niente cazzate.»
 Il Dumont. Il tuo liceo. Dieci minuti a piedi da casa di tua madre.
 
 # img: mehdi/02_furgone
@@ -38,13 +38,13 @@ Il Dumont. Il tuo liceo. Dieci minuti a piedi da casa di tua madre.
 # amb: sirene
 # incrocio: X02
 Nel furgone. Fabre, accanto a te, mastica una gomma e racconta di una ragazza. Gli altri ridono. Tu guardi la visiera appoggiata sulle ginocchia.
-La radio gracchia: _Engin pompiers caillassé devant le lycée. Pare-brise brisé. Demande d'appui._
-« Ils caillassent les pompiers maintenant », dice Fabre. « Les pompiers ! Ils sont malades, ces gosses. » Tu sai chi sono quei gosses. Sono quelli del palazzo C. Eri uno di loro.
+La radio gracchia: _Mezzo dei pompieri preso a sassate davanti al liceo. Parabrezza rotto. Richiesta supporto._
+«Adesso prendono a sassate i pompieri», dice Fabre. «I pompieri! Sono malati, 'sti ragazzini.» Tu sai chi sono quei ragazzini. Sono quelli del palazzo C. Eri uno di loro.
 
 # img: mehdi/03_palazzo_c
 # ora: 07:05
 Il furgone passa sotto il palazzo C. Al quarto piano la finestra di tua madre ha la luce accesa: è già sveglia, prepara il caffè, ascolta la radio in arabo.
-Ti abbassi sul sedile senza volerlo. Fabre se ne accorge. « Qu'est-ce que t'as, Saïdi ? » « Rien. Une crampe. »
+Ti abbassi sul sedile senza volerlo. Fabre se ne accorge. «Che hai, Saïdi?» «Niente. Un crampo.»
 Al quartiere sei un poliziotto. In furgone sei l'arabo. Non sei mai dove sei.
 
 # img: shared/c1_sgombero
@@ -57,23 +57,23 @@ Poi l'ordine: sollevarli uno a uno. Sono leggeri. Sono più leggeri di quanto pe
 # ora: 07:35
 # incrocio: X04
 Una donna con la sciarpa verde ti si para davanti. Ti guarda a lungo. Conosci quello sguardo da prima di sapere chi è.
-« Mehdi ? Mehdi Saïdi ? »
+«Mehdi? Mehdi Saïdi?»
 La Garnier. Storia e geografia. Aula 204. Nel 2015 ti ha dato diciotto in un compito sulla decolonizzazione e tu sei andato in bagno a guardare il foglio per cinque minuti.
-* [« Madame. »]
+* [«Professoressa.»]
     ~ garnier_risposta = "madame"
     ~ su(fiducia, 1)
-    Lo dici piano, sotto la visiera. Lei lo sente. Il ragazzino che tenevi per il cappuccio ti scivola via. Non lo riprendi.
-    Fabre, dietro di te, fischia. « Madame ? Tu la connais, la mamie ? » # ricorda: La Garnier se ne ricorderà.
+    Lo dici piano, sotto la visiera: «Prof.» Lei lo sente. Il ragazzino che tenevi per il cappuccio ti scivola via. Non lo riprendi.
+    Fabre, dietro di te, fischia. «Prof? La conosci, la nonnina?» # ricorda: La Garnier se ne ricorderà.
 * [Abbassi la visiera e non rispondi.]
     ~ garnier_risposta = "visiera"
     ~ su(paura, 1)
     Abbassi la visiera. Il mondo diventa grigio e rigato. Lei resta lì un secondo, poi si gira verso i suoi alunni.
     Ti senti come quando non sapevi rispondere a un'interrogazione: piccolo, e furioso di esserlo.
-* [« Circulez, madame. »]
+* [«Circolare, signora.»]
     ~ garnier_risposta = "circulez"
     ~ giu(fiducia, 1)
     ~ su(rabbia, 1)
-    « Circulez, madame. » La voce di servizio, quella che hai imparato in scuola di polizia. Non ti riconosci.
+    «Circolare, signora.» La voce di servizio, quella che hai imparato in scuola di polizia. Non ti riconosci.
     Lei ti guarda come si guarda un compito copiato. Poi circola.
 - -> sputo
 
@@ -81,15 +81,15 @@ La Garnier. Storia e geografia. Aula 204. Nel 2015 ti ha dato diciotto in un com
 # img: mehdi/04_nassim
 # ora: 07:40
 Un ragazzino con la felpa grigia ti passa accanto, le mani nere di fumo. Ti guarda, ti riconosce. Sputa a dieci centimetri dai tuoi stivali.
-« Le keuf du bâtiment C. Bismillah, c'est les ténèbres, hein ? » Ride. È Nassim Haddad. L'hai visto nascere, praticamente. Sua madre e la tua prendono lo stesso autobus.
+«Lo sbirro del palazzo C. Bismillah, è il buio, eh?» Ride. È Nassim Haddad. L'hai visto nascere, praticamente. Sua madre e la tua prendono lo stesso autobus.
 * [Lo fermi.]
     ~ nassim_fermato = true
     ~ su(rabbia, 1)
     Lo prendi per il braccio. « Oltraggio. » Lui smette di ridere. Ha paura. Ha quindici anni.
-    Carrel arriva, guarda il ragazzino, guarda te. « Lâche-le, Saïdi. On a dit pas de zèle. » Lo lasci. Il ragazzino scappa e si gira solo una volta, all'angolo. # ricorda: Nassim se ne ricorderà.
+    Carrel arriva, guarda il ragazzino, guarda te. «Lascialo, Saïdi. Abbiamo detto niente zelo.» Lo lasci. Il ragazzino scappa e si gira solo una volta, all'angolo. # ricorda: Nassim se ne ricorderà.
 * [Lasci perdere.]
     ~ su(fiducia, 1)
-    Lasci perdere. Fabre ride. « T'es tout mou, Saïdi. Il t'a craché dessus. » « À côté. Il a craché à côté. »
+    Lasci perdere. Fabre ride. «Sei proprio molle, Saïdi. Ti ha sputato addosso.» «Accanto. Ha sputato accanto.»
     È una differenza che solo tu capisci. È tutta la differenza del mondo.
 - -> ritorno
 
@@ -97,15 +97,15 @@ Un ragazzino con la felpa grigia ti passa accanto, le mani nere di fumo. Ti guar
 # img: mehdi/02_furgone
 # ora: 08:10
 Nel furgone, al ritorno, Carrel si siede accanto a te. Si toglie il casco e si passa una mano sulla testa rasata.
-« Tu les connais, ces gosses, Saïdi ? La prof aussi, elle te connaissait. »
-* [« Oui, chef. C'est mon quartier. »]
+«Li conosci, quei ragazzini, Saïdi? Anche la prof ti conosceva.»
+* [«Sì, capo. È il mio quartiere.»]
     ~ quartiere_detto = true
     ~ su(fiducia, 1)
-    « C'est mon quartier. Ma mère habite au bâtiment C. » Carrel annuisce lentamente, come uno che archivia un'informazione.
-    « C'est bien. Ça peut servir. » Non ti piace come lo dice. Non ti piace _servir_.
-* [« Non, chef. Pas vraiment. »]
+    «È il mio quartiere. Mia madre abita al palazzo C.» Carrel annuisce lentamente, come uno che archivia un'informazione.
+    «Bene. Può tornare utile.» Non ti piace come lo dice. Non ti piace _utile_.
+* [«No, capo. Non proprio.»]
     ~ su(paura, 1)
-    « Pas vraiment. » Carrel non insiste. Fabre ride sotto i baffi: lui ha sentito la prof.
+    «Non proprio.» Carrel non insiste. Fabre ride sotto i baffi: lui ha sentito la prof.
     Hai rinnegato il tuo quartiere in un furgone alle otto del mattino. Non c'era neanche un gallo a cantare.
 - -> mattina
 
@@ -117,11 +117,11 @@ Nel furgone, al ritorno, Carrel si siede accanto a te. Si toglie il casco e si p
 # fxoff
 # amb: interno
 Commissariato, open space. Fabre ha il telefono in mano e legge ad alta voce, con l'accento esagerato, uno screenshot che gira da ieri.
-« _Wesh la team, bismillah c'est les ténèbres, demain on bloque à kel heure svp, jsui chaud de ouf frérot._ » Imita un accento che non è di nessuno, e quindi è di tutti quelli come tua madre.
+«_Wesh la team, bismillah c'est les ténèbres, demain on bloque à kel heure svp, jsui chaud de ouf frérot._» _Ehi team, bismillah è il buio, domani a che ora blocchiamo, sono gasatissimo fratè._ Imita un accento che non è di nessuno, e quindi è di tutti quelli come tua madre.
 Ridono tutti. Dicono che è uno di voi, quello che l'ha scritto. Un collega infiltrato nelle chat dei liceali. Nessuno sa chi.
 
 # incrocio: X05
-« Saïdi ! C'est toi qui l'as écrit ? T'as le vocabulaire ! » Altre risate. Tutti ti guardano.
+«Saïdi! L'hai scritto tu? Hai il vocabolario giusto!» Altre risate. Tutti ti guardano.
 * [Ridi anche tu.]
     ~ battuta = "riso"
     ~ giu(fiducia, 1)
@@ -133,36 +133,36 @@ Ridono tutti. Dicono che è uno di voi, quello che l'ha scritto. Un collega infi
     ~ su(paura, 1)
     Non dici niente. Fai un mezzo sorriso, quello che non impegna. Le risate si spengono da sole.
     Nessuno se ne accorge. È questo che ti fa più male: che nessuno si accorga del tuo silenzio.
-* [« C'est raciste, Fabre. »]
+* [«È razzista, Fabre.»]
     ~ battuta = "detto"
     ~ su(responsabilita, 2)
     ~ su(paura, 1)
     Lo dici normale, senza alzare la voce. La stanza si raffredda di dieci gradi.
-    « Oh, ça va, c'est une blague. » « Je sais que c'est une blague. » Fabre non ti rivolgerà più la parola fino a stasera. Neanche gli altri. # ricorda: I colleghi se ne ricorderanno.
+    «Oh, dai, è una battuta.» «Lo so che è una battuta.» Fabre non ti rivolgerà più la parola fino a stasera. Neanche gli altri. # ricorda: I colleghi se ne ricorderanno.
 - -> carrel
 
 = carrel
 # img: mehdi/05_commissariato
 # ora: 10:20
 Carrel ti chiama nel suo ufficio. Ha un figlio della tua età, dice sempre. Non dice mai come si chiama.
-{ quartiere_detto: « Tu m'as dit que c'était ton quartier. » } « Saïdi. Tu connais ces gosses. Tu parles leur langue. Jette un œil à leurs stories, leurs groupes, ce qu'ils préparent pour Nation. Officieusement. »
+{ quartiere_detto: «Mi hai detto che è il tuo quartiere.» } «Saïdi. Tu li conosci, quei ragazzini. Parli la loro lingua. Dai un'occhiata alle loro storie, ai loro gruppi, a cosa preparano per Nation. In via ufficiosa.»
 Ti tende un telefono di servizio. Nella stanza accanto qualcuno fa ancora l'accento del messaggio.
-* [« Non, chef. »]
+* [«No, capo.»]
     ~ snapchat = "rifiutato"
     ~ su(fiducia, 1)
     ~ su(paura, 1)
-    « Non, chef. C'est pas mon boulot. Et c'est pas ma langue, c'est la leur. » Carrel ti guarda a lungo. « Comme tu veux. » Ripone il telefono nel cassetto.
+    «No, capo. Non è il mio lavoro. E non è la mia lingua, è la loro.» Carrel ti guarda a lungo. «Come vuoi.» Ripone il telefono nel cassetto.
     Non sai se hai appena perso la tua promozione o salvato qualcosa che non sapresti nominare. Forse tutte e due.
 * [Accetti.]
     ~ snapchat = "accettato"
     ~ giu(fiducia, 2)
-    Lo prendi. Per un'ora guardi storie di ragazzini: balli, cartelli, _battles d'aura_, un gatto. Un video di Nassim Haddad che dice _aura moins mille pour les keufs_.
-    Non c'è niente da trovare. Scrivi a Carrel: _Rien de particulier._ Ti senti sporco come se avessi frugato in un cassetto di tua madre.
+    Lo prendi. Per un'ora guardi storie di ragazzini: balli, cartelli, _battle d'aura_, un gatto. Un video di Nassim Haddad che dice _aura meno mille agli sbirri_.
+    Non c'è niente da trovare. Scrivi a Carrel: _Niente di particolare._ Ti senti sporco come se avessi frugato in un cassetto di tua madre.
 * [Lo prendi, guardi, e non dici niente a nessuno.]
     ~ snapchat = "guardato"
     ~ su(paura, 1)
-    Lo prendi. Guardi. Vedi che domani alle cinque _les grands_ vogliono andare in testa. Vedi che Nassim Haddad ha chiesto un passamontagna a qualcuno.
-    Quando Carrel ti chiede, dici: « Rien, chef. » È una bugia. Non sai a favore di chi.
+    Lo prendi. Guardi. Vedi che oggi alle cinque _i grandi_ vogliono andare in testa. Vedi che Nassim Haddad ha chiesto un passamontagna a qualcuno.
+    Quando Carrel ti chiede, dici: «Niente, capo.» È una bugia. Non sai a favore di chi.
 - -> estate
 
 = estate
@@ -182,23 +182,23 @@ Respiri. Conti fino a quattro. Esci dal bagno.
 # img: mehdi/07_panino
 # amb: interno
 Panino nel furgone, parcheggiato a Nation, dietro le transenne. La piazza è ancora vuota. Davanti a te, all'angolo del cours de Vincennes, una farmacia. Al primo piano una signora annaffia i gerani.
-Il telefono vibra. _Maman._
-« Mehdi. La mère des Haddad m'a demandé si tu y seras, aujourd'hui. À Nation. »
-« Et tu lui as dit quoi ? » « Que je savais pas. » Una pausa. « Tu y seras ? » « Oui, maman. » « Alors fais attention aux petits. Ils sont tous à quelqu'un. »
+Il telefono vibra. _Maman._ Tua madre.
+«Mehdi. La madre degli Haddad mi ha chiesto se oggi ci sarai. A Nation.»
+«E tu cosa le hai detto?» «Che non lo sapevo.» Una pausa. «Ci sarai?» «Sì, mamma.» «Allora stai attento ai piccoli. Sono tutti figli di qualcuno.»
 
 # img: mehdi/01_briefing
 # ora: 13:15
-Briefing sul posto. Un commissario che non conosci, con la fascia tricolore, parla davanti ai furgoni. « Dispositif renforcé. Cours de Vincennes interdit. En cas de débordement, on disperse et on interpelle. Je veux des interpellations, messieurs. »
-_Je veux des interpellations._ Un numero. Fabre si sfrega le mani.
-* [Alzi la mano: « Et pour les mineurs, monsieur le commissaire ? »]
+Briefing sul posto. Un commissario che non conosci, con la fascia tricolore, parla davanti ai furgoni. «Dispositivo rafforzato. Cours de Vincennes vietato. In caso di disordini, si disperde e si ferma. Voglio dei fermi, signori.»
+_Voglio dei fermi._ Un numero. Fabre si sfrega le mani.
+* [Alzi la mano: «E per i minorenni, signor commissario?»]
     ~ domanda_briefing = true
     ~ su(fiducia, 1)
     ~ su(responsabilita, 1)
-    Il commissario ti guarda. « Les mineurs, on les interpelle comme les autres. Avec discernement. » _Discernement._ Fabre ti dà un calcio alla caviglia.
+    Il commissario ti guarda. «I minorenni si fermano come gli altri. Con discernimento.» _Discernimento._ Fabre ti dà un calcio alla caviglia.
     Hai fatto una domanda. In CSI una domanda è già una risposta.
 * [Annuisci.]
     ~ su(rabbia, 1)
-    Annuisci con gli altri. Il commissario se ne va. Fabre: « Discernement mon cul. Celui qui me lance un pavé, il le mange. »
+    Annuisci con gli altri. Il commissario se ne va. Fabre: «Discernimento un cazzo. Chi mi tira un sampietrino, se lo mangia.»
 - -> pomeriggio
 
 // =====================================================================
@@ -210,7 +210,7 @@ _Je veux des interpellations._ Un numero. Fabre si sfrega le mani.
 # incrocio: X07
 Cordone sul boulevard Voltaire, ai lati del corteo. Sei lì da un'ora, immobile, sotto venti chili di protezioni. Il corteo ti passa davanti come un fiume che non ti vede.
 Poi l'applauso. Passano i pompieri in sciopero, in divisa. I ragazzi impazziscono. Uno di loro ha il casco graffiato di bianco.
-Una ragazza ha un cartello storto: BISMILLAH C'EST LES TÉNÈBRES (ET LE PLAFOND AUSSI). È Inès Haddad. La sorella. Ti viene da ridere. Ti trattieni.
+Una ragazza ha un cartello storto: ‹BISMILLAH C'EST LES TÉNÈBRES (ET LE PLAFOND AUSSI)=in nome di Dio, è il buio (e anche il soffitto)›. È Inès Haddad. La sorella. Ti viene da ridere. Ti trattieni.
 
 # ---
 Il pompiere con il casco graffiato ti guarda il casco, la visiera, poi la faccia. Ti fa un cenno con la testa. Due uniformi.
@@ -225,15 +225,15 @@ Il pompiere con il casco graffiato ti guarda il casco, la visiera, poi la faccia
 = coro
 # img: mehdi/08_cordone
 # ora: 15:30
-Poi passano i liceali. Si fermano davanti al cordone, a due metri, e cantano verso di voi: « Tout le monde dé-teste la po-li-ce ! »
-Poi, ridendo: « BIS-MIL-LAH ! C'EST LES TÉ-NÈ-BRES ! » La frase dello screenshot, la frase di Fabre. Adesso è loro.
+Poi passano i liceali. Si fermano davanti al cordone, a due metri, e cantano verso di voi: «‹Tout le monde dé-teste la po-li-ce!=tutti odiano la polizia›»
+Poi, ridendo: «BIS-MIL-LAH! C'EST LES TÉ-NÈ-BRES!» La frase dello screenshot, la frase di Fabre. Adesso è loro.
 Un ragazzino ti guarda dritto nella visiera. Ha l'età di Nassim. Ha la faccia di tutti quelli del palazzo C.
 * [Lo guardi negli occhi, la visiera alzata.]
     ~ visiera_corteo = "occhi"
     ~ su(fiducia, 1)
     ~ su(paura, 1)
     Alzi la visiera. Lo guardi. Lui smette di cantare. Per tre secondi siete solo due ragazzi della stessa banlieue, uno con il casco e uno senza.
-    Poi il corteo lo porta via. Fabre: « Baisse ta visière, t'es fou ? »
+    Poi il corteo lo porta via. Fabre: «Abbassa la visiera, sei matto?»
 * [Abbassi la visiera.]
     ~ visiera_corteo = "abbassata"
     ~ su(rabbia, 1)
@@ -247,14 +247,14 @@ Un ragazzino ti guarda dritto nella visiera. Ha l'età di Nassim. Ha la faccia d
 La Garnier risale il corteo con una pila di volantini. Si ferma davanti a te. Ti tende un foglio. _17 OCTOBRE 1961 — 17 OCTOBRE 2026._
 Il braccio teso, il foglio che trema nel vento. I colleghi guardano te.
 { garnier_risposta == "madame":
-    Stamattina le hai detto _madame_. Lei se lo ricorda: si vede da come aspetta.
+    Stamattina le hai detto _prof_. Lei se lo ricorda: si vede da come aspetta.
 }
 * [Lo prendi e lo infili nel giubbotto.]
     ~ volantino_preso = true
     ~ su(fiducia, 1)
     ~ su(responsabilita, 1)
-    Lo prendi. Lo infili nel giubbotto senza leggerlo. Non vi dite niente. Fabre: « T'as pris un tract ? T'es syndiqué maintenant ? »
-    Nel 2015, nell'aula 204, la Garnier aveva proiettato una foto: una scritta su un muro del lungosenna, _Ici on noie les Algériens_. Te la ricordi adesso, con il foglio contro il petto.
+    Lo prendi. Lo infili nel giubbotto senza leggerlo. Non vi dite niente. Fabre: «Hai preso un volantino? Adesso sei del sindacato?»
+    Nel 2015, nell'aula 204, la Garnier aveva proiettato una foto: una scritta su un muro del lungosenna, ‹Ici on noie les Algériens=qui si annegano gli algerini›. Te la ricordi adesso, con il foglio contro il petto.
 * [Non lo prendi.]
     ~ su(rabbia, 1)
     Non lo prendi. Lei aspetta un secondo di troppo, poi ritira la mano. La guardi andare via e ti senti come quando non hai consegnato un compito che avevi fatto.
@@ -267,7 +267,7 @@ Il braccio teso, il foglio che trema nel vento. I colleghi guardano te.
 # img: shared/c5_nation
 # amb: sirene
 Place de la Nation. Il cordone tra la piazza e il cours de Vincennes. Tu sei in prima linea. Davanti a te arriva la testa del corteo: k-way neri, ombrelli, cappucci. Dietro, migliaia di persone che spingono.
-La radio: _Tenez la ligne. Tenez la ligne._
+La radio: _Tenete la linea. Tenete la linea._
 
 # img: shared/c5_gas
 # ora: 17:26
@@ -282,7 +282,7 @@ Una bottiglia rimbalza sul tuo scudo. Poi un sasso. Poi una cosa che non vedi e 
 # amb: fuoco
 # incrocio: X09
 All'angolo del cours de Vincennes un cassonetto prende fuoco sotto il palazzo della farmacia. Al primo piano, alla finestra, la signora dei gerani. Il fumo sale verso di lei.
-Dici alla radio: « Feu sous immeuble habité, angle Vincennes. » La radio risponde: _Tenez la ligne._
+Dici alla radio: «Fuoco sotto palazzo abitato, angolo Vincennes.» La radio risponde: _Tenete la linea._
 Il cuore comincia a correre. Il casco si stringe. È luglio, è Clichy, è la luce verde.
 
 # img: mehdi/09_casco
@@ -302,9 +302,9 @@ Ordine di carica tra trenta secondi. Le mani ti si addormentano dentro i guanti.
 # img: shared/c5_carica
 # ora: 17:39
 # sfx: colpo
-« EN AVANT ! » La linea parte. Venti caschi, venti scudi, un unico animale.
+«AVANTI!» La linea parte. Venti caschi, venti scudi, un unico animale.
 { domanda_briefing:
-    _Avec discernement_, ha detto il commissario. La parola ti torna in mente adesso, ridicola e preziosa.
+    _Con discernimento_, ha detto il commissario. La parola ti torna in mente adesso, ridicola e preziosa.
 }
 { visiera_corteo == "occhi":
     Tra le sagome davanti a te cerchi il ragazzino del coro. Non lo trovi. Li cerchi tutti.
@@ -339,7 +339,7 @@ Un mortaio d'artificio esplode contro gli scudi in scintille verdi. A mezzo metr
 - else:
     Il respiro se ne va di nuovo. Il tubo si stringe.
 }
-Fabre ti mette in mano una granata di dispersione. « Vas-y, Saïdi ! Balance ! Ils nous allument ! »
+Fabre ti mette in mano una granata di dispersione. «Vai, Saïdi! Lanciala! Ci stanno bombardando!»
 Davanti a te: la folla, il fumo, il cassonetto in fiamme. Ragazzi. Ragazzi di quindici anni. # timer: 7
 * [La lanci in mezzo alla folla.]
     ~ decisiva(2, "V", "Hai lanciato la granata in mezzo alla folla.")
@@ -350,7 +350,7 @@ Davanti a te: la folla, il fumo, il cassonetto in fiamme. Ragazzi. Ragazzi di qu
 * [Non la lanci.]
     ~ decisiva(2, "P", "Non hai lanciato la granata che Fabre ti ha messo in mano.")
     ~ su(responsabilita, 1)
-    La tieni in mano. Non la lanci. « Non. » Fabre te la strappa, impreca, e la lancia lui.
+    La tieni in mano. Non la lanci. «No.» Fabre te la strappa, impreca, e la lancia lui.
     Rotola sull'asfalto tra le scarpe, piccola come una lattina. Esplode accanto al cassonetto in fiamme. Non è stata la tua mano. Era nella tua mano.
 * [Resti con la granata in mano. # timeout]
     ~ decisiva(2, "F", "Sei rimasto paralizzato con la granata in mano.")
@@ -372,12 +372,12 @@ Lo prendi per il cappuccio e lo trascini via dal fuoco, verso la linea. È la pr
 { nassim_fermato:
     Ti riconosce. Stamattina l'hai preso per il braccio davanti al liceo. Adesso ti guarda come si guarda la fine del mondo.
 - else:
-    Ti riconosce. « Le keuf du bâtiment C… » Non ride più.
+    Ti riconosce. «Lo sbirro del palazzo C…» Non ride più.
 }
 
 # incrocio: X11
-Una ragazza si pianta davanti a te: Inès. Dietro di lei, il pompiere con il casco graffiato si fa largo nel fumo urlando « POMPIER ! LAISSEZ PASSER ! ».
-Fabre arriva da destra con il manganello alzato. « Il bouge encore, celui-là ! » # timer: 8
+Una ragazza si pianta davanti a te: Inès. Dietro di lei, il pompiere con il casco graffiato si fa largo nel fumo urlando «POMPIERE! FATEMI PASSARE!».
+Fabre arriva da destra con il manganello alzato. «Si muove ancora, quello!» # timer: 8
 * [Colpisci il ragazzo, prima che lo faccia Fabre.]
     ~ decisiva(3, "V", "Hai colpito Nassim, a terra.")
     ~ su(rabbia, 2)
@@ -387,14 +387,14 @@ Fabre arriva da destra con il manganello alzato. « Il bouge encore, celui-là !
 * { fiducia >= 4 } [Lo copri con lo scudo e lasci passare il pompiere.]
     ~ decisiva(3, "P", "Hai protetto Nassim con lo scudo e hai lasciato passare il pompiere.")
     ~ su(responsabilita, 1)
-    Ti metti tra Fabre e il ragazzo. Lo scudo alzato. « Il est à terre. C'est bon. » Fabre ti guarda come un traditore.
-    { cenno_pompiere: Il pompiere ti riconosce: il cenno del boulevard Voltaire. } « POMPIER ! » Ti sposti. Lui si inginocchia su Nassim.
+    Ti metti tra Fabre e il ragazzo. Lo scudo alzato. «È a terra. Basta così.» Fabre ti guarda come un traditore.
+    { cenno_pompiere: Il pompiere ti riconosce: il cenno del boulevard Voltaire. } «POMPIERE!» Ti sposti. Lui si inginocchia su Nassim.
 * { fiducia < 4 } [Lo copri con lo scudo e lasci passare il pompiere. # locked: non ti fidi di nessuno, qui, neanche di un pompiere]
     -> dopo
 * [Lo ammanetti e basta.]
     ~ decisiva(3, "P", "Hai ammanettato Nassim senza colpirlo.")
     Lo giri a pancia in giù e gli metti le fascette, senza colpire, senza ginocchio sulla schiena. Fabre si ferma.
-    « Interpellé », dici alla radio. È quello che volevano: un numero. Almeno è un numero vivo.
+    «Fermato», dici alla radio. È quello che volevano: un numero. Almeno è un numero vivo.
 * [Ti blocchi. # timeout]
     ~ decisiva(3, "F", "Ti sei bloccato mentre Fabre alzava il manganello su Nassim.")
     ~ su(paura, 1)
@@ -424,17 +424,17 @@ Ti togli la maschera. L'aria della piazza ti brucia la gola. Non è il gas: è l
 # fxoff
 # amb: interno
 Commissariato del 12°. Il verbale d'intervento. Lo schermo, il cursore. Fabre è passato due volte dietro la tua sedia senza dire niente.
-Hai visto Fabre colpire per due durante la carica. Hai visto Fabre lanciare la granata, o te la sei vista strappare di mano. Il verbale chiede: _Usage de la force — circonstances._
+Hai visto Fabre colpire per due durante la carica. Hai visto Fabre lanciare la granata, o te la sei vista strappare di mano. Il verbale chiede: _Uso della forza — circostanze._
 * [Scrivi la verità.]
     ~ verbale = "verita"
     ~ su(responsabilita, 1)
     Scrivi tutto. Gli orari, i gesti, il lancio della granata a corto raggio in direzione di un gruppo di minori. Il nome del collega.
-    Premi _Valider_. Il dito trema. Sai cosa succede a chi scrive certi verbali. Lo sanno tutti. # ricorda: Fabre se ne ricorderà.
+    Premi _Conferma_. Il dito trema. Sai cosa succede a chi scrive certi verbali. Lo sanno tutti. # ricorda: Fabre se ne ricorderà.
 * [Copri Fabre.]
     ~ verbale = "coperto"
     ~ giu(fiducia, 1)
-    Scrivi _usage proportionné de moyens de dispersion, en réponse à des jets de projectiles_. È la frase standard. È nel manuale. È falsa.
-    Premi _Valider_. Il dito non trema. Questo ti spaventa di più.
+    Scrivi _uso proporzionato dei mezzi di dispersione, in risposta a lanci di oggetti_. È la frase standard. È nel manuale. È falsa.
+    Premi _Conferma_. Il dito non trema. Questo ti spaventa di più.
 - -> carrel_sera
 
 = carrel_sera
@@ -442,10 +442,10 @@ Hai visto Fabre colpire per due durante la carica. Hai visto Fabre lanciare la g
 # ora: 20:20
 Carrel legge il verbale sul suo schermo. Poi ti chiama.
 { verbale == "verita":
-    « Tu sais ce que tu fais, Saïdi ? » « Oui, chef. » « Fabre a deux gosses. » « Le petit Haddad a une mère. »
-    Carrel ti guarda a lungo. Poi chiude il file senza modificarlo. « Va au comptoir. Y a une prof qui demande après toi. »
+    «Lo sai cosa stai facendo, Saïdi?» «Sì, capo.» «Fabre ha due figli.» «Il piccolo Haddad ha una madre.»
+    Carrel ti guarda a lungo. Poi chiude il file senza modificarlo. «Vai al bancone. C'è una prof che chiede di te.»
 - else:
-    « C'est propre », dice. Ti batte sulla spalla. { snapchat == "accettato": « Et merci pour les stories, ce matin. Ça m'a servi pour le rapport. » Non ti ha servito a niente: non c'era niente. Gli è servito lo stesso. } « Va au comptoir. Y a une prof qui demande après toi. »
+    «È pulito», dice. Ti batte sulla spalla. { snapchat == "accettato": «E grazie per le storie, stamattina. Mi sono servite per il rapporto.» Non gli sono servite a niente: non c'era niente. Gli sono servite lo stesso. } «Vai al bancone. C'è una prof che chiede di te.»
 }
 -> bancone
 
@@ -453,11 +453,11 @@ Carrel legge il verbale sul suo schermo. Poi ti chiama.
 # img: odile/05_bancone
 # ora: 20:30
 # incrocio: X12
-Al bancone, alle 20:30, arriva la Garnier. Ha perso la sciarpa verde. Cerca i suoi alunni fermati. « Mehdi », dice. Non _monsieur l'agent_. Mehdi.
+Al bancone, alle 20:30, arriva la Garnier. Ha perso la sciarpa verde. Cerca i suoi alunni fermati. «Mehdi», dice. Non _agente_. Mehdi.
 Ti detta i nomi come all'appello. Li cerchi sullo schermo. Due li fai uscire subito. Due resteranno la notte.
-Poi le dici, a bassa voce, senza guardarla: « Le petit Haddad. Il est à Avicenne. Poignet cassé. Le pompier l'a amené. »
+Poi le dici, a bassa voce, senza guardarla: «Il piccolo Haddad. È ad Avicenne. Polso rotto. L'ha portato il pompiere.»
 { volantino_preso:
-    Tiri fuori dal giubbotto il volantino, piegato in quattro, un po' bagnato di sudore. « Je l'ai lu, madame. Dans le car. » Lei non dice niente. Annuisce, come quando qualcuno dava la risposta giusta.
+    Tiri fuori dal giubbotto il volantino, piegato in quattro, un po' bagnato di sudore. «L'ho letto, prof. Sul furgone.» Lei non dice niente. Annuisce, come quando qualcuno dava la risposta giusta.
 }
 -> notte_pace
 
@@ -470,14 +470,14 @@ Alle una e mezza, nel parcheggio sotterraneo del commissariato, ti togli il casc
 { battuta == "detto" || verbale == "verita":
     I colleghi non ti parlano. Su WhatsApp il gruppo della compagnia è diventato silenzioso da quando sei entrato tu. Domani sarà peggio.
 - else:
-    Fabre ti ha dato una pacca sulla spalla, uscendo. « T'es un bon, Saïdi. » Non sai se è un complimento.
+    Fabre ti ha dato una pacca sulla spalla, uscendo. «Sei uno a posto, Saïdi.» Non sai se è un complimento.
 }
 Respiri. Quattro dentro, quattro fuori. Nessun tubo. Solo il parcheggio, l'odore di benzina, e il volantino sul sedile del passeggero.
 
 # img: shared/c7_grata_scritta
 # ora: domenica
 Il giorno dopo passi davanti al Dumont, in borghese, tornando da casa di tua madre. La grata è ancora nera di fumo.
-Qualcuno ci ha scritto sopra, con lo spray bianco, a lettere enormi: ON EST PAS VOS ENNEMIS.
+Qualcuno ci ha scritto sopra, con lo spray bianco, a lettere enormi: ‹ON EST PAS VOS ENNEMIS=non siamo vostri nemici›.
 Ti fermi. Lo leggi due volte. Non sai a chi è rivolto: a te, ai ragazzi, ai pompieri, a nessuno.
 Decidi che è rivolto a tutti. Riprendi a camminare.
 -> END
@@ -489,28 +489,28 @@ Decidi che è rivolto a tutti. Riprendi a camminare.
 # img: mehdi/10_verbale
 # fxoff
 # amb: interno
-Commissariato del 12°. Il verbale. Il cursore lampeggia nella casella _Usage de la force — circonstances_.
-Il ragazzo è ad Avicenne. { d3 == "V": Il colpo alla testa. } { d2 == "V": La granata, a due metri dalla faccia. } { d1 == "V": La carica: l'hanno trovato sotto la folla. } Un medico ha detto a Carrel una frase che Carrel ripete a tutti con la stessa voce: _il risque de perdre l'œil_.
+Commissariato del 12°. Il verbale. Il cursore lampeggia nella casella _Uso della forza — circostanze_.
+Il ragazzo è ad Avicenne. { d3 == "V": Il colpo alla testa. } { d2 == "V": La granata, a due metri dalla faccia. } { d1 == "V": La carica: l'hanno trovato sotto la folla. } Un medico ha detto a Carrel una frase che Carrel ripete a tutti con la stessa voce: _rischia di perdere l'occhio_.
 * [Scrivi la verità.]
     ~ verbale = "verita"
     Scrivi la verità. Sui tuoi gesti. Ti ci vuole un'ora per quattro righe. Ogni parola pesa come lo scudo.
     Carrel legge sopra la tua spalla. Non dice niente. Poi ti mette una mano sulla spalla, per la prima volta in tre anni.
 * [Scrivi la frase standard.]
     ~ verbale = "coperto"
-    _Usage proportionné de moyens de dispersion, en réponse à des jets de projectiles._ Premi _Valider_.
+    _Uso proporzionato dei mezzi di dispersione, in risposta a lanci di oggetti._ Premi _Conferma_.
     I video sono già su tutti i telefoni di Francia. La frase standard non cambierà niente. La scrivi lo stesso.
 - -> igpn
 
 = igpn
 # img: mehdi/13_telefono
-# chat: Maman
+# chat: Mamma
 # ora: 23:40
-Maman: Mehdi
-Maman: c'est toi dans la vidéo ?
-Maman: la mère des Haddad pleure dans l'escalier
-* [« Oui, maman. »]
-    Mehdi: oui maman
-    Mehdi: pardon
+Mamma: Mehdi
+Mamma: sei tu nel video?
+Mamma: la madre degli Haddad piange per le scale
+* [«Sì, mamma.»]
+    Mehdi: sì mamma
+    Mehdi: scusa
     Il messaggio risulta letto. Nessuna risposta.
 * [Non rispondi.]
     Il telefono vibra ancora due volte. Poi smette.
@@ -525,7 +525,7 @@ Maman: la mère des Haddad pleure dans l'escalier
 L'IGPN ha aperto un'inchiesta. Sei sospeso in via cautelare dalla CSI. Fabre è venuto a dirti che ti difenderanno, che il sindacato è con te, che hai fatto il tuo lavoro.
 Nel parcheggio sotterraneo, in macchina, ti togli il casco. Il respiro non torna. Non torna per tutta la notte.
 { volantino_preso:
-    Sul sedile del passeggero c'è il volantino della Garnier. Lo apri finalmente. _17 octobre 1961._ Poliziotti che eseguivano ordini. Lo richiudi.
+    Sul sedile del passeggero c'è il volantino della Garnier. Lo apri finalmente. _17 ottobre 1961._ Poliziotti che eseguivano ordini. Lo richiudi.
 }
 
 # img: mehdi/12_muro

@@ -120,6 +120,7 @@ window.addEventListener('keydown', (e) => {
 
 function apriMenu() { $('game-menu').hidden = false; $('gm-resume').focus(); }
 $('g-menu').onclick = apriMenu;
+$('ph-menu').onclick = (e) => { e.stopPropagation(); apriMenu(); };
 $('g-map').onclick = () => { ritornoMappa = 'game'; vai('map'); };
 $('g-mute').onclick = () => { imp.audio = !imp.audio; save.salva(); applicaImpostazioni(); };
 $('gm-resume').onclick = () => { $('game-menu').hidden = true; };

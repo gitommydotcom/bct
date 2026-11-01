@@ -80,7 +80,7 @@ Aula 204. Trentacinque sedie per trenta metri quadri. La macchia d'umido a forma
 { quante_paci():
 - 5:
     Tutti i banchi sono occupati. Per una volta nessuno si lamenta che sono troppi.
-    Alla fine dell'ora Nassim si alza e legge una poesia, a voce alta, con il gesso che gli trema. _Ils disent c'est les ténèbres / mais c'est juste le plafond qui tombe._ Nessuno ride. Poi ridono tutti, ma non di lui.
+    Alla fine dell'ora Nassim si alza e legge una poesia, a voce alta, con il gesso che gli trema. ‹Ils disent c'est les ténèbres / mais c'est juste le plafond qui tombe.=Dicono che è il buio / ma è solo il soffitto che cade.› Nessuno ride. Poi ridono tutti, ma non di lui.
 - 4:
     Un banco è vuoto. Nessuno ci appoggia lo zaino. Nessuno lo dice, ma tutti lo guardano, ogni tanto, come si guarda una finestra.
 - 3:
@@ -91,7 +91,7 @@ Aula 204. Trentacinque sedie per trenta metri quadri. La macchia d'umido a forma
     Metà classe. La lezione sul 17 ottobre la fa una ragazza, in piedi davanti alla lavagna, perché nessun adulto se la sente.
 - else:
     I banchi vuoti sono più di quelli pieni. A metà mattina il preside passa a dire che da domani il liceo chiude di nuovo, "per ragioni di sicurezza".
-    All'uscita, sulla grata ridipinta, qualcuno ha già scritto a spray: C'EST LES TÉNÈBRES. Non è più una battuta.
+    All'uscita, sulla grata ridipinta, qualcuno ha già scritto a spray: ‹C'EST LES TÉNÈBRES=è il buio›. Non è più una battuta.
 }
 
 # img: titolo
@@ -100,5 +100,5 @@ Aula 204. Trentacinque sedie per trenta metri quadri. La macchia d'umido a forma
 Questa era una versione della giornata. Ce ne sono altre.
 Dipendono da chi stava davanti e da chi è rimasto fermo, da chi ha acceso e da chi ha spento, da chi ha teso una mano e da chi l'ha presa.
 La pace, nelle tue versioni: {quante_paci()} su 5.
-_C'est les ténèbres._ Forse. Ma qualcuno, ogni volta, ha acceso una luce.
+‹C'est les ténèbres.=È il buio.› Forse. Ma qualcuno, ogni volta, ha acceso una luce.
 -> END

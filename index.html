@@ -61,15 +61,25 @@
           <button class="icon" id="g-map" aria-label="Mappa">◆</button>
           <button class="icon" id="g-mute" aria-label="Audio">♪</button>
         </div>
-        <div class="chat" id="chat" hidden>
-          <div class="chat-head" id="chat-head"></div>
-          <div class="chat-log" id="chat-log"></div>
-        </div>
         <div class="text" id="text" aria-live="polite"></div>
         <div class="toast" id="toast" hidden></div>
         <div class="timer" id="timer" hidden><div id="timer-fill"></div></div>
         <ol class="choices" id="choices"></ol>
         <button class="continue" id="continue" hidden aria-label="Avanti">▼</button>
+      </div>
+    </div>
+    <!-- TELEFONO: le conversazioni in chat si aprono qui sopra la scena -->
+    <div class="phone-wrap" id="chat" hidden>
+      <div class="phone" role="log" aria-live="polite">
+        <div class="ph-status"><span id="ph-ora"></span><span class="ph-notch"></span><span class="ph-icons" aria-hidden="true">▂▄▆ ▮▮▮▯</span></div>
+        <div class="ph-head">
+          <span class="ph-back" aria-hidden="true">‹</span>
+          <span class="ph-av" id="ph-av" aria-hidden="true"></span>
+          <div class="ph-info"><b id="chat-head"></b><small id="ph-sub"></small></div>
+          <button class="icon ph-menu" id="ph-menu" aria-label="Menu">≡</button>
+        </div>
+        <div class="ph-log" id="chat-log"></div>
+        <div class="ph-foot" id="ph-foot"><div class="ph-input" aria-hidden="true"><span>Scrivi un messaggio…</span><span class="ph-send">➤</span></div></div>
       </div>
     </div>
   </section>

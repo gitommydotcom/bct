@@ -38,7 +38,7 @@ export default {
     finale: 'Finale: {esito}',
   },
   personaggi: {
-    ines:   { nome: 'Inès Haddad', eta: '17 anni', ruolo: 'La studentessa', frase: '«On demande pas la lune. On demande un plafond.»' },
+    ines:   { nome: 'Inès Haddad', eta: '17 anni', ruolo: 'La studentessa', frase: '«Non chiediamo la luna. Chiediamo un soffitto.»' },
     sacha:  { nome: 'Sacha Lemaire', eta: '23 anni', ruolo: 'Il black bloc', frase: '«Se non ci siamo noi davanti, davanti ci sono i ragazzini.»' },
     jerome: { nome: 'Jérôme Ferrand', eta: '34 anni', ruolo: 'Il pompiere', frase: '«Prima la vita, poi i beni, poi il resto.»' },
     odile:  { nome: 'Odile Garnier', eta: '52 anni', ruolo: 'L\'insegnante', frase: '«Oggi non è un giorno qualunque.»' },
@@ -49,7 +49,7 @@ export default {
     scontro: 'Lo scontro', sera: 'Sera', notte: 'Notte',
   },
   incroci: {
-    X01: 'La grata', X02: 'Il sasso sul parabrezza', X03: '«On est pas vos ennemis!»',
+    X01: 'La grata', X02: 'Il sasso sul parabrezza', X03: '«Non siamo vostri nemici!»',
     X04: 'La prof e la visiera', X05: 'Lo screenshot', X06: 'La maschera nella metro',
     X07: 'Gli applausi', X08: 'Il volantino del 1961', X09: 'Il cassonetto sotto il palazzo',
     X10: 'La granata che rotola', X11: 'La mano tesa', X12: 'Il bancone del commissariato',

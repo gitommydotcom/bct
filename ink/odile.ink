@@ -35,29 +35,29 @@ Hai cinquantadue anni, ventiquattro di Dumont. Ti metti a correre lo stesso.
 # img: shared/c1_sgombero
 # ora: 07:15
 # fx: lampeggianti
-Davanti alla grata i ragazzi sono seduti per terra, intrecciati. Gli agenti li sollevano uno a uno. Riconosci le felpe, i cappucci, gli zaini: sono i tuoi. Seconde B, prima A, la terminale di Inès Haddad.
+Davanti alla grata i ragazzi sono seduti per terra, intrecciati. Gli agenti li sollevano uno a uno. Riconosci le felpe, i cappucci, gli zaini: sono i tuoi. La seconda B, la prima A, la quinta di Inès Haddad.
 I colleghi del sindacato arrivano alla spicciolata, con le pettorine. Qualcuno ha portato i croissant. È ridicolo e commovente. Come tutta la scuola pubblica.
 
 # ---
-Philippe, fisica e chimica, ti passa un caffè. Da settembre fa anche matematica in seconde B, gratis, perché il professore non è mai arrivato.
-« Ils ont raison, tu sais. Les gamins. » Lo dice come si dice una cosa vietata.
-« Je sais. C'est pour ça que j'ai peur. »
+Philippe, fisica e chimica, ti passa un caffè. Da settembre fa anche matematica in seconda B, gratis, perché il professore non è mai arrivato.
+«Hanno ragione, sai. I ragazzi.» Lo dice come si dice una cosa vietata.
+«Lo so. È per questo che ho paura.»
 
 # img: shared/c1_prof_visiera
 # ora: 07:35
 # incrocio: X04
 Un agente sta sollevando un ragazzino per il cappuccio. Il casco, la visiera, il collo. Il collo lo conosci.
 Ti avvicini. Lo guardi a lungo. Sotto la visiera c'è un ragazzo che nel 2015 ha preso diciotto in un compito sulla decolonizzazione e non ci credeva.
-* [« Mehdi ? Mehdi Saïdi ? »]
+* [«Mehdi? Mehdi Saïdi?»]
     ~ mehdi_alba = "nome"
     ~ su(fiducia, 1)
     Non risponde. Ma il ragazzino gli scivola dalle mani, e lui non lo riprende.
-    « Tu te souviens de moi ? » Il casco si gira appena. Poi l'ordine di un superiore, e lui si gira davvero. # ricorda: Mehdi se ne ricorderà.
+    «Ti ricordi di me?» Il casco si gira appena. Poi l'ordine di un superiore, e lui si gira davvero. # ricorda: Mehdi se ne ricorderà.
 * [Ti metti tra lui e i ragazzi.]
     ~ mehdi_alba = "mezzo"
     ~ su(paura, 1)
     ~ su(responsabilita, 1)
-    Ti metti in mezzo, le mani aperte. Lo scudo ti sfiora il petto. « Ce sont des enfants. Ce sont MES élèves. »
+    Ti metti in mezzo, le mani aperte. Lo scudo ti sfiora il petto. «Sono ragazzi. Sono i MIEI alunni.»
     L'agente si ferma. Sotto la visiera, per un secondo, ti sembra di vedere un tuo alunno. Poi non lo vedi più.
 * [Tiri fuori il telefono e filmi.]
     ~ mehdi_alba = "filmato"
@@ -72,14 +72,14 @@ Ti avvicini. Lo guardi a lungo. Sotto la visiera c'è un ragazzo che nel 2015 ha
 # fxoff
 # amb: silenzio
 Alle 7:45 la grata è libera. Il liceo è chiuso comunque: primo giorno di vacanza. Avete difeso un edificio vuoto, tutti quanti, da tutte e due le parti.
-Inès Haddad ti passa davanti con il fratello per mano. Nassim, seconde B, quindici anni, un ragazzo che scrive poesie e le strappa. Ha le mani nere di fumo.
+Inès Haddad ti passa davanti con il fratello per mano. Nassim, seconda B, quindici anni, un ragazzo che scrive poesie e le strappa. Ha le mani nere di fumo.
 La loro madre lavora ad Avicenne, turni di notte. Hai il suo numero, dal colloquio di settembre.
 * [Chiami la madre.]
     ~ chiamata_madre = true
     ~ su(responsabilita, 1)
     ~ giu(fiducia, 1)
     Risponde al terzo squillo, dalla pausa. Le dici che i ragazzi stanno bene. Le dici del fumo. Non le dici di Nassim e delle sue mani nere.
-    « Merci, madame. Merci de me dire. » Riattacca. Ti chiedi per chi hai chiamato: per lei, per loro o per te.
+    «Grazie, professoressa. Grazie di avermelo detto.» Riattacca. Ti chiedi per chi hai chiamato: per lei, per loro o per te.
 * [Non chiami nessuno. Sono abbastanza grandi.]
     ~ su(fiducia, 1)
     Non chiami. Hai passato ventiquattro anni a dire ai ragazzi di pensare con la loro testa. Non puoi chiamare la mamma la prima volta che lo fanno.
@@ -91,28 +91,28 @@ La loro madre lavora ad Avicenne, turni di notte. Hai il suo numero, dal colloqu
 # ora: 08:30
 # img: odile/02_telefono
 # amb: interno
-# chat: Mme Pasquier (proviseure)
-Mme Pasquier: Odile, bonjour. Vous étiez sur place ce matin ?
-Mme Pasquier: Le rectorat me demande la liste des élèves impliqués dans le blocage. Vous en avez reconnu ?
-Mme Pasquier: C'est pour leur protection aussi, vous savez.
+# chat: Mme Pasquier (preside)
+Mme Pasquier: Odile, buongiorno. Era sul posto stamattina?
+Mme Pasquier: Il provveditorato mi chiede l'elenco degli studenti coinvolti nel blocco. Ne ha riconosciuto qualcuno?
+Mme Pasquier: È anche per proteggerli, sa.
 * [Le mandi tre nomi. I più grandi, quelli che lo sanno già.]
     ~ nomi_preside = "dati"
     ~ giu(fiducia, 2)
-    Odile: Inès Haddad (déléguée), Yasmine Kébé, Bilal Traoré. Ils étaient au premier rang. Sans violence.
-    Mme Pasquier: Merci Odile. Je savais que je pouvais compter sur vous.
-    _Je savais que je pouvais compter sur vous._ La frase ti resta addosso tutta la mattina, come l'odore del fumo.
+    Odile: Inès Haddad (rappresentante), Yasmine Kébé, Bilal Traoré. Erano in prima fila. Senza violenza.
+    Mme Pasquier: Grazie Odile. Sapevo di poter contare su di lei.
+    _Sapevo di poter contare su di lei._ La frase ti resta addosso tutta la mattina, come l'odore del fumo.
 * [Rifiuti.]
     ~ nomi_preside = "rifiutati"
     ~ su(rabbia, 1)
     ~ su(fiducia, 1)
-    Odile: Je ne suis pas une auxiliaire de police, Mme Pasquier. Je suis professeure d'histoire.
-    Mme Pasquier: Je note.
-    Due parole. Sai esattamente cosa vogliono dire in un'amministrazione.
-* [Menti: « Je n'ai vu personne, il y avait trop de fumée. »]
+    Odile: Non sono un'ausiliaria di polizia, signora preside. Sono una professoressa di storia.
+    Mme Pasquier: Ne prendo nota.
+    Tre parole. Sai esattamente cosa vogliono dire in un'amministrazione.
+* [Menti: «Non ho visto nessuno, c'era troppo fumo.»]
     ~ nomi_preside = "mentito"
     ~ su(paura, 1)
-    Odile: Je suis arrivée tard, il y avait trop de fumée. Je n'ai reconnu personne.
-    Mme Pasquier: Dommage.
+    Odile: Sono arrivata tardi, c'era troppo fumo. Non ho riconosciuto nessuno.
+    Mme Pasquier: Peccato.
     Hai mentito alla tua preside per proteggere tre ragazzi. A diciassette anni avresti trovato la cosa eroica. A cinquantadue la trovi solo necessaria.
 - -> aula
 
@@ -123,33 +123,33 @@ Mme Pasquier: C'est pour leur protection aussi, vous savez.
 Vai al liceo lo stesso: il bidello ti apre la porta di servizio. Aula 204. Trentacinque sedie per trenta metri quadri. Una macchia d'umido a forma di Africa sul soffitto.
 Prendi il gesso. Lunedì, dopo le vacanze, dovrai fare lezione. Ma quale lezione, dopo una giornata come questa?
 Scrivi il titolo.
-* [« 17 octobre 1961 »]
+* [«17 ottobre 1961»]
     ~ lavagna_titolo = "1961"
     17 OCTOBRE 1961 # lavagna: 17 OCTOBRE 1961
-* [« Qui a le droit de manifester ? »]
+* [«Chi ha il diritto di manifestare?»]
     ~ lavagna_titolo = "diritto"
     ~ su(fiducia, 1)
-    Qui a le droit de manifester ? # lavagna: Qui a le droit de manifester ?
-* [« Mémoire »]
+    ‹Qui a le droit de manifester ?=Chi ha il diritto di manifestare?› # lavagna: Qui a le droit de manifester ?
+* [«Memoria»]
     ~ lavagna_titolo = "memoria"
-    Mémoire # lavagna: MÉMOIRE
+    ‹Mémoire=Memoria› # lavagna: MÉMOIRE
 - Sotto, una parola. Quella che vuoi che rimanga.
-* [« Témoigner »]
+* [«Testimoniare»]
     ~ su(responsabilita, 1)
-    — témoigner # lavagna: — témoigner
-* [« Désobéir »]
+    ‹— témoigner=testimoniare› # lavagna: — témoigner
+* [«Disobbedire»]
     ~ su(rabbia, 1)
-    — désobéir # lavagna: — désobéir
-* [« Se taire »]
+    ‹— désobéir=disobbedire› # lavagna: — désobéir
+* [«Tacere»]
     ~ su(paura, 1)
-    — se taire (?) # lavagna: — se taire (?)
+    ‹— se taire (?)=tacere (?)› # lavagna: — se taire (?)
 - E un'ultima riga, per te.
-* [« Et nous ? »]
+* [«E noi?»]
     ~ su(fiducia, 1)
-    Et nous ? # lavagna: Et nous ?
-* [« Mon père. »]
+    ‹Et nous ?=E noi?› # lavagna: Et nous ?
+* [«Mio padre.»]
     ~ su(paura, 1)
-    Mon père. # lavagna: Mon père.
+    ‹Mon père.=Mio padre.› # lavagna: Mon père.
     La cancelli subito con il palmo. Resta un alone bianco che nessuno saprà leggere.
 - Guardi la lavagna a lungo. Poi chiudi l'aula a chiave e vai a Vincennes.
 -> ehpad
@@ -159,18 +159,18 @@ Scrivi il titolo.
 # ora: 10:30
 # amb: interno
 EHPAD Les Tilleuls, Vincennes. A quindici minuti a piedi da place de la Nation. Tuo padre, Lucien, ottantotto anni, guarda la finestra.
-Era guardiano della pace. Nel 1961 aveva ventitré anni. Non ti ha mai detto dov'era la notte del 17 ottobre. Tu insegni quella notte da vent'anni e non l'hai mai detto ai tuoi alunni.
-« Odile ? C'est toi ? Il y a du bruit dehors. » Oggi è un giorno buono, quasi.
+Era agente di polizia, un _gardien de la paix_. Nel 1961 aveva ventitré anni. Non ti ha mai detto dov'era la notte del 17 ottobre. Tu insegni quella notte da vent'anni e non l'hai mai detto ai tuoi alunni.
+«Odile? Sei tu? C'è rumore fuori.» Oggi è un giorno buono, quasi.
 * [Gli chiedi di quella notte.]
     ~ padre_chiesto = true
     ~ su(paura, 1)
-    « Papa. Le 17 octobre 1961. Tu étais où ? »
-    Lui guarda la finestra per un minuto intero. « Il pleuvait. On avait des ordres. Le pont… » Si ferma. « Moi j'ai rien jeté. J'ai rien jeté, moi. »
-    Poi ti chiede se hai mangiato. Non saprai mai se _moi_ era una difesa o una confessione. # ricorda: Tuo padre se ne ricorderà, forse.
+    «Papà. Il 17 ottobre 1961. Tu dov'eri?»
+    Lui guarda la finestra per un minuto intero. «Pioveva. Avevamo degli ordini. Il ponte…» Si ferma. «Io non ho buttato niente. Io non ho buttato niente.»
+    Poi ti chiede se hai mangiato. Non saprai mai se quell'_io_ era una difesa o una confessione. # ricorda: Tuo padre se ne ricorderà, forse.
 * [Gli tieni la mano e non chiedi niente.]
     ~ su(fiducia, 1)
     Gli tieni la mano. È leggera, una mano di carta. Fuori passano i primi gruppi diretti a Nation, con le bandiere.
-    « Qu'est-ce qu'ils veulent ? » « Des profs, papa. Des plafonds. » « Ah. » Sorride. « C'est bien. »
+    «Cosa vogliono?» «Professori, papà. Soffitti.» «Ah.» Sorride. «Fanno bene.»
 - -> nation_mattina
 
 = nation_mattina
@@ -188,36 +188,36 @@ Ricambi. Non sai perché te la ricorderai. Le cose che ricordi non chiedono mai 
 # ora: 11:50
 # img: shared/c3_assemblea
 # amb: folla
-L'assemblea nel cortiletto dietro la palestra. Il tetto puntellato, la cassa, le _battles d'aura_. Sacha Lemaire sul muretto, il tuo alunno del 2021: _qui veut être vu, vient avec nous_.
-Poi parla Inès. Poi, inaspettatamente, Bilal grida: « Madame Garnier ! Qu'elle parle ! » E tutti: « Gar-nier ! Gar-nier ! »
+L'assemblea nel cortiletto dietro la palestra. Il tetto puntellato, la cassa, le _battle d'aura_. Sacha Lemaire sul muretto, il tuo alunno del 2021: _chi vuole farsi vedere, viene con noi_.
+Poi parla Inès. Poi, inaspettatamente, Bilal grida: «Prof Garnier! Parli lei!» E tutti: «Gar-nier! Gar-nier!»
 Sali sul muretto. Duecento facce. Ne conosci centoquaranta.
 * [Racconti il 1961 per mettere in guardia.]
     ~ discorso = "avvertire"
     ~ su(fiducia, 1)
-    « Il y a soixante-cinq ans, jour pour jour, des Algériens ont manifesté pacifiquement à Paris. Des centaines sont morts. Jetés dans la Seine. »
-    « Je vous le dis pas pour vous faire peur. Je vous le dis parce qu'ils étaient pacifiques, et que c'est ça qu'on a voulu effacer. Soyez pacifiques. Et soyez nombreux. On ne jette pas cent mille personnes dans la Seine. »
+    «Sessantacinque anni fa, oggi, degli algerini hanno manifestato pacificamente a Parigi. In centinaia sono morti. Buttati nella Senna.»
+    «Non ve lo dico per farvi paura. Ve lo dico perché erano pacifici, ed è proprio questo che si è voluto cancellare. Siate pacifici. E siate tanti. Centomila persone non le butti nella Senna.»
 * [Lo racconti per accendere.]
     ~ discorso = "accendere"
     ~ su(rabbia, 2)
-    « Il y a soixante-cinq ans, jour pour jour, la police de Paris a jeté des manifestants dans la Seine. Et pendant quarante ans, l'État a dit qu'il ne s'était rien passé. »
-    « Alors quand on vous dit de rester calmes, demandez-vous qui vous le dit. » Il cortile esplode. Sacha ti guarda come si guarda un'alleata. Non era quello che volevi. O forse sì.
-* [Non parli. « C'est votre journée. »]
+    «Sessantacinque anni fa, oggi, la polizia di Parigi ha buttato dei manifestanti nella Senna. E per quarant'anni lo Stato ha detto che non era successo niente.»
+    «Quindi quando vi dicono di stare calmi, chiedetevi chi ve lo dice.» Il cortile esplode. Sacha ti guarda come si guarda un'alleata. Non era quello che volevi. O forse sì.
+* [Non parli. «È la vostra giornata.»]
     ~ discorso = "tacere"
     ~ su(fiducia, 1)
     ~ giu(responsabilita, 1)
-    « Non. C'est votre journée, pas la mienne. Moi je vous suis. » Scendi dal muretto tra i fischi affettuosi.
+    «No. È la vostra giornata, non la mia. Io vi seguo.» Scendi dal muretto tra i fischi affettuosi.
     È la cosa più difficile che hai fatto in ventiquattro anni: stare zitta davanti a una classe.
 - -> poesia_nassim
 
 = poesia_nassim
 # img: shared/c3_assemblea
 # ora: 12:40
-Mentre scendi dal muretto, Nassim Haddad ti si para davanti e ti mette in mano un foglio a quadretti piegato in otto. « C'est pour vous. Lisez pas maintenant. »
+Mentre scendi dal muretto, Nassim Haddad ti si para davanti e ti mette in mano un foglio a quadretti piegato in otto. «È per lei. Non lo legga adesso.»
 È una poesia. Lo sai dalla forma delle righe. Nassim scrive poesie e le strappa; questa non l'ha strappata.
 * [La leggi subito, appena lui si gira.]
     ~ poesia = "letta"
     ~ su(responsabilita, 1)
-    _Ils disent c'est les ténèbres / mais c'est juste le plafond qui tombe / et nous dessous qui faisons semblant / de pas avoir peur du noir._
+    ‹Ils disent c'est les ténèbres / mais c'est juste le plafond qui tombe / et nous dessous qui faisons semblant / de pas avoir peur du noir.=Dicono che è il buio / ma è solo il soffitto che cade / e noi sotto, a fare finta / di non avere paura del buio.›
     La rileggi tre volte. È la cosa più bella che ti abbiano dato in ventiquattro anni, dopo la sciarpa verde.
 * [La metti nella borsa, per dopo.]
     ~ poesia = "tenuta"
@@ -234,8 +234,8 @@ Sacha era bravo in storia. Odiava le date e amava le cause.
 * [Attraversi il vagone e vai a parlare a Sacha.]
     ~ metro_scelta = "sacha"
     ~ su(responsabilita, 1)
-    « Sacha. Il a quinze ans. » Sacha ti guarda come si guarda una prof: con l'affetto di chi non deve più obbedirle. « C'est pour le gaz, madame. Juste pour le gaz. »
-    « En 1961 aussi, ils avaient des foulards pour le gaz. » Non risponde. Ma per tutto il viaggio tiene Nassim vicino.
+    «Sacha. Ha quindici anni.» Sacha ti guarda come si guarda una prof: con l'affetto di chi non deve più obbedirle. «È per il gas, prof. Solo per il gas.»
+    «Anche nel 1961 avevano i fazzoletti per il gas.» Non risponde. Ma per tutto il viaggio tiene Nassim vicino.
 * [Lo dici a Inès.]
     ~ metro_scelta = "ines"
     ~ giu(responsabilita, 1)
@@ -253,14 +253,14 @@ Sacha era bravo in storia. Odiava le date e amava le cause.
 # ora: 14:20
 # img: shared/c4_republique
 # amb: folla
-République. Gilet gialli, sindacati, infermiere, universitari. I colleghi dello SNES con lo striscione PROFS AVEC VOUS. Hai trecento volantini nello zaino, fotocopiati di nascosto in sala professori: _17 OCTOBRE 1961 — 17 OCTOBRE 2026_.
+République. Gilet gialli, sindacati, infermiere, universitari. I colleghi del sindacato con lo striscione ‹PROFS AVEC VOUS=i prof con voi›. Hai trecento volantini nello zaino, fotocopiati di nascosto in sala professori: _17 OCTOBRE 1961 — 17 OCTOBRE 2026_.
 Ti senti ridicola e necessaria. È la sensazione abituale del tuo mestiere.
 
 # ---
 # ora: 14:50
-Davanti a te i tuoi ragazzi gridano al megafono: « BIS-MIL-LAH ! » E duecento voci: « C'EST LES TÉ-NÈ-BRES ! »
-Una signora della CGT ti chiede cosa vuol dire. « Rien, madame. C'est ça qui est drôle. Ils ont pris la phrase d'un policier qui se moquait d'eux et ils en ont fait une chanson. »
-La signora ci pensa. « Alors ça veut dire quelque chose. » Ha ragione. Ti appunti la frase per lunedì.
+Davanti a te i tuoi ragazzi gridano al megafono: «BIS-MIL-LAH!» E duecento voci: «C'EST LES TÉ-NÈ-BRES!» _In nome di Dio, è il buio._
+Una signora della CGT ti chiede cosa vuol dire. «Niente, signora. È per questo che fa ridere. Hanno preso la frase di un poliziotto che li prendeva in giro e ne hanno fatto una canzone.»
+La signora ci pensa. «Allora vuol dire qualcosa.» Ha ragione. Ti appunti la frase per lunedì.
 
 # img: shared/c4_applausi
 # ora: 15:20
@@ -271,11 +271,11 @@ Tu applaudi più piano. Pensi a una cosa che hai letto negli archivi: la notte d
 # img: shared/c4_volantino
 # ora: 15:40
 # incrocio: X08
-Distribuisci i volantini. A Inès: « Tu te souviens ? » Al pompiere con il casco graffiato.
+Distribuisci i volantini. A Inès: «Te lo ricordi?» Al pompiere con il casco graffiato.
 * [Al pompiere racconti dei corpi nella Senna.]
     ~ volantino_jerome = true
     ~ su(fiducia, 1)
-    « Les pompiers, cette nuit-là, ont repêché des corps dans la Seine pendant des jours. Eux, ils savaient. » Lui piega il volantino e lo mette nel taschino, accanto a una foto di bambina.
+    «Quella notte i pompieri hanno ripescato corpi nella Senna per giorni. Loro sapevano.» Lui piega il volantino e lo mette nel taschino, accanto a una foto di bambina.
 * [Gli dai il volantino e passi oltre.]
     Lui lo prende con un sorriso stanco e lo passa a un collega giovane che zoppica. Il ragazzo lo legge muovendo le labbra.
 - Poi ti giri verso il cordone, ai lati del corteo. Un agente giovane ha la visiera alzata. Lo riconosci anche da qui: Mehdi.
@@ -301,13 +301,13 @@ Distribuisci i volantini. A Inès: « Tu te souviens ? » Al pompiere con il cas
 Place de la Nation. Sei arrivata con la coda del corteo, insieme ai tuoi colleghi. Ma i tuoi ragazzi no: i tuoi ragazzi sono più avanti, verso la testa, verso il cours de Vincennes.
 Conti le teste che conosci. Ne trovi sette. Bilal, Yasmine, Inès. Nassim no.
 { metro_scelta:
-- "sacha": Poi lo vedi: in testa, attaccato al gomito di Sacha. Sacha si gira, ti vede, ti fa un cenno. _Je le garde._ Non sai se crederci. Ci credi un po'.
+- "sacha": Poi lo vedi: in testa, attaccato al gomito di Sacha. Sacha si gira, ti vede, ti fa un cenno. _Ci penso io._ Non sai se crederci. Ci credi un po'.
 - "ines": Inès lo cerca con gli occhi, disperata. Da République non le parla più. Per colpa del passamontagna che gli ha strappato. Per colpa tua.
 - "niente": Lo vedi, in testa, con il passamontagna nero sulla faccia. Quello che hai visto passare in metro, e hai fatto finta di niente.
     ~ su(paura, 1)
 }
 { discorso == "accendere":
-    Qualcuno grida: « Qui vous dit de rester calmes ? » Sono parole tue. Detti in un cortile, a mezzogiorno, sembravano storia. Qui sembrano un ordine.
+    Qualcuno grida: «Chi vi dice di stare calmi?» Sono parole tue. Dette in un cortile, a mezzogiorno, sembravano storia. Qui sembrano un ordine.
     ~ su(rabbia, 1)
 }
 
@@ -325,16 +325,16 @@ Ti metti la sciarpa verde sulla bocca. Non serve a niente. Tieni gli occhi apert
 # incrocio: X09
 All'angolo del cours de Vincennes un cassonetto prende fuoco sotto un palazzo. Al primo piano una donna della tua età, forse più vecchia, alla finestra.
 E i tuoi ragazzi, Bilal, Yasmine e altri cinque, stanno andando verso il fuoco. Verso la testa. Verso gli scudi che si muovono.
-Bilal si gira e ti vede. « Madame ! Venez ! » # timer: 9
+Bilal si gira e ti vede. «Prof! Venga!» # timer: 9
 * [Li richiami e li porti indietro per il cours de Vincennes.]
     ~ decisiva(1, "P", "Hai riportato indietro i tuoi alunni, lontano dal fuoco e dagli scudi.")
     ~ su(responsabilita, 1)
-    « BILAL ! YASMINE ! Avec moi ! Maintenant ! » La voce da interrogazione, quella che non usi mai. Funziona. Ti seguono, controvoglia, tenendosi per le felpe.
+    «BILAL! YASMINE! Con me! Subito!» La voce da interrogazione, quella che non usi mai. Funziona. Ti seguono, controvoglia, tenendosi per le felpe.
     Li porti via dal palazzo, dalla carica, verso una via laterale. Sette su sette. Nassim non c'è.
 * [Vai con loro, in prima fila, a gridare.]
     ~ decisiva(1, "V", "Hai portato i tuoi alunni in prima fila, contro gli scudi.")
     ~ su(rabbia, 2)
-    Vai con loro. Davanti. Gridi con loro, la sciarpa verde alzata come una bandiera. « Ni oubli ! Ni pardon ! »
+    Vai con loro. Davanti. Gridi con loro, la sciarpa verde alzata come una bandiera. «‹Ni oubli! Ni pardon!=né oblio, né perdono›»
     Per un minuto ti senti giovane e giusta. I ragazzi, vedendoti lì, non indietreggiano più. Nessuno di loro. È quello che hai voluto, e non è quello che volevi.
 * [Resti ferma. # timeout]
     ~ decisiva(1, "F", "Sei rimasta ferma mentre i tuoi alunni andavano verso il fuoco.")
@@ -357,13 +357,13 @@ Un mortaio esplode contro gli scudi in scintille verdi. Il volantino del 1961 vo
 # flash
 # incrocio: X10
 La granata rotola tra le scarpe ed esplode. Il mondo diventa un fischio.
-Quando torna, vicino al cassonetto in fiamme c'è un ragazzo a terra. Felpa grigia. Nassim Haddad, seconde B, quello che scrive poesie e le strappa. Sopra di lui, un casco. # timer: 8
+Quando torna, vicino al cassonetto in fiamme c'è un ragazzo a terra. Felpa grigia. Nassim Haddad, seconda B, quello che scrive poesie e le strappa. Sopra di lui, un casco. # timer: 8
 * { paura < 8 } [Corri da lui.]
     ~ decisiva(2, "P", "Sei corsa da Nassim, a cinquantadue anni, nel gas.")
     ~ su(responsabilita, 1)
     Corri. Non corri da trent'anni. Corri come si corre nei sogni, piano e con tutto il corpo. Arrivi. Ti inginocchi accanto a lui.
-    « Nassim. C'est Madame Garnier. Respire. » Lui apre un occhio. « Madame… on a cours lundi ? »
-    { poesia == "letta": « Oui. Et tu me liras ton poème à voix haute. » Lui sorride, con il sangue sui denti. « Même pas en rêve. » }
+    «Nassim. Sono la prof Garnier. Respira.» Lui apre un occhio. «Prof… lunedì c'è lezione?»
+    { poesia == "letta": «Sì. E mi leggerai la tua poesia ad alta voce.» Lui sorride, con il sangue sui denti. «Neanche per sogno.» }
 * { paura >= 8 } [Corri da lui. # locked: le gambe non ti reggono più]
     -> mano
 * [Spingi via l'agente con tutte e due le mani.]
@@ -388,15 +388,15 @@ L'agente solleva Nassim per il cappuccio e lo trascina verso il cordone. Si gira
     Dal giubbotto gli spunta un angolo di carta bianca. Il tuo volantino.
 }
 { volantino_jerome:
-    Nel fumo si fa largo un pompiere in divisa: è quello del taschino, quello dei corpi nella Senna. Urla « POMPIER ! ». # timer: 8
+    Nel fumo si fa largo un pompiere in divisa: è quello del taschino, quello dei corpi nella Senna. Urla «POMPIERE!». # timer: 8
 - else:
-    Nel fumo, un pompiere in divisa si fa largo urlando « POMPIER ! ». # timer: 8
+    Nel fumo, un pompiere in divisa si fa largo urlando «POMPIERE!». # timer: 8
 }
-* { fiducia >= 4 } [« Mehdi. Le 17 octobre. Tu te souviens de ce qu'on a étudié ? »]
+* { fiducia >= 4 } [«Mehdi. Il 17 ottobre. Ti ricordi cosa abbiamo studiato?»]
     ~ decisiva(3, "P", "Hai ricordato a Mehdi la lezione sul 17 ottobre.")
     Mehdi si blocca. Sotto la visiera, gli occhi di un ragazzo di sedici anni seduto in terza fila, aula 204, che prende diciotto e non ci crede.
-    « Madame… » Solo questo. Poi molla il cappuccio. Il pompiere si inginocchia su Nassim. Mehdi resta lì, in piedi, con le mani vuote.
-* { fiducia < 4 } [« Mehdi. Le 17 octobre. Tu te souviens de ce qu'on a étudié ? » # locked: non credi più che le lezioni servano a qualcosa]
+    «Prof…» Solo questo. Poi molla il cappuccio. Il pompiere si inginocchia su Nassim. Mehdi resta lì, in piedi, con le mani vuote.
+* { fiducia < 4 } [«Mehdi. Il 17 ottobre. Ti ricordi cosa abbiamo studiato?» # locked: non credi più che le lezioni servano a qualcosa]
     -> dopo
 * [Gli strappi lo scudo.]
     ~ decisiva(3, "V", "Hai strappato lo scudo a Mehdi.")
@@ -407,7 +407,7 @@ L'agente solleva Nassim per il cappuccio e lo trascina verso il cordone. Si gira
 * [Lasci fare e prendi i nomi dei testimoni.]
     ~ decisiva(3, "P", "Hai raccolto i nomi dei testimoni, invece di intervenire.")
     ~ su(responsabilita, 1)
-    Tiri fuori il quaderno dei voti dalla borsa. È l'unica cosa che hai. « Vous avez vu ? Votre nom. Votre téléphone. » Li scrivi tutti: un ragazzo, una nonna, un infermiere.
+    Tiri fuori il quaderno dei voti dalla borsa. È l'unica cosa che hai. «Ha visto? Il suo nome. Il suo telefono.» Li scrivi tutti: un ragazzo, una nonna, un infermiere.
     Mehdi porta via Nassim. Il pompiere lo raggiunge dietro gli scudi. Il tuo quaderno è pieno di nomi. È così che si scrive la storia, ti dici. Di solito dopo.
 * [Resti ferma. # timeout]
     ~ decisiva(3, "F", "Sei rimasta ferma mentre Mehdi portava via Nassim.")
@@ -420,7 +420,7 @@ L'agente solleva Nassim per il cappuccio e lo trascina verso il cordone. Si gira
 # ora: 17:52
 # fxoff: gas
 # amb: sirene
-Alle 17:52 la piazza si svuota. Scarpe spaiate, cartelli, i tuoi volantini calpestati a centinaia. _17 octobre 1961_, sotto le suole.
+Alle 17:52 la piazza si svuota. Scarpe spaiate, cartelli, i tuoi volantini calpestati a centinaia. _17 ottobre 1961_, sotto le suole.
 { d1 == "P":
     I tuoi sette sono con te, in una via laterale, tossendo. Yasmine piange. Bilal ride. Sono vivi tutti e sette.
 - else:
@@ -442,18 +442,18 @@ Alle 17:52 la piazza si svuota. Scarpe spaiate, cartelli, i tuoi volantini calpe
 # amb: interno
 # incrocio: X12
 Commissariato del 12°. Sei venuta a cercare i tuoi alunni fermati: ne hai contati quattro, sui social. Al bancone, dietro il vetro, c'è Mehdi. Senza casco, ha la faccia di un ragazzo stanco.
-« Madame Garnier. » Lo dice prima di te.
+«Prof Garnier.» Lo dice prima di te.
 Gli dici i nomi uno per uno, come all'appello. Lui li cerca sullo schermo. Due li fanno uscire subito. Due resteranno la notte.
 { nomi_preside == "dati":
     Uno dei due è Bilal Traoré. Il suo nome, stamattina, l'hai scritto tu alla preside. Non c'entra niente. Ti sembra che c'entri tutto.
 }
 
-* [« Merci, Mehdi. »]
-    Lui annuisce. Poi, a bassa voce, senza guardarti: « Le petit Haddad. Il est à Avicenne. Poignet cassé. Le pompier l'a amené. »
-    { volantino_mehdi: Tira fuori dal giubbotto il tuo volantino, piegato. « Je l'ai lu, madame. Dans le car. » }
-* [« Tu étais où, toi, aujourd'hui ? Vraiment ? »]
+* [«Grazie, Mehdi.»]
+    Lui annuisce. Poi, a bassa voce, senza guardarti: «Il piccolo Haddad. È ad Avicenne. Polso rotto. L'ha portato il pompiere.»
+    { volantino_mehdi: Tira fuori dal giubbotto il tuo volantino, piegato. «L'ho letto, prof. Sul furgone.» }
+* [«E tu dov'eri, oggi? Davvero?»]
     ~ su(rabbia, 1)
-    Mehdi ti guarda a lungo. « J'étais là où on m'a mis, madame. Comme vous. » Poi: « Le petit Haddad est à Avicenne. Il va bien. »
+    Mehdi ti guarda a lungo. «Ero dove mi hanno messo, prof. Come lei.» Poi: «Il piccolo Haddad è ad Avicenne. Sta bene.»
     È la risposta più onesta che tu abbia sentito oggi. Non ti piace per niente.
 - -> telefonata
 
@@ -462,9 +462,9 @@ Gli dici i nomi uno per uno, come all'appello. Lui li cerca sullo schermo. Due l
 # ora: 22:10
 Il telefono. L'EHPAD di Vincennes. Tuo padre si è agitato, ha sentito le sirene tutta la sera. Chiede di te.
 { padre_chiesto:
-    L'infermiera dice che ripete una frase: _J'ai rien jeté. Dis-lui que j'ai rien jeté._
+    L'infermiera dice che ripete una frase: _Io non ho buttato niente. Diglielo, che non ho buttato niente._
 - else:
-    L'infermiera dice che ha chiesto se i ragazzi hanno avuto i loro plafond.
+    L'infermiera dice che ha chiesto se i ragazzi hanno avuto i loro soffitti.
 }
 Vai. A piedi, attraverso la piazza vuota. Gli tieni la mano fino a quando si addormenta.
 { chiamata_madre:
@@ -476,7 +476,7 @@ Vai. A piedi, attraverso la piazza vuota. Gli tieni la mano fino a quando si add
 # img: odile/02_telefono
 # ora: 23:30
 Uscendo dall'EHPAD, un messaggio vocale. È la madre di Inès e Nassim, da Avicenne, la voce stanca di dodici ore.
-_Madame Garnier. C'est la maman de Nassim. Vous m'avez appelée ce matin. Personne d'autre ne m'a appelée, ce matin. Merci._
+_Prof Garnier. Sono la mamma di Nassim. Mi ha chiamata stamattina. Nessun altro mi ha chiamata, stamattina. Grazie._
 La riascolti due volte sul marciapiede, sotto le finestre spente. Ti chiedi ancora per chi l'hai chiamata. Adesso hai una risposta.
 -> notte_pace
 
@@ -492,11 +492,11 @@ Il garofano gira su se stesso e se ne va con la corrente, verso il mare, come tu
 # img: odile/07_aula_dopo
 # ora: lunedì
 Lunedì 2 novembre, alle 7:50, entri nell'aula 204 prima degli alunni.
-Sulla lavagna, sotto le tue parole di sabato, qualcuno ha scritto con una calligrafia storta che conosci: _17 OCTOBRE 2026 : NOUS AUSSI ON S'EN SOUVIENDRA._
-E sotto, più piccolo: _(et merci madame)_.
+Sulla lavagna, sotto le tue parole di sabato, qualcuno ha scritto con una calligrafia storta che conosci: ‹17 OCTOBRE 2026 : NOUS AUSSI ON S'EN SOUVIENDRA.=17 ottobre 2026: anche noi ce ne ricorderemo.›
+E sotto, più piccolo: ‹(et merci madame)=e grazie prof›.
 { lavagna_titolo:
-- "diritto": Accanto alla tua domanda, _Qui a le droit de manifester ?_, qualcuno ha disegnato una freccia e ha scritto: _nous._
-- "memoria": Accanto a _MÉMOIRE_, qualcuno ha aggiunto una s, poi l'ha cancellata, poi l'ha riscritta. _MÉMOIRES._
+- "diritto": Accanto alla tua domanda, _Qui a le droit de manifester ?_, qualcuno ha disegnato una freccia e ha scritto: ‹nous.=noi.›
+- "memoria": Accanto a _MÉMOIRE_, qualcuno ha aggiunto una s, poi l'ha cancellata, poi l'ha riscritta. ‹MÉMOIRES.=memorie, al plurale.›
 - else: Accanto alla data del 1961, qualcuno ha scritto la stessa data con un altro anno. Le due righe si guardano come in uno specchio.
 }
 -> END
@@ -512,30 +512,30 @@ E sotto, più piccolo: _(et merci madame)_.
 Commissariato del 12°. Non sei venuta a cercare i tuoi alunni: sei venuta in furgone, con le fascette ai polsi. Il braccio ti fa un male da urlo.
 Al bancone c'è Mehdi. Ti guarda entrare. Scrive il tuo nome sullo schermo, lettera per lettera, senza alzare gli occhi. G-A-R-N-I-E-R.
 { d1 == "V":
-    Yasmine Kébé, diciassette anni, terminale, è ad Avicenne con un braccio rotto. Era in prima fila. Era in prima fila perché c'eri tu.
+    Yasmine Kébé, diciassette anni, quinta, è ad Avicenne con un braccio rotto. Era in prima fila. Era in prima fila perché c'eri tu.
 - else:
     Hai saputo da un'agente che ti ha portato un bicchiere d'acqua: Nassim Haddad è in rianimazione. Trauma cranico.
 }
 
 # img: odile/02_telefono
-# chat: Mme Pasquier (proviseure)
+# chat: Mme Pasquier (preside)
 # ora: 23:00
-Mme Pasquier: Odile. Le rectorat a vu les vidéos.
-Mme Pasquier: Une enseignante en première ligne avec des élèves mineurs. Vous imaginez.
+Mme Pasquier: Odile. Il provveditorato ha visto i video.
+Mme Pasquier: Un'insegnante in prima linea con degli studenti minorenni. Si rende conto.
 { chiamata_madre:
-    Mme Pasquier: La mère des Haddad m'a appelée. Elle dit que vous l'aviez prévenue ce matin. Ça ne vous aidera pas, mais je voulais que vous le sachiez.
+    Mme Pasquier: Mi ha chiamata la madre degli Haddad. Dice che lei l'aveva avvisata stamattina. Non la aiuterà, ma volevo che lo sapesse.
 }
 { nomi_preside == "dati":
-    Mme Pasquier: J'ai déjà transmis les noms que vous m'avez donnés ce matin. Le vôtre s'y ajoute.
+    Mme Pasquier: Ho già trasmesso i nomi che mi ha dato stamattina. Ora c'è anche il suo.
 - else:
-    Mme Pasquier: J'ai dû transmettre une liste. Votre nom est le premier.
+    Mme Pasquier: Ho dovuto trasmettere un elenco. Il suo nome è il primo.
 }
 * [Non rispondi.]
     Non rispondi. Lasci il telefono a faccia in giù sulla panca. La panca è fredda come una lavagna.
-* [« J'ai fait ce que j'enseigne. »]
+* [«Ho fatto quello che insegno.»]
     ~ su(rabbia, 1)
-    Odile: J'ai fait ce que j'enseigne.
-    Mme Pasquier: Non, Odile. Vous enseignez l'histoire. Aujourd'hui vous en avez fabriqué. Ce n'est pas la même chose.
+    Odile: Ho fatto quello che insegno.
+    Mme Pasquier: No, Odile. Lei insegna la storia. Oggi l'ha fabbricata. Non è la stessa cosa.
 - -> notte_violenza
 
 = notte_violenza
@@ -544,21 +544,21 @@ Mme Pasquier: Une enseignante en première ligne avec des élèves mineurs. Vous
 # ora: 04:00
 # img: odile/08_cella
 # amb: notte
-Alle quattro di notte, nella cella, pensi a una data. Non il 1961: il 2015. Mehdi Saïdi in terza fila che prende diciotto. Tu che gli dici _tu vois que tu peux_.
+Alle quattro di notte, nella cella, pensi a una data. Non il 1961: il 2015. Mehdi Saïdi in terza fila che prende diciotto. Tu che gli dici _vedi che ce la fai_.
 Pensi a cosa hai insegnato a quel ragazzo, e a Yasmine, e a Nassim. Che la storia la fanno quelli che stanno davanti. Non hai mai detto chi raccoglie i pezzi.
 
 # img: shared/c6_commissariato
 # ora: 05:30
 Alle cinque e mezza arriva Philippe, il collega di fisica, con l'avvocata del sindacato e un termos di caffè. Ha guidato da Montreuil nel buio.
-« Tu sais que tu vas passer en conseil de discipline. » « Je sais. » « Tu sais que je témoignerai pour toi. » Non lo sapevi.
+«Lo sai che finirai davanti al consiglio di disciplina.» «Lo so.» «Lo sai che testimonierò per te.» Non lo sapevi.
 { poesia == "tenuta":
-    Nella borsa che ti restituiscono c'è ancora il foglio di Nassim, piegato in otto. Lo apri. _Ils disent c'est les ténèbres / mais c'est juste le plafond qui tombe._ Nassim è in ospedale. Lo leggi troppo tardi, come tutto oggi.
+    Nella borsa che ti restituiscono c'è ancora il foglio di Nassim, piegato in otto. Lo apri. ‹Ils disent c'est les ténèbres / mais c'est juste le plafond qui tombe.=Dicono che è il buio / ma è solo il soffitto che cade.› Nassim è in ospedale. Lo leggi troppo tardi, come tutto oggi.
 }
 
 # img: odile/09_ehpad_mattina
 # ora: domenica
 Il giorno dopo, quando ti rilasciano, vai direttamente all'EHPAD, con il braccio fasciato.
-Tuo padre è lucido. Succede, a volte, per un minuto. Ti guarda il braccio. « C'est eux ? » Annuisci.
-« J'étais sur le pont, en 61 », dice. « Je tenais les bras. D'autres jetaient. Moi je tenais les bras. » Poi chiede se hai mangiato.
+Tuo padre è lucido. Succede, a volte, per un minuto. Ti guarda il braccio. «Sono stati loro?» Annuisci.
+«Ero sul ponte, nel '61», dice. «Tenevo le braccia. Altri buttavano. Io tenevo le braccia.» Poi chiede se hai mangiato.
 È troppo tardi per qualsiasi cosa. Lo sai. Gli tieni la mano lo stesso.
 -> END

@@ -16,8 +16,19 @@ export function parseTag(tag) {
 }
 
 function esc(s) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
-// _corsivo_ per il francese e i pensieri
-function formatta(s) { return esc(s).replace(/_([^_]+)_/g, '<em>$1</em>'); }
+// ‹francese=traduzione›: il francese resta, con la traduzione italiana accanto.
+// _corsivo_ per pensieri, scritte e titoli.
+const GLOSSA = /‹([^›]+)›/g;
+function divide(inner) { const i = inner.lastIndexOf('='); return i < 0 ? [inner, ''] : [inner.slice(0, i), inner.slice(i + 1)]; }
+export function formatta(s) {
+  return esc(s)
+    .replace(GLOSSA, (m, inner) => { const [fr, it] = divide(inner); return `<span class="fr">${fr}</span>${it ? `<span class="gl">${it}</span>` : ''}`; })
+    .replace(/_([^_]+)_/g, '<em>$1</em>');
+}
+// testo semplice per la macchina da scrivere
+export function piano(s) {
+  return s.replace(GLOSSA, (m, inner) => { const [fr, it] = divide(inner); return it ? `${fr} (${it})` : fr; }).replace(/_([^_]+)_/g, '$1');
+}
 
 const storieCache = {};
 export async function caricaStoria(id) {
@@ -108,7 +119,7 @@ export class Partita {
       switch (k) {
         case 'img': this.ctx.img = v; this.ctx.lavagna = []; this.r.setDyn('lavagna', []); await this.r.setScena(v, this.id); this.r.aggiungiFx(this.ctx.fx); break;
         case 'capitolo': this.ctx.cap = v; $('hud-cap').textContent = t(`capitoli.${v}`) !== `capitoli.${v}` ? t(`capitoli.${v}`) : v; break;
-        case 'ora': this.ctx.ora = v; $('hud-ora').textContent = v; break;
+        case 'ora': this.ctx.ora = v; $('hud-ora').textContent = v; $('ph-ora').textContent = v; break;
         case 'fx': v.split(/[ ,]+/).filter(Boolean).forEach((f) => { if (!this.ctx.fx.includes(f)) this.ctx.fx.push(f); }); this.r.aggiungiFx(this.ctx.fx); break;
         case 'fxoff': (v ? v.split(/[ ,]+/) : [...this.ctx.fx]).forEach((f) => { this.ctx.fx = this.ctx.fx.filter((x) => x !== f); this.r.togliFx(f); }); break;
         case 'flash': this.r.flash(); break;
@@ -154,17 +165,17 @@ export class Partita {
     const html = formatta(riga.testo), d = this.velocita();
     if (!d) { p.innerHTML = html; return; }
     // macchina da scrivere: si scrive il testo semplice, poi si sostituisce con l'HTML formattato
-    const piano = riga.testo.replace(/_([^_]+)_/g, '$1');
+    const testo = piano(riga.testo);
     const caret = '<span class="caret">&nbsp;</span>';
     const paura = this.story.variablesState['paura'] || 0;
     let fatto = false; this.skip = () => { fatto = true; };
-    for (let i = 1; i <= piano.length && !fatto; i++) {
+    for (let i = 1; i <= testo.length && !fatto; i++) {
       if (tok !== this.token) return;
-      p.innerHTML = esc(piano.slice(0, i)) + caret;
+      p.innerHTML = esc(testo.slice(0, i)) + caret;
       if (i % 3 === 0) sfx('tasto');
       let attesa = d;
       if (paura >= 7 && Math.random() < 0.06) attesa += 120; // la paura fa inciampare il testo
-      if (/[.!?…]/.test(piano[i - 1])) attesa += d * 6;
+      if (/[.!?…]/.test(testo[i - 1])) attesa += d * 6;
       await new Promise((r) => setTimeout(r, attesa));
       this.scrollGiu();
     }
@@ -181,25 +192,60 @@ export class Partita {
     this.righePagina = righe;
   }
 
-  scrollGiu() { const pan = $('panel'); pan.scrollTop = pan.scrollHeight; }
-
-  // ---------- chat ----------
-  apriChat() {
-    this.elChat.hidden = false; this.elChatLog.innerHTML = ''; this.elText.innerHTML = '';
-    this.elChatHead.textContent = this.ctx.chat.titolo; document.getElementById('scr-game').classList.add('chat-mode');
+  scrollGiu() {
+    if (this.ctx.chat) { this.elChatLog.scrollTop = this.elChatLog.scrollHeight; return; }
+    const pan = $('panel'); pan.scrollTop = pan.scrollHeight;
   }
-  chiudiChat() { this.elChat.hidden = true; this.elChatLog.innerHTML = ''; document.getElementById('scr-game').classList.remove('chat-mode'); }
+
+  // ---------- chat: lo schermo di un telefono sopra la scena ----------
+  apriChat() {
+    const c = this.ctx.chat;
+    this.elChat.hidden = false; this.elChatLog.innerHTML = ''; this.elText.innerHTML = '';
+    this.elChatHead.textContent = c.titolo;
+    const sigla = c.titolo.replace(/[^\p{L}\s]/gu, '').trim().split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
+    $('ph-av').textContent = sigla || '…';
+    $('ph-ora').textContent = this.ctx.ora || '';
+    this.aggiornaSottotitolo();
+    // scelte, timer e "avanti" entrano nel telefono, sopra la barra di scrittura
+    const foot = $('ph-foot'), input = foot.querySelector('.ph-input');
+    [$('timer'), this.elChoices, this.elCont].forEach((el) => foot.insertBefore(el, input));
+    document.getElementById('scr-game').classList.add('chat-mode');
+  }
+  chiudiChat() {
+    this.elChat.hidden = true; this.elChatLog.innerHTML = '';
+    const pan = $('panel');
+    [$('timer'), this.elChoices, this.elCont].forEach((el) => pan.appendChild(el));
+    document.getElementById('scr-game').classList.remove('chat-mode');
+  }
+
+  gruppo() { const c = this.ctx.chat; return !!c && c.log.some((m) => !m.sys && !m.mio && !c.titolo.startsWith(m.chi)); }
+  aggiornaSottotitolo() {
+    const c = this.ctx.chat; if (!c) return;
+    if (this.gruppo()) {
+      const nomi = [...new Set(c.log.filter((m) => !m.sys).map((m) => (m.mio ? 'tu' : m.chi)))];
+      $('ph-sub').textContent = nomi.join(', ');
+    } else $('ph-sub').textContent = 'online';
+  }
 
   parseMsg(testo) {
-    const m = testo.match(/^([^:]{1,24}):\s+(.*)$/);
+    const m = testo.match(/^([A-ZÀ-ÖØ-Þ][^:,.!?«»_]{0,22}):\s+(.*)$/);
     if (!m) return { sys: true, testo };
-    return { chi: m[1].trim(), testo: m[2], mio: m[1].trim() === CHAT_NOME[this.id] };
+    return { chi: m[1].trim(), testo: m[2], mio: m[1].trim() === CHAT_NOME[this.id], ora: this.ctx.ora || '' };
   }
 
   bolla(m, istantaneo) {
     const el = document.createElement('div');
-    el.className = 'msg' + (m.sys ? ' sys' : m.mio ? ' me' : '');
-    el.innerHTML = m.sys ? formatta(m.testo) : `<span class="who">${esc(m.chi)}</span>${formatta(m.testo)}`;
+    if (m.sys) {
+      el.className = 'msg sys' + (m.testo.length > 60 ? ' nota' : '');
+      el.innerHTML = formatta(m.testo);
+    } else {
+      const prec = this.elChatLog.lastElementChild;
+      const stesso = prec && prec.dataset.chi === m.chi;
+      el.className = 'msg' + (m.mio ? ' me' : '') + (stesso ? ' cont' : '');
+      el.dataset.chi = m.chi;
+      const nome = !m.mio && !stesso && this.gruppo() ? `<span class="who">${esc(m.chi)}</span>` : '';
+      el.innerHTML = `${nome}<span class="body">${formatta(m.testo)}</span><span class="meta">${esc(m.ora || '')}${m.mio ? ' <span class="tick">✓✓</span>' : ''}</span>`;
+    }
     if (istantaneo) el.style.animation = 'none';
     this.elChatLog.appendChild(el); this.scrollGiu();
     return el;
@@ -208,13 +254,18 @@ export class Partita {
   async scriviChat(testo, tok) {
     const m = this.parseMsg(testo);
     this.ctx.chat.log.push(m);
+    this.aggiornaSottotitolo();
     const d = this.velocita();
     if (d && !m.mio && !m.sys) {
-      const scrive = this.bolla({ sys: true, testo: `${m.chi} sta scrivendo…` }); scrive.classList.add('typing');
+      const scrive = document.createElement('div');
+      scrive.className = 'msg typing'; scrive.setAttribute('aria-label', `${m.chi} sta scrivendo`);
+      scrive.innerHTML = '<i></i><i></i><i></i>';
+      this.elChatLog.appendChild(scrive); this.scrollGiu();
+      $('ph-sub').textContent = `${m.chi} sta scrivendo…`;
       let fatto = false; this.skip = () => { fatto = true; };
       const attesa = Math.min(1600, 300 + m.testo.length * d * 0.9);
       for (let x = 0; x < attesa && !fatto; x += 50) { if (tok !== this.token) return; await new Promise((r) => setTimeout(r, 50)); }
-      this.skip = null; scrive.remove();
+      this.skip = null; scrive.remove(); this.aggiornaSottotitolo();
     }
     if (tok !== this.token) return;
     this.bolla(m); if (!m.mio) sfx('notifica');

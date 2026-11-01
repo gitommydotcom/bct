@@ -36,17 +36,17 @@ Due vite in un parcheggio. Nessuna delle due ti chiede come stai.
 
 # img: sacha/02_telefono
 # chat: LYNX
-Karim: cassonettes ok rue de la Folie
-Lou: les petits sont déjà là. ils sont chauds
-Karim: le petit Haddad aussi. il veut "aider" 😂
-Lou: sacha tu ramènes quoi
-* [« Rien. Mes mains. »]
-    Sacha: rien. mes mains
-    Lou: ok le moine
-* [« Les lunettes et le sérum phy. Pour les petits. »]
+Karim: cassonetti ok, rue de la Folie
+Lou: i piccoli sono già lì. sono carichissimi
+Karim: anche il piccolo Haddad. vuole "aiutare" 😂
+Lou: sacha tu cosa porti
+* [«Niente. Le mie mani.»]
+    Sacha: niente. le mie mani
+    Lou: ok monaco
+* [«Occhialini e soluzione fisiologica. Per i piccoli.»]
     ~ su(responsabilita, 1)
-    Sacha: lunettes + sérum phy. pour les petits
-    Karim: maman sacha 🥹
+    Sacha: occhialini + fisiologica. per i piccoli
+    Karim: mamma sacha 🥹
 - -> grata
 
 = grata
@@ -59,10 +59,10 @@ Spingete i cassonetti giù per la rue de la Folie. Le ruote urlano. Nassim sping
 I ragazzi del blocco vi guardano arrivare. Davanti a loro c'è la delegata, la sorella di Nassim. Inès.
 
 # incrocio: X01
-« Salut, la déléguée. On vous a ramené des meubles. »
-Inès non ride. « Pas de feu. »
+«Ciao, delegata. Vi abbiamo portato i mobili.»
+Inès non ride. «Niente fuoco.»
 Karim ti guarda. Lou ti guarda. Nassim ti guarda di più.
-* [« Pas de feu. C'est leur blocus. »]
+* [«Niente fuoco. È il loro blocco.»]
     ~ su(fiducia, 1)
     ~ giu(rabbia, 1)
     Lo dici forte, perché lo sentano tutti. Karim alza gli occhi al cielo. Inès ti fa un cenno breve, sorpreso.
@@ -118,16 +118,16 @@ Si ferma a venti metri. Scendono in due.
 Nassim ha un sasso in mano. Lo vedi un secondo prima. Avresti il tempo.
 Il parabrezza si stella con un rumore secco. Nassim torna dietro il cassonetto e cerca i tuoi occhi.
 Cerca un voto.
-* [« Bien joué, petit. »]
+* [«Bravo, piccolo.»]
     ~ sasso_bravo = true
     ~ su(rabbia, 1)
     ~ giu(responsabilita, 1)
     Gli batti una mano sulla spalla. Nassim cresce di dieci centimetri.
     Ti dici che il camion è dello Stato, che lo Stato vi tira addosso di peggio. Ti suona bene. Ti suona come una cosa che hai già detto troppe volte. # ricorda: Nassim se ne ricorderà.
-* [« Pas les pompiers. Jamais les pompiers. »]
+* [«Non i pompieri. Mai i pompieri.»]
     ~ nassim_sgridato = true
     ~ su(responsabilita, 1)
-    Lo prendi per il bavero, non forte. « T'as compris ? Jamais. Ils sont avec nous, eux. »
+    Lo prendi per il bavero, non forte. «Hai capito? Mai. Loro sono con noi.»
     Nassim abbassa gli occhi. Per un secondo sei di nuovo l'allenatore e lui l'allievo che ha fatto un errore di guardia.
 * [Lo trascini via prima che arrivino i blu.]
     ~ su(paura, 1)
@@ -139,15 +139,15 @@ Cerca un voto.
 # img: shared/c1_pompiere
 # incrocio: X03
 Il pompiere più grande scende senza casco. Ha un graffio bianco nuovo sulla vernice. Guarda i ragazzi, guarda te.
-« ON EST PAS VOS ENNEMIS ! »
+«NON SIAMO VOSTRI NEMICI!»
 La voce rimbalza sulle facciate. Qualcuno ride. Qualcuno smette di ridere.
 * [Abbassi lo sguardo.]
     ~ giu(rabbia, 1)
     Abbassi lo sguardo. Hai ventitré anni e ti senti sgridato da un uomo che non conosci.
     Non è vergogna. È peggio: è che ha ragione su una cosa, e tu ne avevi dette mille.
-* [« Alors qu'est-ce que vous foutez là ? »]
+* [«E allora che cazzo ci fate qui?»]
     ~ su(rabbia, 1)
-    Il pompiere ti guarda a lungo. « On éteint. C'est tout ce qu'on sait faire. »
+    Il pompiere ti guarda a lungo. «Spegniamo. È l'unica cosa che sappiamo fare.»
     Poi rimette il casco. Non hai vinto niente.
 - -> sgombero
 
@@ -185,7 +185,7 @@ Gli agenti scendono in fila, scudi, caschi, ginocchiere. I piccoli si stringono 
 # ora: 07:45
 # fxoff
 # amb: silenzio
-Alle 7:45 la grata è libera. Dalla folla dei prof in sciopero senti una voce che conosci: la Garnier, la prof di storia, che chiama un agente per nome. « Mehdi ? »
+Alle 7:45 la grata è libera. Dalla folla dei prof in sciopero senti una voce che conosci: la Garnier, la prof di storia, che chiama un agente per nome. «Mehdi?»
 Mehdi Saïdi. Il figlio del palazzo C, uno che giocava a calcio con te. Adesso porta il casco dall'altra parte.
 Ti viene da ridere. Ti viene da vomitare. Fai tutte e due le cose in un cortile, da solo.
 -> mattina
@@ -202,31 +202,31 @@ Nessuno dorme. Tutti guardano i telefoni. I video dell'alba hanno già trentamil
 # img: sacha/02_telefono
 # chat: LYNX
 # incrocio: X05
-Karim: vous avez vu le truc "bismillah c'est les ténèbres"
-Karim: un keuf qui se fait passer pour un lycéen sur snap 💀
-Lou: ça veut dire qu'ils lisent les groupes
-Lou: ça veut dire qu'ils lisent CE groupe peut-être
-Karim: au fait c'est qui "Tom" ? il est arrivé lundi
-Tom: …moi ? je suis en fac à Saint-Denis. c'est Lou qui m'a ajouté
-* [« Lâchez-le. On devient quoi, si on se méfie de tout le monde ? »]
+Karim: avete visto la storia del "bismillah c'est les ténèbres"?
+Karim: uno sbirro che si finge liceale su snap 💀
+Lou: vuol dire che leggono i gruppi
+Lou: vuol dire che magari leggono QUESTO gruppo
+Karim: a proposito, chi è "Tom"? è entrato lunedì
+Tom: …io? faccio l'università a Saint-Denis. mi ha aggiunto Lou
+* [«Lasciatelo stare. Se diffidiamo di tutti, cosa diventiamo?»]
     ~ tom = "difeso"
     ~ su(fiducia, 2)
-    Sacha: lâchez le. si on se méfie de tout le monde on devient eux
-    Tom: merci
-    Karim: ok mais si demain on se fait serrer c'est toi qu'on appelle 🙃
-* [Lo interroghi: « T'es dans quelle fac ? Quel prof ? Quelle salle ? »]
+    Sacha: lasciatelo stare. se diffidiamo di tutti diventiamo come loro
+    Tom: grazie
+    Karim: ok ma se domani ci beccano chiamiamo te 🙃
+* [Lo interroghi: «Che facoltà? Che prof? Che aula?»]
     ~ tom = "interrogato"
     ~ su(rabbia, 1)
-    Sacha: t'es en quelle année. quel prof. quelle salle.
-    Tom: L2 socio. Mme Achour. salle B204. je peux t'envoyer ma carte étudiante si tu veux
-    Tom: c'est chaud ce que vous faites là
-* [« Dehors. Pas de risque. »]
+    Sacha: che anno. che prof. che aula.
+    Tom: secondo anno, sociologia. prof.ssa Achour. aula B204. se vuoi ti mando il libretto
+    Tom: però è pesante quello che state facendo
+* [«Fuori. Niente rischi.»]
     ~ tom = "cacciato"
     ~ giu(fiducia, 1)
     ~ su(paura, 1)
-    Sacha: dehors. désolé. pas de risque
+    Sacha: fuori. scusa. niente rischi
     Tom ha lasciato il gruppo.
-    Lou: c'était mon cousin, connard
+    Lou: era mio cugino, stronzo
 - -> ricordo
 
 = ricordo
@@ -235,24 +235,24 @@ Tom: …moi ? je suis en fac à Saint-Denis. c'est Lou qui m'a ajouté
 # ora: 10:15
 # amb: notte
 Lou dice _infiltrati_ e la stanza si restringe.
-Hai diciassette anni. Il pavimento di un furgone, la guancia schiacciata sulla gomma che puzza di piedi. Un ginocchio sulla schiena, una voce sopra: _Les noms. Donne-nous les noms et tu rentres chez ta mère._
+Hai diciassette anni. Il pavimento di un furgone, la guancia schiacciata sulla gomma che puzza di piedi. Un ginocchio sulla schiena, una voce sopra: _I nomi. Dacci i nomi e torni dalla mamma._
 Li hai dati. Tre nomi. Sei tornato da tua madre. Uno dei tre ha fatto sei mesi.
 Nessuno lo sa. È per questo che stai sempre davanti: perché davanti nessuno ti chiede niente.
 
 # img: sacha/03_appartamento
 # ora: 10:40
 # amb: interno
-Il telefono vibra. _Maman._ Non chiama mai di sabato. Lavora alle pulizie in un ospedale, il sabato fa le scale.
+Il telefono vibra. _Maman._ Tua madre. Non chiama mai di sabato. Lavora alle pulizie in un ospedale, il sabato fa le scale.
 * [Rispondi.]
     ~ madre_risposto = true
     ~ giu(rabbia, 1)
-    « Sacha. Je t'ai vu dans une vidéo. Le feu devant ton ancien lycée. C'était toi ? »
-    « Non, maman. » Non sai se è una bugia. Davanti a lei, tutto è un po' una bugia.
-    « Fais attention à toi. Et aux petits. » Lei sa. Lei sa sempre, senza nomi.
+    «Sacha. Ti ho visto in un video. Il fuoco davanti al tuo vecchio liceo. Eri tu?»
+    «No, mamma.» Non sai se è una bugia. Davanti a lei, tutto è un po' una bugia.
+    «Stai attento. E ai piccoli.» Lei sa. Lei sa sempre, senza nomi.
 * [Lasci squillare.]
     ~ su(rabbia, 1)
     Lasci squillare. Una, due, sei volte. Poi un messaggio vocale che non ascolterai.
-    Lou ti guarda. « Ta mère ? » « Le boulot. » Lou non ci crede, ma non chiede. È la regola.
+    Lou ti guarda. «Tua madre?» «Il lavoro.» Lou non ci crede, ma non chiede. È la regola.
 - -> preparativi
 
 = preparativi
@@ -264,21 +264,21 @@ Il telefono vibra. È Nassim. Nella foto del profilo ha i guantoni che gli hai r
 
 # img: sacha/02_telefono
 # chat: Nassim 🥊
-Nassim: t'es où ?
-Nassim: je viens avec vous cet aprèm hein 💪
-* [« Non. Toi tu restes avec ta sœur. »]
+Nassim: dove sei?
+Nassim: oggi pomeriggio vengo con voi eh 💪
+* [«No. Tu stai con tua sorella.»]
     ~ nassim_invitato = "casa"
     ~ su(responsabilita, 1)
-    Sacha: non. toi tu restes avec ta sœur
-    Nassim: t'es sérieux
-    Nassim: tout le monde y va
-    Sacha: tout le monde c'est pas toi
-* [« Viens. Mais tu fais ce que je dis. »]
+    Sacha: no. tu stai con tua sorella
+    Nassim: dici sul serio
+    Nassim: ci vanno tutti
+    Sacha: tutti non sei tu
+* [«Vieni. Ma fai quello che dico io.»]
     ~ nassim_invitato = "vieni"
     ~ giu(responsabilita, 1)
-    Sacha: viens. mais tu fais ce que je dis
-    Nassim: WALLAH 🔥🔥🔥
-    Nassim: je savais que t'étais un vrai
+    Sacha: vieni. ma fai quello che dico io
+    Nassim: GIURO 🔥🔥🔥
+    Nassim: lo sapevo che eri uno vero
 - -> mezzogiorno
 
 // =====================================================================
@@ -288,21 +288,21 @@ Nassim: je viens avec vous cet aprèm hein 💪
 # ora: 11:50
 # img: shared/c3_assemblea
 # amb: folla
-L'assemblea nel cortile del Dumont. Duecento ragazzi, una cassa, le _battles d'aura_ sul muretto. Tu sali sul muretto. Parli poco, come sempre.
-« Le cortège officiel, c'est une balade. Les flics vous parquent, vous rentrez, et lundi, rien. Nous, on va devant. Qui veut être vu, vient avec nous. »
+L'assemblea nel cortile del Dumont. Duecento ragazzi, una cassa, le _battle d'aura_ sul muretto. Tu sali sul muretto. Parli poco, come sempre.
+«Il corteo ufficiale è una passeggiata. Gli sbirri vi chiudono in un recinto, tornate a casa, e lunedì niente. Noi andiamo davanti. Chi vuole farsi vedere, viene con noi.»
 Nassim applaude più forte di tutti. { nassim_invitato == "casa": Applaude anche se gli hai detto di no. Soprattutto per quello. } Poi parla Inès.
-Inès dice di restare nel corteo ufficiale. Dice _jusqu'au bout, tous_. Il cortile vota per lei.
+Inès dice di restare nel corteo ufficiale. Dice _fino in fondo, tutti_. Il cortile vota per lei.
 * [Accetti il voto.]
     ~ assemblea = "votato"
     ~ su(fiducia, 1)
     ~ giu(rabbia, 1)
-    « Comme tu veux. » E lo pensi, quasi.
+    «Come vuoi.» E lo pensi, quasi.
     Scendi dal muretto. Davanti andrete in pochi, solo voi grandi. I piccoli resteranno dietro. Era quello che volevi, no?
 * [Lavori i ragazzi uno per uno, dopo il voto.]
     ~ assemblea = "lavorato"
     ~ giu(responsabilita, 2)
     ~ su(rabbia, 1)
-    Il voto è il voto. Poi però ci sono i corridoi, i telefoni, le pacche sulle spalle. « Toi t'as l'air solide. Viens devant. »
+    Il voto è il voto. Poi però ci sono i corridoi, i telefoni, le pacche sulle spalle. «Tu sembri uno tosto. Vieni davanti.»
     Ne convinci undici. Il più giovane ha quattordici anni. # ricorda: Undici ragazzi ti seguiranno davanti.
 * [Te ne vai senza dire niente.]
     ~ assemblea = "andato"
@@ -316,23 +316,23 @@ Inès dice di restare nel corteo ufficiale. Dice _jusqu'au bout, tous_. Il corti
 # amb: metro
 # incrocio: X06
 Linea 5. Il vagone è pieno di cartelli e di risate. Nassim si fa largo fino a te.
-« Sacha. T'en as un pour moi ? » Indica il passamontagna in più che ti esce dalla tasca. Lo sa, che ne porti sempre due.
+«Sacha. Ce l'hai uno per me?» Indica il passamontagna in più che ti esce dalla tasca. Lo sa, che ne porti sempre due.
 In fondo al vagone vedi la Garnier, la tua vecchia prof. E Inès, che vi guarda.
-* [Glielo dai. « C'est pour le gaz. Juste pour le gaz. »]
+* [Glielo dai. «È per il gas. Solo per il gas.»]
     ~ maschera_data = "data"
     ~ giu(responsabilita, 1)
     Glielo passi come si passa una sigaretta. Nassim se lo ficca in tasca.
     Inès attraversa il vagone come un temporale. Non le dici niente. Guardi la galleria.
-* [« Non. Rentre chez toi après Nation. »]
+* [«No. Dopo Nation vai a casa.»]
     ~ maschera_data = "negata"
     ~ su(responsabilita, 1)
     ~ giu(fiducia, 1)
-    Nassim ti guarda come se l'avessi colpito. « T'es comme ma sœur. »
-    Gli dici di sì, che sei come sua sorella. Ti dà una spinta e torna dai suoi. La Garnier ti fa un cenno da lontano, uno di quelli che a scuola volevano dire _bien_.
+    Nassim ti guarda come se l'avessi colpito. «Sei come mia sorella.»
+    Gli dici di sì, che sei come sua sorella. Ti dà una spinta e torna dai suoi. La Garnier ti fa un cenno da lontano, uno di quelli che a scuola volevano dire _bravo_.
 * [Glielo dai, ma gli fai promettere di restarti vicino.]
     ~ maschera_data = "vicino"
     ~ su(responsabilita, 1)
-    « Tu restes collé à moi. Tu cours quand je cours. Tu t'arrêtes quand je m'arrête. Promis ? » « Wallah. »
+    «Mi stai attaccato. Corri quando corro io. Ti fermi quando mi fermo io. Promesso?» «Giuro.»
     Lo tieni d'occhio fino a République. È più facile proteggere qualcuno che dirgli di no. # ricorda: Nassim ti resterà vicino.
 - -> pomeriggio
 
@@ -344,7 +344,7 @@ In fondo al vagone vedi la Garnier, la tua vecchia prof. E Inès, che vi guarda.
 # amb: folla
 République. Gilet gialli, sindacati, infermiere, nonni. Tutti quelli che ti hanno detto per anni che la violenza non serve a niente, oggi sono qui perché tre settimane di licei bloccati sono servite.
 Non sai cosa pensarne. Ti fa piacere e ti fa rabbia insieme.
-Lou ti passa una lattina. « Regarde. Même les profs. Même les pompiers. » Indica uno striscione: POMPIERS EN GRÈVE.
+Lou ti passa una lattina. «Guarda. Anche i prof. Anche i pompieri.» Indica uno striscione: ‹POMPIERS EN GRÈVE=pompieri in sciopero›.
 
 # ---
 # ora: 14:50
@@ -360,7 +360,7 @@ Ai lati del boulevard Voltaire, il cordone. Caschi, visiere abbassate. In uno de
 # amb: folla
 In testa al corteo, sul boulevard Voltaire. Ombrelli neri aperti senza pioggia, k-way, occhialini. Ai lati, il cordone che vi accompagna come un recinto mobile.
 # incrocio: X07
-Dietro di voi parte un applauso enorme: stanno arrivando i pompieri in sciopero. I ragazzi gridano _les pompiers avec nous_. Tu non ti giri.
+Dietro di voi parte un applauso enorme: stanno arrivando i pompieri in sciopero. I ragazzi gridano _i pompieri con noi_. Tu non ti giri.
 Ti metti il passamontagna. Il mondo diventa una fessura.
 
 # img: sacha/05_vetrina
@@ -377,7 +377,7 @@ Un ragazzino col cappuccio raccoglie un pezzo di pavé. Avrà quattordici anni. 
     ~ vetrina = "fermato"
     ~ su(responsabilita, 1)
     ~ giu(rabbia, 1)
-    Gli fermi il braccio. « Pas toi. Pas pour une vitrine. »
+    Gli fermi il braccio. «Non tu. Non per una vetrina.»
     Lui ti guarda come se fossi pazzo. Forse lo sei: sei vestito di nero dalla testa ai piedi e stai salvando una banca.
 - -> volantino
 
@@ -385,7 +385,7 @@ Un ragazzino col cappuccio raccoglie un pezzo di pavé. Avrà quattordici anni. 
 # img: sacha/06_volantino_terra
 # ora: 16:30
 # incrocio: X08
-Per terra, calpestato, un volantino fotocopiato. _17 OCTOBRE 1961 — 17 OCTOBRE 2026._ La calligrafia della Garnier sul margine: _Ni oubli, ni pardon_.
+Per terra, calpestato, un volantino fotocopiato. _17 OCTOBRE 1961 — 17 OCTOBRE 2026._ La calligrafia della Garnier sul margine: ‹Ni oubli, ni pardon=né oblio, né perdono›.
 * [Lo raccogli e lo leggi.]
     ~ volantino_letto = true
     ~ su(fiducia, 1)
@@ -433,7 +433,7 @@ L'accendino è nella tua mano. { nassim_acceso: Lo stesso che hai dato a Nassim 
 * { responsabilita >= 4 } [Lo spingi in mezzo alla strada, lontano dalle finestre.]
     ~ decisiva(1, "P", "Hai spinto il cassonetto lontano dal palazzo prima che bruciasse.")
     ~ su(responsabilita, 1)
-    « Pas là ! Y a des gens ! » Spingi. Karim ti guarda come se fossi impazzito, poi spinge anche lui.
+    «Non lì! C'è gente!» Spingi. Karim ti guarda come se fossi impazzito, poi spinge anche lui.
     Il cassonetto rotola fino al centro dell'incrocio, lontano dalle finestre. Qualcun altro lo accende lì. Il fumo sale nel vuoto.
 * { responsabilita < 4 } [Lo spingi in mezzo alla strada, lontano dalle finestre. # locked: oggi hai smesso di pensare agli altri]
     -> carica
@@ -449,7 +449,7 @@ L'accendino è nella tua mano. { nassim_acceso: Lo stesso che hai dato a Nassim 
 # ora: 17:39
 # sfx: colpo
 La carica. Gli scudi avanzano di trenta metri in pochi secondi. La folla si rovescia all'indietro.
-Qualcuno ti mette in mano una cosa pesante, cilindrica, con la miccia: un mortaio d'artificio. « Vas-y, Sacha. Toi t'as le bras. »
+Qualcuno ti mette in mano una cosa pesante, cilindrica, con la miccia: un mortaio d'artificio. «Vai, Sacha. Tu hai il braccio.»
 # sfx: granata
 # flash
 Uno parte da qualche parte alla tua destra ed esplode contro gli scudi in scintille verdi. Il tuo è ancora nella tua mano.
@@ -491,12 +491,12 @@ Un agente tiene Nassim per il cappuccio e lo trascina verso il cordone. Si gira:
     Mehdi ti guarda. Ti riconosce: stamattina eri quello con le mani vuote davanti alla grata.
 }
 { sasso_bravo:
-    Nassim grida: « Sacha ! Sacha, aide-moi ! » Lo dice come stamattina diceva _t'as vu ?_ dopo il sasso.
+    Nassim grida: «Sacha! Sacha, aiutami!» Lo dice come stamattina diceva _hai visto?_ dopo il sasso.
 }
 { nassim_sgridato:
-    Nel fumo, un pompiere in divisa da sciopero si fa largo urlando « POMPIER ! ». Nassim lo vede e smette di scalciare. _Jamais les pompiers._ Gliel'hai detto tu.
+    Nel fumo, un pompiere in divisa da sciopero si fa largo urlando «POMPIERE!». Nassim lo vede e smette di scalciare. _Mai i pompieri._ Gliel'hai detto tu.
 - else:
-    Nel fumo, un pompiere in divisa da sciopero si fa largo urlando « POMPIER ! ».
+    Nel fumo, un pompiere in divisa da sciopero si fa largo urlando «POMPIERE!».
 }
 Il pompiere non arriverà in tempo. Tu sì. # timer: 8
 * [Ti butti su Mehdi per strappargli Nassim.]
@@ -506,11 +506,11 @@ Il pompiere non arriverà in tempo. Tu sì. # timer: 8
     Lo colpisci alla schiena con tutto il peso. Mehdi cade su Nassim. Il casco di Mehdi colpisce la testa di Nassim sull'asfalto, un rumore che non dimenticherai.
     Poi le mani, gli scudi, i manganelli. Ti divincoli. Scappi. Lasci Nassim lì sotto.
     -> dopo
-* { fiducia >= 3 } [Ti togli il passamontagna. « Prends-moi. Lui, c'est un gosse. »]
+* { fiducia >= 3 } [Ti togli il passamontagna. «Prendi me. Lui è un ragazzino.»]
     ~ decisiva(3, "P", "Ti sei tolto la maschera e ti sei consegnato al posto di Nassim.")
     ~ maschera_tolta = true
     -> maschera
-* { fiducia < 3 } [Ti togli il passamontagna. « Prends-moi. Lui, c'est un gosse. » # locked: non ti fidi abbastanza di nessuno per mostrarti]
+* { fiducia < 3 } [Ti togli il passamontagna. «Prendi me. Lui è un ragazzino.» # locked: non ti fidi abbastanza di nessuno per mostrarti]
     -> dopo
 * [Scappi. # timeout]
     ~ decisiva(3, "F", "Sei scappato lasciando Nassim all'agente.")
@@ -523,11 +523,11 @@ Il pompiere non arriverà in tempo. Tu sì. # timer: 8
 Le dita sul bordo del passamontagna. Tutti i telefoni della piazza. Tutte le telecamere. La tua faccia. # mini: maschera
 * [ok # ok]
     Lo tiri via. La faccia nuda nel gas, gli occhi che bruciano. Mehdi ti vede. Tu vedi lui.
-    « Prends-moi. Lui, c'est un gosse. » { volantino_letto: Nella tasca del passamontagna, piegato in quattro, c'è ancora il volantino. _Ni oubli._ }
+    «Prendi me. Lui è un ragazzino.» { volantino_letto: Nella tasca del passamontagna, piegato in quattro, c'è ancora il volantino. _Né oblio._ }
     Mehdi esita un secondo che dura un anno. Poi molla il cappuccio di Nassim e prende il tuo braccio. Il pompiere arriva e si china su Nassim.
 * [ko # ko]
     Le dita non ti obbediscono. Il passamontagna resta a metà, sulla bocca, come un bavaglio.
-    Ti metti in ginocchio davanti a Mehdi lo stesso, le mani dietro la testa. « Prends-moi. » Mehdi ti guarda, guarda Nassim. Molla il ragazzo e ti prende. Il pompiere arriva e si china su Nassim.
+    Ti metti in ginocchio davanti a Mehdi lo stesso, le mani dietro la testa. «Prendi me.» Mehdi ti guarda, guarda Nassim. Molla il ragazzo e ti prende. Il pompiere arriva e si china su Nassim.
 - -> dopo
 
 = dopo
@@ -560,18 +560,18 @@ Alle 17:52 la piazza si svuota. Scarpe spaiate, cartelli, il volantino del 1961 
 - else:
     Ti hanno preso in rue des Pyrénées, cento metri dopo. Commissariato del 12°. Hai i polsi legati con le fascette.
 }
-_Garde à vue._ Partecipazione a un raggruppamento in vista di violenze. Lo dicono come si dice il meteo.
+_Garde à vue_: il fermo. Partecipazione a un raggruppamento in vista di violenze. Lo dicono come si dice il meteo.
 Ti chiedono i nomi. Lou, Karim, gli altri. Il gruppo Signal. Chi ha portato cosa.
 
 # incrocio: X12
 Sei di nuovo sul pavimento del furgone, a diciassette anni. La voce è un'altra, la domanda è la stessa.
-« Les noms, et tu rentres chez ta mère. »
+«I nomi, e torni dalla mamma.»
 * [Non dici niente.]
     ~ su(responsabilita, 1)
     Non dici niente. Per sei ore. Per dodici. Ti chiedono i nomi in tutti i modi possibili, gentili e no.
     Non dici niente. Non è coraggio. È solo che stavolta sai quanto pesa l'altra cosa.
 * [Dici solo il tuo nome. Due volte.]
-    « Sacha Lemaire. » « On sait. Les autres. » « Sacha Lemaire. »
+    «Sacha Lemaire.» «Lo sappiamo. Gli altri.» «Sacha Lemaire.»
     L'agente sospira e chiude il fascicolo. Fuori, al bancone, senti la voce della Garnier che chiede dei suoi alunni, uno per uno, come all'appello.
 - -> avvocata
 
@@ -579,7 +579,7 @@ Sei di nuovo sul pavimento del furgone, a diciassette anni. La voce è un'altra,
 # img: shared/c6_commissariato
 # ora: 22:30
 Alle 22:30 arriva l'avvocata del collettivo, Maître Benarbia, con un trench bagnato e un sacchetto di biscotti che le guardie le fanno lasciare all'ingresso.
-« T'as rien dit ? » « Rien. » « Bien. » Si siede. « Le petit Haddad a dit à sa sœur que tu l'as sorti de là. Elle va témoigner. »
+«Non hai detto niente?» «Niente.» «Bene.» Si siede. «Il piccolo Haddad ha detto a sua sorella che l'hai tirato fuori tu. Lei testimonierà.»
 Non sai cosa rispondere. Nessuno ha mai testimoniato per te. Hai sempre pensato che fosse il contrario: tu che non testimoni per nessuno.
 -> cella
 
@@ -587,14 +587,14 @@ Non sai cosa rispondere. Nessuno ha mai testimoniato per te. Hai sempre pensato 
 # img: sacha/07_cella
 # ora: 23:40
 # amb: notte
-Nel corridoio due agenti ridono. « Bismillah, c'est les ténèbres, hein ? » Uno imita l'accento. L'altro ride più forte.
-Un terzo non ride. Riconosci la sua voce: è Mehdi. Dice soltanto: « Le gamin. Il est à Avicenne. Poignet cassé. Il va bien. »
+Nel corridoio due agenti ridono. «Bismillah, è il buio, eh?» Uno imita l'accento. L'altro ride più forte.
+Un terzo non ride. Riconosci la sua voce: è Mehdi. Dice soltanto: «Il ragazzino. È ad Avicenne. Polso rotto. Sta bene.»
 Non sai se lo dice a te. Lo dice abbastanza forte perché tu lo senta.
 { tom == "difeso":
-    In tasca, nel telefono sequestrato, c'è ancora il messaggio di Tom: _merci_. Domani ti farà ridere che fosse proprio Tom l'unico a scriverti.
+    In tasca, nel telefono sequestrato, c'è ancora il messaggio di Tom: _grazie_. Domani ti farà ridere che fosse proprio Tom l'unico a scriverti.
 }
 { madre_risposto:
-    Pensi a tua madre che ha detto _fais attention aux petits_. Ci hai fatto attenzione. Una volta, almeno.
+    Pensi a tua madre che ha detto _stai attento ai piccoli_. Ci hai fatto attenzione. Una volta, almeno.
 }
 -> notte_pace
 
@@ -639,12 +639,12 @@ Poi il ragazzo a terra. { maschera_data == "data" || maschera_data == "vicino": 
 
 # img: sacha/02_telefono
 # chat: LYNX
-Lou: vous êtes où
-Karim: chez moi. sacha t'es vivant ?
-Karim: le petit Haddad est en réa
-Lou: c'est le feu qui a tout fait partir. c'était le plan de qui le feu ?
-* [« C'était mon plan. »]
-    Sacha: c'était mon plan
+Lou: dove siete
+Karim: a casa. sacha sei vivo?
+Karim: il piccolo Haddad è in rianimazione
+Lou: è il fuoco che ha fatto partire tutto. di chi era il piano del fuoco?
+* [«Era il mio piano.»]
+    Sacha: era il mio piano
     Lou: ok
     Nessun altro scrive. Il silenzio di una chat è il rumore più forte che conosci.
 * [Esci dal gruppo.]
