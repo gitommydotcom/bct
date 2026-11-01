@@ -4,6 +4,7 @@
 // Uno strato è { draw(ctx, p, t, rng, dyn), anim } — anim=true se cambia nel tempo.
 
 export const W = 320, H = 200;
+import { personaggio } from './characters.js';
 const g = (v) => `rgb(${v | 0},${v | 0},${v | 0})`;
 
 export function rng(seed) {
@@ -89,6 +90,20 @@ export function persona(ctx, x, y, h, v, o = {}) {
   }
 }
 
+// dai vecchi "tipi" di sagoma ai personaggi disegnati
+const TIPO_CHI = { pompiere: 'pompiere', casco: 'poliziotto', prof: 'odile', ragazza: 'ragazza', cappuccio: 'ragazzo', adulto: 'adulto', anziana: 'anziana', maschera: 'sacha', a_terra: 'nassim' };
+function figuraP(ctx, p, seed = 0) {
+  if (p.sagoma) { persona(ctx, p.x ?? 160, p.y ?? 180, p.h ?? 80, p.lum ?? 10, p); return; }
+  const chi = p.chi || TIPO_CHI[p.tipo] || 'adulto';
+  const buio = p.buio ?? (p.lum != null ? (p.lum <= 6 ? 0.55 : p.lum <= 15 ? 0.3 : 0.15) : 0.2);
+  const o = { ...p, buio, seed: p.seed ?? seed, posa: p.posa || ({ alto: 'alto', avanti: 'avanti' }[p.braccio]) };
+  if (p.tipo === 'a_terra') o.a_terra = true;
+  if (p.tipo === 'maschera') o.maschera = true;
+  if (p.tipo === 'cappuccio' && chi === 'ragazzo') o.cappuccio = true;
+  if (chi === 'poliziotto' || (p.tipo === 'casco')) { if (o.scudo === undefined) o.scudo = true; if (!o.visiera) o.visiera = 'giu'; }
+  personaggio(ctx, p.x ?? 160, p.y ?? 180, p.h ?? 80, chi, o);
+}
+
 const CARTELLI = ['BISMILLAH', '6-7', 'AURA -1000', 'UN PLAFOND', '35/CLASSE', 'NI OUBLI', 'PROFS AVEC NOUS', 'TÉNÈBRES', '93 DEBOUT', 'ON EST LÀ'];
 
 // ---------- strati ----------
@@ -172,17 +187,32 @@ export const STRATI = {
     if (p.acceso !== false) STRATI.luce.draw(ctx, { x, y: y - h + 3, r: p.r ?? 45, a: 0.35 }); } },
   folla: { draw(ctx, p, t, r) {
     const n = p.n ?? 24, y = p.y ?? 175, s = p.s ?? 1, v = p.lum ?? 10;
+    const tipi = p.tipi || ['adulto', 'ragazza', 'cappuccio', 'adulto'];
+    const persone = [];
     for (let i = 0; i < n; i++) {
       const x = (p.x0 ?? -10) + (i + r() * 0.8) * (((p.x1 ?? W + 10) - (p.x0 ?? -10)) / n);
-      const h = (45 + r() * 18) * s;
-      const tipi = p.tipi || ['adulto', 'ragazza', 'cappuccio', 'adulto'];
-      persona(ctx, x, y + r() * 6 * s, h, v + r() * (p.var ?? 12), { tipo: tipi[Math.floor(r() * tipi.length)], dir: r() < 0.5 ? -1 : 1,
+      const h = (45 + r() * 18) * s, yy = y + r() * 6 * s;
+      persone.push({ x, h, yy, tipo: tipi[Math.floor(r() * tipi.length)], dir: r() < 0.5 ? -1 : 1, var: r() * (p.var ?? 12),
         cartello: r() < (p.cartelli ?? 0.15) ? CARTELLI[Math.floor(r() * CARTELLI.length)] : null, braccio: r() < (p.braccia ?? 0.1) ? 'alto' : null });
-    } } },
+    }
+    persone.sort((a, b) => a.yy - b.yy); // i più vicini davanti
+    persone.forEach((q, i) => {
+      if (q.h >= 34 && p.dettaglio !== false) { // abbastanza grandi: personaggi veri, in controluce
+        const chi = { adulto: q.dir > 0 ? 'adulto' : 'adulta', ragazza: 'ragazza', cappuccio: 'ragazzo', maschera: 'sacha', casco: 'poliziotto', pompiere: 'pompiere' }[q.tipo] || 'adulto';
+        personaggio(ctx, q.x, q.yy, q.h, chi, { dir: q.dir, seed: i * 7 + (p.seed || 0), buio: p.buio ?? Math.max(0.25, 0.75 - v / 60), posa: q.braccio === 'alto' ? 'alto' : (q.cartello ? 'tiene' : 'giu'),
+          cartello: q.cartello, maschera: q.tipo === 'maschera', cappuccio: q.tipo === 'cappuccio' || q.tipo === 'maschera', occhialini: q.tipo === 'maschera' && i % 2 === 0,
+          scudo: q.tipo === 'casco' && p.scudi !== false, visiera: 'giu', sciopero: q.tipo === 'pompiere', casco: q.tipo === 'pompiere' ? i % 3 !== 0 : undefined, espr: p.espr });
+      } else persona(ctx, q.x, q.yy, q.h, v + q.var, { tipo: q.tipo, dir: q.dir, cartello: q.cartello, braccio: q.braccio });
+    });
+  } },
   cordone: { draw(ctx, p, t, r) { // linea di polizia
     const n = p.n ?? 9, y = p.y ?? 170, s = p.s ?? 1, x0 = p.x0 ?? 0, x1 = p.x1 ?? W;
-    for (let i = 0; i < n; i++) persona(ctx, x0 + (i + 0.5) * (x1 - x0) / n, y + r() * 2, 60 * s, p.lum ?? 15, { tipo: 'casco', dir: p.dir ?? -1, dettaglio: p.visiera ?? 150 }); } },
-  figura: { draw(ctx, p) { persona(ctx, p.x ?? 160, p.y ?? 180, p.h ?? 80, p.lum ?? 10, p); } },
+    for (let i = 0; i < n; i++) {
+      const x = x0 + (i + 0.5) * (x1 - x0) / n, h = 60 * s;
+      if (h >= 34) personaggio(ctx, x, y + r() * 2, h, 'poliziotto', { dir: p.dir ?? -1, seed: i, scudo: true, visiera: 'giu', buio: p.buio ?? Math.max(0.2, 0.6 - (p.lum ?? 15) / 60) });
+      else persona(ctx, x, y + r() * 2, h, p.lum ?? 15, { tipo: 'casco', dir: p.dir ?? -1, dettaglio: p.visiera ?? 150 });
+    } } },
+  figura: { draw(ctx, p, t, r, dyn) { figuraP(ctx, p); } },
   camion: { draw(ctx, p) { // camion dei pompieri di profilo
     const x = p.x ?? 60, y = p.y ?? 172, s = p.s ?? 1, v = p.lum ?? 60;
     rect(ctx, x, y - 50 * s, 120 * s, 42 * s, v); // cassone
@@ -234,10 +264,29 @@ export const STRATI = {
   scritta: { draw(ctx, p) { text(ctx, p.testo || '', p.x ?? 160, p.y ?? 90, p.lum ?? 230, p.size ?? 10, p.font ?? 'PressStart', p.align ?? 'center'); } },
   granata: { anim: true, draw(ctx, p, t) { const x = p.x ?? 160, y = p.y ?? 175; rect(ctx, x - 4, y - 5, 9, 5, 200);
     for (let i = 0; i < 6; i++) { const k = (t * 0.8 + i / 6) % 1; circle(ctx, x + Math.sin(i + t * 2) * 4 + k * 8, y - 6 - k * 30, 2 + k * 9, 190 - k * 90); } } },
-  mano: { draw(ctx, p) { const x = p.x ?? 120, y = p.y ?? 200, s = p.s ?? 1, v = p.lum ?? 15, d = p.dir ?? 1;
-    poly(ctx, [x - 14 * s, y, x - 8 * s, y - 60 * s, x + 8 * s, y - 64 * s, x + 14 * s, y], v);
-    for (let i = 0; i < 4; i++) rect(ctx, x - 8 * s + i * 4.5 * s, y - 84 * s + Math.abs(1.5 - i) * 4 * s, 3.5 * s, 24 * s, v);
-    rect(ctx, x + d * 10 * s, y - 70 * s, 4 * s, 14 * s, v); } },
+  mano: { draw(ctx, p) { // mano aperta che si tende verso l'alto (volantino, la mano tesa)
+    const x = p.x ?? 120, y = p.y ?? 200, s = p.s ?? 1, d = p.dir ?? 1, pelle = p.pelle ?? 165, man = p.manica ?? 35;
+    ctx.save(); ctx.translate(x, y); ctx.scale(s * d, s); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const ink = 'rgb(8,8,8)';
+    const sfum = (x0, x1, v) => { const gr = ctx.createLinearGradient(x0, 0, x1, 0); gr.addColorStop(0, g(v + 30)); gr.addColorStop(1, g(v - 40)); return gr; };
+    // manica
+    ctx.beginPath(); ctx.moveTo(-17, 4); ctx.lineTo(-13, -44); ctx.lineTo(13, -46); ctx.lineTo(17, 4); ctx.closePath();
+    ctx.fillStyle = sfum(-17, 17, man); ctx.fill(); ctx.lineWidth = 1.4; ctx.strokeStyle = ink; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-12, -40); ctx.lineTo(-11, -2); ctx.lineWidth = 1; ctx.strokeStyle = g(man + 60); ctx.stroke();
+    // dita (dietro il palmo), poi palmo e pollice
+    const dita = [[-8.5, -62, -11, -86], [-2.8, -64, -3.4, -93], [3, -64, 3.8, -91], [8.4, -61, 10.5, -82]];
+    dita.forEach(([x0, y0, x1, y1], i) => {
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.lineWidth = 7.2; ctx.strokeStyle = ink; ctx.stroke();
+      ctx.lineWidth = 5.4; ctx.strokeStyle = g(pelle + 10 - i * 8); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(x0 + (x1 - x0) * 0.55 - 2, y0 + (y1 - y0) * 0.55); ctx.lineTo(x0 + (x1 - x0) * 0.55 + 2, y0 + (y1 - y0) * 0.55); ctx.lineWidth = 0.7; ctx.strokeStyle = g(pelle - 55); ctx.stroke(); // nocca
+      ctx.beginPath(); ctx.moveTo(x1 - 1, y1 + 2.5); ctx.lineTo(x1 - 0.6, y1 + 0.5); ctx.lineWidth = 1; ctx.strokeStyle = g(pelle + 60); ctx.stroke(); // luce sull'unghia
+    });
+    ctx.beginPath(); ctx.moveTo(-12, -42); ctx.bezierCurveTo(-14, -56, -12, -66, -2, -67); ctx.bezierCurveTo(9, -67, 13, -58, 12.5, -44); ctx.closePath();
+    ctx.fillStyle = sfum(-13, 13, pelle); ctx.fill(); ctx.lineWidth = 1.4; ctx.strokeStyle = ink; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-6, -50); ctx.quadraticCurveTo(0, -46, 6, -53); ctx.lineWidth = 0.8; ctx.strokeStyle = g(pelle - 50); ctx.stroke(); // linea del palmo
+    ctx.beginPath(); ctx.moveTo(-11, -48); ctx.quadraticCurveTo(-19, -54, -21, -66); ctx.lineWidth = 7.4; ctx.strokeStyle = ink; ctx.stroke();
+    ctx.lineWidth = 5.6; ctx.strokeStyle = g(pelle + 18); ctx.stroke(); // pollice
+    ctx.restore(); } },
   visiera: { draw(ctx, p) { // il mondo visto da sotto il casco
     ctx.fillStyle = g(p.lum ?? 5); ctx.beginPath(); ctx.rect(0, 0, W, H); ctx.ellipse(W / 2, H / 2 + 10, W * 0.56, H * 0.52, 0, 0, Math.PI * 2, true); ctx.fill('evenodd');
     ctx.globalAlpha = 0.5; for (let i = 0; i < 7; i++) line(ctx, 40 + i * 37, 30 + (i % 3) * 20, 90 + i * 31, 60 + (i % 2) * 40, 200); ctx.globalAlpha = 1; } },
@@ -253,18 +302,20 @@ export const STRATI = {
     rect(ctx, x + 20, y + 24 + h * 0.5 - 14, 30, 10, 200);
     text(ctx, p.titolo || '', x + w / 2, y + 30 + h * 0.5, 15, 14, 'VT323', 'center');
     for (let i = 0; i < 5; i++) rect(ctx, x + 8, y + h * 0.5 + 50 + i * 7, w - 16 - (i % 2) * 30, 2, 120); } },
-  ritratto: { draw(ctx, p) { // primo piano per la selezione
-    const v = p.lum ?? 15, cx = p.x ?? 160, tipo = p.tipo;
-    const gr = ctx.createRadialGradient(cx, 80, 10, cx, 100, 170); gr.addColorStop(0, g(p.sfondo ?? 200)); gr.addColorStop(1, g(60)); ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H);
-    poly(ctx, [cx - 85, H, cx - 70, 150, cx - 30, 132, cx + 30, 132, cx + 70, 150, cx + 85, H], v); // spalle
-    rect(ctx, cx - 16, 112, 32, 26, v); // collo
-    circle(ctx, cx, 85, 36, v); // testa
-    const ch = 230;
-    if (tipo === 'ines') { circle(ctx, cx + 36, 70, 18, v); circle(ctx, cx + 48, 92, 12, v); poly(ctx, [cx - 30, 132, cx, 160, cx + 30, 132, cx + 34, 140, cx, 170, cx - 34, 140], 90); }
-    if (tipo === 'sacha') { poly(ctx, [cx - 48, 135, cx - 44, 60, cx, 38, cx + 44, 60, cx + 48, 135], v); rect(ctx, cx - 26, 76, 52, 10, ch); rect(ctx, cx - 14, 79, 8, 4, v); rect(ctx, cx + 6, 79, 8, 4, v); }
-    if (tipo === 'jerome') { poly(ctx, [cx - 46, 96, cx - 40, 56, cx, 40, cx + 40, 56, cx + 46, 96], v + 25); rect(ctx, cx - 38, 84, 76, 8, ch); rect(ctx, cx - 70, 172, 140, 6, ch); }
-    if (tipo === 'odile') { rect(ctx, cx - 26, 82, 22, 9, ch); rect(ctx, cx + 4, 82, 22, 9, ch); rect(ctx, cx - 4, 85, 8, 2, ch); poly(ctx, [cx - 40, 136, cx + 40, 136, cx + 30, 160, cx - 30, 160], 120); circle(ctx, cx, 60, 30, v); }
-    if (tipo === 'mehdi') { circle(ctx, cx, 80, 45, v + 20); rect(ctx, cx - 44, 64, 88, 22, 150); rect(ctx, cx - 44, 64, 88, 3, ch); rect(ctx, cx - 60, 150, 26, 50, v + 40); }
+  ritratto: { draw(ctx, p, t, r) { // primo piano per la selezione e le schede
+    const tipo = p.tipo, cx = p.x ?? 160;
+    const sf = { ines: [200, 90], sacha: [95, 20], jerome: [190, 60], odile: [215, 110], mehdi: [150, 30] }[tipo] || [200, 60];
+    const gr = ctx.createRadialGradient(cx - 30, 70, 10, cx, 100, 210); gr.addColorStop(0, g(sf[0])); gr.addColorStop(1, g(sf[1])); ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H);
+    // un dettaglio del suo mondo dietro di lui
+    if (tipo === 'ines') { for (let x = 4; x < W; x += 13) { rect(ctx, x, 0, 4, H, 70); poly(ctx, [x - 1, 0, x + 5, 0, x + 2, -6], 70); } rect(ctx, 0, 150, W, 5, 70); }
+    if (tipo === 'sacha') { const b = ctx.createRadialGradient(270, 200, 5, 270, 200, 170); b.addColorStop(0, 'rgba(255,255,255,.75)'); b.addColorStop(1, 'rgba(255,255,255,0)'); ctx.fillStyle = b; ctx.fillRect(0, 0, W, H); }
+    if (tipo === 'jerome') { for (let i = 0; i < 14; i++) circle(ctx, 30 + r() * 260, 40 + r() * 140, 14 + r() * 26, 150 + r() * 60); }
+    if (tipo === 'odile') { rect(ctx, 0, 20, W, 120, 45); rect(ctx, 0, 136, W, 6, 120); text(ctx, '17 OCTOBRE 1961', 160, 26, 210, 16, 'VT323', 'center'); }
+    if (tipo === 'mehdi') { for (let i = 0; i < 5; i++) rect(ctx, 0, 30 + i * 34, W, 14, 40 + (i % 2) * 30); const b = ctx.createRadialGradient(40, 40, 5, 40, 40, 140); b.addColorStop(0, 'rgba(255,255,255,.55)'); b.addColorStop(1, 'rgba(255,255,255,0)'); ctx.fillStyle = b; ctx.fillRect(0, 0, W, H); }
+    const o = { ines: { espr: 'neutro', luce: -1 }, sacha: { espr: 'rabbia', luce: 1 }, jerome: { espr: 'neutro', luce: -1, sciopero: true },
+      odile: { espr: 'neutro', luce: -1 }, mehdi: { espr: 'triste', luce: -1, visiera: 'su' } }[tipo] || {};
+    personaggio(ctx, cx + (p.dx ?? 0), p.piedi ?? 628, p.altezza ?? 560, tipo, { dir: p.dir ?? (tipo === 'sacha' || tipo === 'mehdi' ? -1 : 1), ...o, ...(p.o || {}) });
+    const v2 = ctx.createLinearGradient(0, 150, 0, H); v2.addColorStop(0, 'rgba(0,0,0,0)'); v2.addColorStop(1, 'rgba(0,0,0,.45)'); ctx.fillStyle = v2; ctx.fillRect(0, 150, W, 50);
   } },
 };
 

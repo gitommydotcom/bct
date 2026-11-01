@@ -27,7 +27,7 @@ Scorciatoia per gli sviluppatori: `http://localhost:8080/?gioca=ines` apre diret
 | `story/` | Le storie compilate (`npm run build`). Non modificarle a mano |
 | `lang/it.js` | Tutti i testi dell'interfaccia (menu, opzioni, schede dei personaggi) |
 | `art/` | Le illustrazioni definitive (vedi sotto). Se un file manca, il gioco usa il segnaposto |
-| `js/` | Il motore: `engine.js` (Ink, pagine, scelte), `render.js` (palette e dither), `scenes.js` + `scenedefs.js` (segnaposto), `audio.js`, `mini.js` |
+| `js/` | Il motore: `engine.js` (Ink, pagine, scelte), `render.js` (palette e dither), `scenes.js` + `scenedefs.js` (segnaposto), `characters.js` (i personaggi disegnati: sagome, vestiti, espressioni), `audio.js`, `mini.js` |
 | `tools/` | Compilatore, verifica, convertitore di immagini, galleria, server locale |
 
 ## Modificare i testi
@@ -38,6 +38,8 @@ Scorciatoia per gli sviluppatori: `http://localhost:8080/?gioca=ines` apre diret
 3. `npm run verify` gioca migliaia di partite a caso e segnala vicoli ciechi, finali irraggiungibili, scelte mai prese, variabili inutili, immagini mancanti e pagine troppo lunghe.
 
 I comandi tra `#` (immagine, ora, effetti, suoni, chat, timer…) sono spiegati in cima a `ink/comune.ink`.
+
+**Lingua.** Dialoghi e chat si scrivono in italiano (anche quando i personaggi, nella finzione, parlano francese). Il francese resta solo per slogan, scritte e citazioni, sempre con la traduzione: `‹ON EST PAS VOS ENNEMIS=non siamo vostri nemici›` mostra il testo francese con la traduzione accanto.
 
 ## Sostituire le illustrazioni
 

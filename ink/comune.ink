@@ -20,6 +20,9 @@
 //   # incrocio: X02           incrocio con altri personaggi (mappa della giornata)
 //   # lavagna: parola         scrive sulla lavagna della scena
 //   _testo_                   corsivo
+//   ‹francese=italiano›       testo francese con la traduzione accanto (solo per slogan, scritte, citazioni:
+//                             i dialoghi si scrivono in italiano)
+//   Nelle chat i messaggi sono "Nome: testo"; le altre righe diventano note di sistema.
 // =====================================================================
 
 VAR personaggio = ""

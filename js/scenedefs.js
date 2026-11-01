@@ -39,17 +39,17 @@ export const SCENE = {
     ['fuoco', { x: 160, y: 156, w: 44, h: 46 }], ['folla', { y: 200, n: 9, s: 1.2, lum: 0, var: 6, braccia: 0.6, cartelli: 0 }]] },
   'shared/c1_camion': { desc: '6:45. Il camion dei pompieri SDIS 77 si ferma a venti metri dalla grata. Due pompieri scendono, uno con il casco in mano. Il fumo del cassonetto a destra.', strati: [
     ['cielo', { a: 25, b: 85 }], ['cite', { y: 160, lum: 30, finestre: 0.15, flum: 150 }], ['suolo', { y: 160, a: 35, b: 60 }],
-    ['camion', { x: 20, y: 178, s: 1, lum: 70, lampeggiante: 230 }], ['figura', { x: 210, y: 182, h: 70, lum: 15, tipo: 'pompiere' }], ['figura', { x: 238, y: 180, h: 64, lum: 18, tipo: 'pompiere' }],
+    ['camion', { x: 20, y: 178, s: 1, lum: 70, lampeggiante: 230 }], ['figura', { x: 204, y: 184, h: 76, chi: 'jerome', casco: false, posa: 'tiene', espr: 'stanco', buio: 0.25 }], ['figura', { x: 240, y: 182, h: 70, chi: 'pompiere', seed: 1, dir: -1, espr: 'paura', buio: 0.3 }],
     ['colonna', { x: 290, y: 160, h: 150, r: 30, lum: 100, vento: -20 }], ['scritta', { testo: 'SDIS 77', x: 80, y: 135, size: 8, lum: 230 }]] },
   'shared/c1_pompiere': { desc: 'Primo piano del pompiere più anziano (Jérôme): casco con un graffio bianco nuovo, sguardo stanco. Dietro, sfocato, il camion col parabrezza stellato.', strati: [
     ['cielo', { a: 30, b: 90 }], ['camion', { x: -40, y: 170, s: 1.2, lum: 60, crepa: true }], ['vignetta', { a: 0.5 }],
-    ['figura', { x: 200, y: 230, h: 190, lum: 12, tipo: 'pompiere', dettaglio: 200 }], ['scritta', { testo: '/', x: 186, y: 52, size: 12, lum: 255, font: 'VT323' }]] },
+    ['figura', { x: 196, y: 590, h: 545, chi: 'jerome', espr: 'stanco', luce: 1, buio: 0.08 }]] },
   'shared/c1_sgombero': { desc: '7:10. Tre furgoni della polizia, luci blu che girano sui muri. Il cordone avanza verso i ragazzi seduti davanti alla grata. Il commissario con la fascia tricolore e il megafono.', strati: [
     ['cielo', { a: 30, b: 80 }], ['grata', { y: 160, h: 55, muro: 50, insegna: false }], ['suolo', { y: 160, a: 30, b: 55 }],
     ['furgone', { x: 200, y: 172, lum: 35 }], ['cordone', { y: 192, n: 5, x0: 150, x1: 320, s: 1.1 }], ['folla', { y: 200, n: 8, s: 0.6, lum: 5, x0: 0, x1: 150, cartelli: 0.2 }]], fx: ['lampeggianti'] },
   'shared/c1_prof_visiera': { desc: '7:35. La prof Garnier, sciarpa verde, davanti a un agente con il casco abbassato. Lei lo guarda dritto: «Mehdi?». Lui non risponde. Inquadratura di tre quarti, i due volti vicini.', strati: [
     ['cielo', { a: 40, b: 100 }], ['grata', { y: 150, h: 50, muro: 60, insegna: false }], ['vignetta', { a: 0.4 }],
-    ['figura', { x: 105, y: 230, h: 175, lum: 20, tipo: 'prof', dir: 1 }], ['figura', { x: 225, y: 235, h: 185, lum: 10, tipo: 'casco', dir: -1, dettaglio: 160, scudo: false }]] },
+    ['figura', { x: 98, y: 470, h: 440, chi: 'odile', dir: 1, espr: 'neutro', buio: 0.08 }], ['figura', { x: 238, y: 486, h: 470, chi: 'mehdi', dir: -1, visiera: 'giu', luce: 1, buio: 0.15 }]] },
   'shared/c1_grata_vuota': { desc: '7:45. La grata libera, il cassonetto annerito rovesciato, striscioni calpestati sull\'asfalto bagnato. Luce grigia del mattino.', strati: [
     ['cielo', { a: 90, b: 160 }], ['grata', { y: 165, h: 62, muro: 90, finestre: 60, lum: 30 }], ['suolo', { y: 165, a: 60, b: 100 }],
     ['cassonetto', { x: 120, y: 185, lum: 20, rovesciato: true }], ['pieno', { x: 170, y: 182, w: 70, h: 8, lum: 200 }], ['pieno', { x: 60, y: 190, w: 40, h: 5, lum: 180 }]] },
@@ -57,25 +57,25 @@ export const SCENE = {
   // ---------------- capitolo 3: mezzogiorno ----------------
   'shared/c3_assemblea': { desc: 'Mezzogiorno. Il cortiletto dietro la palestra (tetto puntellato con travi). Duecento ragazzi, cartelli, una cassa bluetooth. Sacha in piedi sul muretto parla, braccio alzato.', strati: [
     giorno(140, 210), ['pieno', { x: 0, y: 40, w: 320, h: 110, lum: 110 }], ['sbarre', { x0: 30, x1: 300, y: 30, h: 30, passo: 40, spessore: 3, lum: 60 }],
-    ['pieno', { x: 0, y: 140, w: 320, h: 60, lum: 140 }], ['pieno', { x: 100, y: 128, w: 120, h: 12, lum: 80 }], ['figura', { x: 160, y: 128, h: 70, lum: 10, tipo: 'cappuccio', braccio: 'alto' }],
+    ['pieno', { x: 0, y: 140, w: 320, h: 60, lum: 140 }], ['pieno', { x: 100, y: 128, w: 120, h: 12, lum: 80 }], ['figura', { x: 160, y: 129, h: 76, chi: 'sacha', cappuccio: false, posa: 'alto', espr: 'urlo', buio: 0.15 }],
     ['folla', { y: 205, n: 22, s: 1, lum: 15, cartelli: 0.3, braccia: 0.15 }]] },
   'shared/c3_metro': { desc: '13:10. Linea 5, un vagone pieno di liceali con i cartelli. In fondo, Sacha passa un passamontagna a Nassim. Luci della galleria che scorrono nei finestrini.', strati: [
     ['metro', { lum: 80 }], ['folla', { y: 210, n: 8, s: 1.8, lum: 15, cartelli: 0.35, var: 20 }]] },
 
   // ---------------- capitolo 4: pomeriggio ----------------
   'shared/c4_republique': { desc: '14:20. Place de la République: la statua della Marianne coperta di ragazzi, una folla enorme di gilet gialli, sindacati, infermiere, nonni. Bandiere e cartelli.', strati: [
-    giorno(150, 220), ['haussmann', { top: 70, y: 160, lum: 110, accese: 0 }], ['pieno', { x: 150, y: 40, w: 20, h: 120, lum: 60 }], ['figura', { x: 160, y: 42, h: 34, lum: 60 }],
+    giorno(150, 220), ['haussmann', { top: 70, y: 160, lum: 110, accese: 0 }], ['pieno', { x: 150, y: 40, w: 20, h: 120, lum: 60 }], ['figura', { x: 160, y: 42, h: 34, lum: 60, sagoma: true }],
     ['folla', { y: 120, n: 6, s: 0.4, lum: 30, x0: 140, x1: 180 }], ['suolo', { y: 160, a: 120, b: 150 }],
     ['folla', { y: 210, n: 30, s: 0.95, lum: 20, cartelli: 0.35, var: 30 }], ['striscione', { x: 40, y: 140, w: 120, h: 18, testo: 'PROFS AVEC VOUS', size: 7 }]] },
   'shared/c4_applausi': { desc: '15:20. Boulevard Voltaire. I pompieri in sciopero sfilano in divisa con i bracciali POMPIERS EN GRÈVE; i liceali intorno applaudono a braccia alzate.', strati: [
     giorno(140, 210), ['haussmann', { top: 30, y: 165, lum: 100, x0: 0, x1: 120 }], ['haussmann', { top: 40, y: 165, lum: 90, x0: 200, x1: 320 }], ['suolo', { y: 165, a: 110, b: 150, linee: true, lineeLum: 130 }],
     ['folla', { y: 195, n: 18, s: 0.9, lum: 30, braccia: 0.7, cartelli: 0.1, var: 20 }],
-    ['figura', { x: 120, y: 205, h: 95, lum: 10, tipo: 'pompiere' }], ['figura', { x: 170, y: 208, h: 100, lum: 10, tipo: 'pompiere', braccio: 'alto' }], ['figura', { x: 220, y: 204, h: 92, lum: 10, tipo: 'pompiere' }],
+    ['figura', { x: 118, y: 206, h: 96, chi: 'pompiere', seed: 2, sciopero: true, casco: false, espr: 'sorriso', buio: 0.15 }], ['figura', { x: 170, y: 210, h: 104, chi: 'jerome', posa: 'alto', sciopero: true, espr: 'sorriso', buio: 0.1 }], ['figura', { x: 222, y: 205, h: 92, chi: 'pompiere', seed: 1, sciopero: true, dir: -1, buio: 0.15 }],
     ['striscione', { x: 95, y: 92, w: 150, h: 18, testo: 'POMPIERS EN GRÈVE', size: 7 }]] },
   'shared/c4_volantino': { desc: '15:40. Una mano tende un volantino fotocopiato: «17 OCTOBRE 1961 — 17 OCTOBRE 2026». Dietro, sfocato, il cordone di polizia ai lati del corteo.', strati: [
     giorno(100, 170), ['cordone', { y: 160, n: 8, s: 0.8, lum: 40 }], ['vignetta', { a: 0.5 }],
     ['pieno', { x: 95, y: 30, w: 130, h: 90, lum: 235 }], ['scritta', { testo: '17 OCTOBRE 1961', y: 45, size: 8, lum: 20 }], ['scritta', { testo: '—', y: 62, size: 8, lum: 20 }], ['scritta', { testo: '17 OCTOBRE 2026', y: 80, size: 8, lum: 20 }],
-    ['scritta', { testo: 'ni oubli ni pardon', y: 100, size: 12, lum: 60, font: 'VT323' }], ['mano', { x: 160, y: 205, s: 1.3, lum: 25 }]] },
+    ['scritta', { testo: 'ni oubli ni pardon', y: 100, size: 12, lum: 60, font: 'VT323' }], ['mano', { x: 160, y: 238, s: 1.3, lum: 25 }]] },
   'shared/c4_testa': { desc: '16:50. La testa del corteo: k-way neri, ombrelli aperti senza pioggia, cappucci. Tra loro, piccolo, il cappuccio di Nassim che si allontana.', strati: [
     ['cielo', { a: 90, b: 150 }], ['haussmann', { top: 40, y: 165, lum: 70 }], ['suolo', { y: 165, a: 80, b: 110 }],
     ['folla', { y: 200, n: 16, s: 1.15, lum: 5, var: 6, tipi: ['maschera', 'cappuccio', 'maschera'], cartelli: 0 }]], fx: ['fumo'] },
@@ -96,12 +96,12 @@ export const SCENE = {
     ['pieno', { x: 30, y: 180, w: 50, h: 10, lum: 220 }], ['cordone', { y: 230, n: 5, s: 2.2, lum: 10, visiera: 190 }]], fx: ['gas'] },
   'shared/c5_granata': { desc: '17:42. Inquadratura bassa, ad altezza di scarpa: una granata che rotola tra le scarpe e fuma. Sullo sfondo, accanto al cassonetto in fiamme, un ragazzo a terra (Nassim).', strati: [
     ['cielo', { a: 50, b: 90 }], ['suolo', { y: 110, a: 60, b: 110 }], ['cassonetto', { x: 270, y: 130, s: 0.7, lum: 20 }], ['fuoco', { x: 270, y: 113, w: 26, h: 26 }],
-    ['figura', { x: 210, y: 140, h: 60, lum: 10, tipo: 'a_terra' }], ['granata', { x: 140, y: 175 }],
+    ['figura', { x: 210, y: 142, h: 64, tipo: 'a_terra', chi: 'nassim', cappuccio: true, espr: 'occhi_chiusi', buio: 0.35 }], ['granata', { x: 140, y: 175 }],
     ['pieno', { x: 10, y: 160, w: 40, h: 24, lum: 15 }], ['pieno', { x: 60, y: 168, w: 34, h: 18, lum: 12 }], ['pieno', { x: 250, y: 172, w: 50, h: 22, lum: 10 }]], fx: ['gas'] },
   'shared/c5_mano': { desc: '17:44. LA MANO TESA. Un agente (Mehdi) trascina Nassim per il cappuccio lontano dal fuoco; in primo piano una mano tesa verso di lui, nel fumo. Sullo sfondo un pompiere in divisa si fa largo.', strati: [
     ['cielo', { a: 60, b: 100 }], ['cassonetto', { x: 60, y: 160, s: 0.9, lum: 20 }], ['fuoco', { x: 60, y: 138, w: 34, h: 36 }],
-    ['figura', { x: 280, y: 170, h: 80, lum: 20, tipo: 'pompiere', braccio: 'alto' }], ['figura', { x: 200, y: 190, h: 130, lum: 10, tipo: 'casco', dir: -1, scudo: false, braccio: 'avanti' }],
-    ['figura', { x: 160, y: 195, h: 80, lum: 15, tipo: 'a_terra', dir: -1 }], ['mano', { x: 70, y: 210, s: 1.2, lum: 0, dir: 1 }]], fx: ['fumo'] },
+    ['figura', { x: 282, y: 172, h: 84, chi: 'jerome', posa: 'alto', espr: 'urlo', sciopero: true, dir: -1, buio: 0.35 }], ['figura', { x: 214, y: 196, h: 150, chi: 'mehdi', dir: -1, posa: 'avanti', visiera: 'giu', buio: 0.25 }],
+    ['figura', { x: 150, y: 186, h: 84, tipo: 'a_terra', chi: 'nassim', cappuccio: true, dir: 1, espr: 'paura', buio: 0.2 }], ['mano', { x: 70, y: 210, s: 1.2, lum: 0, dir: 1 }]], fx: ['fumo'] },
   'shared/c5_vuota': { desc: '17:52. La piazza che si svuota. Scarpe spaiate, cartelli a terra, un volantino del 1961 calpestato. Il cassonetto nero fuma ancora sotto la finestra del primo piano.', strati: [
     ['cielo', { a: 50, b: 100 }], ['facciata', { x: 190, w: 130, lum: 45, riga: 3, col: 0, persona: false }], ['suolo', { y: 168, a: 50, b: 85 }],
     ['cassonetto', { x: 250, y: 185, lum: 15, rovesciato: true }], ['colonna', { x: 250, y: 175, h: 120, r: 18, lum: 70 }],
@@ -110,10 +110,10 @@ export const SCENE = {
   // ---------------- capitolo 6-7: sera e notte (condivise) ----------------
   'shared/c6_avicenne': { desc: 'Sera. Il corridoio dell\'ospedale Avicenne a Bobigny: sedie arancioni, una macchinetta, neon. In fondo, seduto, un pompiere con la divisa sporca di fumo.', strati: [
     ['corridoio', { lum: 110 }], ['sedie', { x: 20, y: 160, n: 3, lum: 160 }], ['pieno', { x: 270, y: 80, w: 34, h: 90, lum: 60 }], ['pieno', { x: 276, y: 90, w: 22, h: 30, lum: 200 }],
-    ['figura', { x: 160, y: 128, h: 44, lum: 20, tipo: 'pompiere' }]] },
+    ['figura', { x: 160, y: 134, h: 46, chi: 'jerome', casco: false, seduto: true, espr: 'stanco', buio: 0.1 }]] },
   'shared/c6_commissariato': { desc: 'Sera. Commissariato di Bobigny: una panca di metallo, un neon che ronza, il bancone in fondo con un agente. Pareti verde ospedale.', strati: [
     ['stanza', { lum: 90, pav: 50, y: 150 }], ['luce', { x: 160, y: 0, r: 140, a: 0.4 }], ['pieno', { x: 180, y: 100, w: 140, h: 50, lum: 60 }],
-    ['figura', { x: 250, y: 102, h: 40, lum: 20, tipo: 'casco', scudo: false }], ['pieno', { x: 20, y: 150, w: 120, h: 8, lum: 140 }], ['figura', { x: 70, y: 152, h: 60, lum: 15, tipo: 'ragazza' }]] },
+    ['figura', { x: 250, y: 104, h: 42, chi: 'poliziotto', casco: false, scudo: false, seed: 2, dir: -1, buio: 0.2 }], ['pieno', { x: 20, y: 150, w: 120, h: 8, lum: 140 }], ['figura', { x: 66, y: 168, h: 66, chi: 'ragazza', seed: 1, seduto: true, espr: 'triste', buio: 0.15 }]] },
   'shared/c7_grata_scritta': { desc: 'Il giorno dopo. La grata del Dumont ancora nera di fumo; sopra, a spray bianco, a lettere enormi: ON EST PAS VOS ENNEMIS.', strati: [
     ['cielo', { a: 120, b: 190 }], ['grata', { y: 170, h: 80, muro: 100, finestre: 70, lum: 25 }], ['suolo', { y: 170, a: 90, b: 130 }],
     ['scritta', { testo: 'ON EST PAS', y: 110, size: 14, lum: 255 }], ['scritta', { testo: 'VOS ENNEMIS', y: 132, size: 14, lum: 255 }]] },
@@ -128,10 +128,10 @@ export const SCENE = {
     ['pieno', { lum: 10 }], ['telefono', { x: 160, y: 100, s: 1.1 }], ['vignetta', { a: 0.6 }]] },
   'ines/03_sasso': { desc: 'Inès, 6:48. In primo piano di spalle un ragazzo col cappuccio (Nassim) con il braccio alzato; il parabrezza del camion che si stella. Il momento prima e dopo, insieme.', strati: [
     ['cielo', { a: 30, b: 80 }], ['camion', { x: -110, y: 175, s: 1.7, lum: 70, crepa: true }], ['vignetta', { a: 0.4 }],
-    ['figura', { x: 250, y: 240, h: 200, lum: 5, tipo: 'cappuccio', braccio: 'alto', dir: -1 }]] },
+    ['figura', { x: 246, y: 262, h: 236, chi: 'nassim', cappuccio: true, posa: 'alto', dir: -1, espr: 'sorriso', buio: 0.4 }]] },
   'ines/04_camera': { desc: 'Inès, 9:10. Il soggiorno di giorno: Nassim addormentato sul divano con le scarpe ai piedi. Luce grigia dalla finestra.', strati: [
     ['stanza', { lum: 120, pav: 80, y: 150 }], ['finestra', { x: 30, y: 20, w: 80, h: 90, lum: 210 }], ['pieno', { x: 120, y: 120, w: 170, h: 40, lum: 70 }], ['pieno', { x: 120, y: 100, w: 170, h: 22, lum: 60 }],
-    ['figura', { x: 200, y: 128, h: 110, lum: 25, tipo: 'a_terra' }]] },
+    ['figura', { x: 196, y: 132, h: 112, tipo: 'a_terra', chi: 'nassim', posa: 'giu', espr: 'occhi_chiusi', buio: 0.1 }]] },
   'ines/05_cucina_giorno': { desc: 'Inès, 10:30. La stessa cucina di giorno, il telefono sul tavolo che vibra: «Maman».', strati: [
     ['stanza', { lum: 150, pav: 100, y: 150 }], ['finestra', { x: 190, y: 30, w: 90, h: 80, lum: 230 }], ['tavolo', { x: 50, y: 140, w: 130, tazza: true }],
     ['pieno', { x: 100, y: 132, w: 26, h: 8, lum: 30 }], ['frigo', { x: 6, y: 50, lum: 190 }], ['scritta', { testo: 'MAMAN', x: 113, y: 120, size: 6, lum: 40 }]] },
@@ -141,50 +141,50 @@ export const SCENE = {
     ['scritta', { testo: '(et le plafond aussi)', y: 122, size: 16, lum: 40, font: 'VT323' }], ['mano', { x: 270, y: 215, s: 0.9, lum: 30 }]] },
   'ines/07_microfono': { desc: 'Inès, 15:35. Una giornalista radio tende il microfono verso Inès (soggettiva). Dietro il corteo sul boulevard Voltaire.', strati: [
     giorno(130, 200), ['haussmann', { top: 30, y: 160, lum: 110 }], ['folla', { y: 190, n: 14, s: 0.8, lum: 50, cartelli: 0.3 }], ['vignetta', { a: 0.3 }],
-    ['figura', { x: 240, y: 240, h: 200, lum: 15, tipo: 'ragazza', braccio: 'avanti', dir: -1 }], ['pieno', { x: 150, y: 120, w: 14, h: 22, lum: 30 }], ['pieno', { x: 147, y: 112, w: 20, h: 12, lum: 60 }]] },
+    ['figura', { x: 246, y: 300, h: 300, chi: 'adulta', seed: 2, posa: 'avanti', dir: -1, espr: 'sorriso', buio: 0.1 }], ['pieno', { x: 150, y: 120, w: 14, h: 22, lum: 30 }], ['pieno', { x: 147, y: 112, w: 20, h: 12, lum: 60 }]] },
   'ines/08_mamma': { desc: 'Inès, 22:30. La mamma in camice da aiuto-infermiera che arriva di corsa in fondo al corridoio di Avicenne.', strati: [
-    ['corridoio', { lum: 100 }], ['figura', { x: 160, y: 190, h: 150, lum: 210, tipo: 'adulto', dettaglio: 255 }], ['vignetta', { a: 0.4 }]] },
+    ['corridoio', { lum: 100 }], ['figura', { x: 160, y: 192, h: 150, chi: 'infermiera', posa: 'corsa', espr: 'paura', buio: 0 }], ['vignetta', { a: 0.4 }]] },
   'ines/09_camera_notte': { desc: 'Inès, 2:40. La cameretta al buio: Nassim dorme con il gesso sul cuscino; il telefono di Inès acceso sul letto accanto.', strati: [
     ['stanza', { lum: 25, pav: 15, y: 150 }], ['finestra', { x: 200, y: 20, w: 80, h: 70, lum: 15 }], ['cite', { x0: 200, x1: 280, y: 90, lum: 35, finestre: 0.2, flum: 120, hmin: 20, hvar: 20 }],
     ['letto', { x: 20, y: 160, persona: true, lum: 60 }], ['pieno', { x: 44, y: 132, w: 14, h: 8, lum: 230 }], ['luce', { x: 260, y: 150, r: 50, a: 0.4 }], ['pieno', { x: 250, y: 146, w: 18, h: 10, lum: 230 }]] },
   'ines/10_telefono_commissariato': { desc: 'Inès, 23:00. Il telefono a muro del commissariato, la cornetta in mano, un agente che guarda l\'orologio.', strati: [
     ['stanza', { lum: 80, pav: 45, y: 160 }], ['luce', { x: 100, y: 0, r: 120, a: 0.35 }], ['pieno', { x: 110, y: 60, w: 40, h: 60, lum: 30 }], ['pieno', { x: 118, y: 70, w: 24, h: 36, lum: 160 }],
-    ['figura', { x: 170, y: 200, h: 140, lum: 15, tipo: 'ragazza', braccio: 'alto', dir: -1 }], ['figura', { x: 280, y: 190, h: 120, lum: 25, tipo: 'adulto' }]] },
+    ['figura', { x: 168, y: 214, h: 160, chi: 'ines', posa: 'orecchio', dir: -1, espr: 'triste', buio: 0.1 }], ['figura', { x: 284, y: 196, h: 124, chi: 'poliziotto', casco: false, scudo: false, seed: 1, dir: -1, buio: 0.3 }]] },
   'ines/11_cella': { desc: 'Inès, 3:10. La cella di garde à vue: piastrelle, una panca, una luce al neon dietro una grata, le sbarre in primo piano.', strati: [
     ['stanza', { lum: 50, pav: 30, y: 150 }], ['luce', { x: 160, y: 10, r: 90, a: 0.4 }], ['pieno', { x: 60, y: 140, w: 200, h: 10, lum: 80 }],
-    ['figura', { x: 160, y: 150, h: 60, lum: 10, tipo: 'ragazza' }], ['sbarre', { x0: 4, x1: 320, passo: 30, spessore: 6, lum: 5 }]] },
+    ['figura', { x: 150, y: 250, h: 236, chi: 'ines', seduto: true, posa: 'braccia_conserte', espr: 'triste', luce: 1, buio: 0.2 }], ['sbarre', { x0: 4, x1: 320, passo: 30, spessore: 6, lum: 5 }]] },
   // ---------------- SACHA ----------------
   'sacha/01_magazzino': { desc: 'Sacha, 4:50. Il parcheggio del magazzino di Aulnay sotto i lampioni al sodio: operai in gilet catarifrangente che escono dal turno di notte. Sacha di spalle si toglie il gilet.', strati: [
     notte(5, 35), ['pieno', { x: 0, y: 40, w: 320, h: 110, lum: 50 }], ['pieno', { x: 120, y: 90, w: 80, h: 60, lum: 160 }], ['scritta', { testo: 'QUAI 14', x: 160, y: 50, size: 8, lum: 200 }],
     ['suolo', { y: 150, a: 30, b: 55 }], ['lampione', { x: 40, y: 175, h: 120, r: 60 }], ['lampione', { x: 280, y: 175, h: 120, r: 60 }],
-    ['folla', { y: 185, n: 10, s: 0.6, lum: 20, x0: 60, x1: 260, cartelli: 0 }], ['figura', { x: 160, y: 215, h: 150, lum: 5, tipo: 'cappuccio' }]] },
+    ['folla', { y: 185, n: 10, s: 0.6, lum: 20, x0: 60, x1: 260, cartelli: 0 }], ['figura', { x: 160, y: 236, h: 180, chi: 'sacha', cappuccio: false, espr: 'stanco', luce: 1, buio: 0.3 }]] },
   'sacha/02_telefono': { desc: 'Sacha: il telefono in una mano guantata nera, lo schermo della chat Signal. (Usata per le schermate di chat.)', strati: [
     ['pieno', { lum: 8 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 5 }], ['vignetta', { a: 0.7 }]] },
   'sacha/03_appartamento': { desc: 'Sacha, 9:30. L\'appartamento di Lou a Pantin: ombrelli neri contro il muro, una scatola di occhialini da piscina, tazze di caffè solubile, tre ragazzi sui telefoni.', strati: [
     ['stanza', { lum: 70, pav: 40, y: 150 }], ['finestra', { x: 220, y: 25, w: 70, h: 75, lum: 160 }], ['tavolo', { x: 60, y: 140, w: 150, tazza: true }],
     ['pieno', { x: 20, y: 70, w: 4, h: 80, lum: 10 }], ['pieno', { x: 30, y: 74, w: 4, h: 76, lum: 10 }], ['pieno', { x: 40, y: 72, w: 4, h: 78, lum: 10 }],
-    ['figura', { x: 120, y: 200, h: 100, lum: 15, tipo: 'cappuccio' }], ['figura', { x: 190, y: 205, h: 95, lum: 18, tipo: 'ragazza' }], ['luce', { x: 150, y: 130, r: 30, a: 0.5 }]] },
+    ['figura', { x: 118, y: 204, h: 104, chi: 'sacha', cappuccio: false, posa: 'telefono', buio: 0.15 }], ['figura', { x: 194, y: 206, h: 96, chi: 'ragazza', seed: 1, dir: -1, posa: 'tiene', espr: 'paura', buio: 0.15 }], ['luce', { x: 150, y: 130, r: 30, a: 0.5 }]] },
   'sacha/04_furgone': { desc: 'Sacha, ricordo: a 17 anni, la guancia schiacciata sul pavimento di gomma di un furgone di polizia, un ginocchio sulla schiena, gli stivali in primo piano.', contrasto: 1.3, strati: [
     ['pieno', { lum: 20 }], ['pieno', { x: 0, y: 130, w: 320, h: 70, lum: 45 }], ['sbarre', { x0: 0, x1: 320, y: 130, h: 70, passo: 12, spessore: 2, lum: 30 }],
-    ['figura', { x: 160, y: 150, h: 160, lum: 5, tipo: 'a_terra' }], ['pieno', { x: 230, y: 40, w: 40, h: 110, lum: 10 }], ['pieno', { x: 220, y: 140, w: 60, h: 14, lum: 8 }], ['vignetta', { a: 0.8 }]] },
+    ['luce', { x: 130, y: 150, r: 130, a: 0.6 }], ['figura', { x: 150, y: 168, h: 190, tipo: 'a_terra', chi: 'sacha', cappuccio: false, espr: 'paura', dir: -1, buio: 0.1 }], ['pieno', { x: 230, y: 40, w: 40, h: 110, lum: 10 }], ['pieno', { x: 220, y: 140, w: 60, h: 14, lum: 8 }], ['vignetta', { a: 0.45 }]] },
   'sacha/05_vetrina': { desc: 'Sacha, 15:55. La vetrina di una banca all\'angolo con la rue de la Roquette che riflette la testa del corteo vestita di nero; un ragazzino con un pezzo di pavé in mano.', strati: [
     ['pieno', { lum: 90 }], ['pieno', { x: 20, y: 20, w: 280, h: 150, lum: 140 }], ['scritta', { testo: 'BANQUE', y: 30, size: 10, lum: 40 }],
-    ['folla', { y: 170, n: 10, s: 1, lum: 70, tipi: ['maschera', 'cappuccio'], cartelli: 0 }], ['figura', { x: 240, y: 215, h: 150, lum: 5, tipo: 'cappuccio', braccio: 'alto' }]] },
+    ['folla', { y: 170, n: 10, s: 1, lum: 70, tipi: ['maschera', 'cappuccio'], cartelli: 0 }], ['figura', { x: 240, y: 222, h: 156, chi: 'ragazzo', seed: 3, cappuccio: true, posa: 'alto', espr: 'rabbia', buio: 0.35 }]] },
   'sacha/06_volantino_terra': { desc: 'Sacha, 16:30. Il volantino del 1961 per terra, calpestato da un\'impronta di scarpa, sull\'asfalto del boulevard. Una mano guantata lo raccoglie.', strati: [
     ['pieno', { lum: 60 }], ['pieno', { x: 70, y: 40, w: 180, h: 110, lum: 220 }], ['scritta', { testo: '17 OCTOBRE 1961', y: 60, size: 8, lum: 30 }], ['scritta', { testo: '17 OCTOBRE 2026', y: 92, size: 8, lum: 30 }],
     ['scritta', { testo: 'ni oubli, ni pardon', y: 118, size: 14, lum: 80, font: 'VT323' }], ['pieno', { x: 130, y: 60, w: 50, h: 80, lum: 120 }], ['mano', { x: 260, y: 210, s: 1, lum: 5 }]] },
   'sacha/07_cella': { desc: 'Sacha, notte. La cella del commissariato del 12°: panca di metallo, Sacha seduto a viso scoperto, la luce del corridoio che entra dalla grata della porta.', strati: [
     ['stanza', { lum: 35, pav: 20, y: 150 }], ['luce', { x: 260, y: 60, r: 80, a: 0.4 }], ['pieno', { x: 240, y: 40, w: 40, h: 40, lum: 150 }], ['sbarre', { x0: 240, x1: 280, y: 40, h: 40, passo: 8, spessore: 2, lum: 20 }],
-    ['pieno', { x: 30, y: 140, w: 160, h: 10, lum: 70 }], ['figura', { x: 100, y: 145, h: 70, lum: 10, tipo: 'adulto' }]] },
+    ['pieno', { x: 30, y: 140, w: 160, h: 10, lum: 70 }], ['figura', { x: 110, y: 250, h: 236, chi: 'sacha', cappuccio: false, seduto: true, espr: 'stanco', luce: 1, buio: 0.15 }]] },
   'sacha/08_palestra': { desc: 'Sacha, il giorno dopo. La palestra di boxe del quartiere: il ring, i sacchi appesi, Nassim seduto sulle corde con il gesso al polso che tende un paio di guantoni.', strati: [
     ['stanza', { lum: 90, pav: 60, y: 150 }], ['finestra', { x: 20, y: 20, w: 120, h: 50, lum: 210, croce: false }], ['pieno', { x: 60, y: 120, w: 220, h: 6, lum: 200 }], ['pieno', { x: 60, y: 104, w: 220, h: 3, lum: 200 }],
-    ['pieno', { x: 290, y: 0, w: 4, h: 60, lum: 30 }], ['pieno', { x: 280, y: 60, w: 24, h: 50, lum: 30 }], ['figura', { x: 170, y: 160, h: 90, lum: 15, tipo: 'cappuccio', braccio: 'avanti' }], ['pieno', { x: 196, y: 108, w: 14, h: 10, lum: 230 }]] },
+    ['pieno', { x: 290, y: 0, w: 4, h: 60, lum: 30 }], ['pieno', { x: 280, y: 60, w: 24, h: 50, lum: 30 }], ['figura', { x: 170, y: 176, h: 96, chi: 'nassim', seduto: true, posa: 'avanti', gesso: true, espr: 'neutro', dir: -1, buio: 0.1 }], ['pieno', { x: 196, y: 108, w: 14, h: 10, lum: 230 }]] },
   'sacha/09_portone': { desc: 'Sacha, 19:30. Rue des Pyrénées: un portone socchiuso, Sacha nell\'androne che si toglie il k-way nero; fuori, le sirene che passano.', strati: [
     ['pieno', { lum: 25 }], ['pieno', { x: 200, y: 0, w: 120, h: 200, lum: 70 }], ['luce', { x: 260, y: 80, r: 90, a: 0.3 }], ['pieno', { x: 190, y: 0, w: 14, h: 200, lum: 10 }],
-    ['figura', { x: 110, y: 210, h: 170, lum: 5, tipo: 'cappuccio', braccio: 'alto' }]], fx: ['lampeggianti'] },
+    ['figura', { x: 110, y: 224, h: 186, chi: 'sacha', cappuccio: true, posa: 'alto', espr: 'stanco', buio: 0.45 }]], fx: ['lampeggianti'] },
   'sacha/10_kebab': { desc: 'Sacha, 21:10. Un kebab di Ménilmontant: il televisore sopra il frigo delle bibite che trasmette in loop il video di Nation; Sacha di spalle al bancone.', strati: [
     ['stanza', { lum: 120, pav: 70, y: 150 }], ['pieno', { x: 180, y: 70, w: 120, h: 80, lum: 200 }], ['pieno', { x: 190, y: 20, w: 100, h: 60, lum: 15 }], ['pieno', { x: 196, y: 26, w: 88, h: 48, lum: 120 }],
-    ['colonna', { x: 230, y: 70, h: 40, r: 8, lum: 200 }], ['pieno', { x: 0, y: 140, w: 170, h: 30, lum: 60 }], ['figura', { x: 90, y: 230, h: 180, lum: 10, tipo: 'cappuccio' }]] },
+    ['colonna', { x: 230, y: 70, h: 40, r: 8, lum: 200 }], ['pieno', { x: 0, y: 140, w: 170, h: 30, lum: 60 }], ['figura', { x: 86, y: 262, h: 230, chi: 'sacha', cappuccio: true, dir: 1, espr: 'triste', luce: 1, buio: 0.35 }]] },
   'sacha/11_canale': { desc: 'Sacha, il giorno dopo all\'alba. Il canale dell\'Ourcq, acqua grigia, i magazzini sull\'altra riva; un passamontagna nero che galleggia.', strati: [
     ['cielo', { a: 90, b: 170 }], ['cite', { y: 110, lum: 60, finestre: 0.05, flum: 200, hmin: 20, hvar: 30 }], ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 100 }],
     ['luce', { x: 200, y: 110, r: 120, a: 0.25 }], ['pieno', { x: 150, y: 150, w: 26, h: 8, lum: 5 }], ['pieno', { x: 0, y: 180, w: 320, h: 20, lum: 50 }]] },
@@ -192,14 +192,14 @@ export const SCENE = {
   'jerome/01_cabina': { desc: 'Jérôme, 6:15. La cabina del camion SDIS 77 di notte sulla N3: il cruscotto illuminato, Hugo al volante, i lampioni che scorrono, la radio.', strati: [
     ['pieno', { lum: 10 }], ['pieno', { x: 20, y: 20, w: 280, h: 90, lum: 30 }], ['lampione', { x: 90, y: 110, h: 70, r: 30 }], ['lampione', { x: 230, y: 110, h: 60, r: 25 }],
     ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 20 }], ['luce', { x: 160, y: 130, r: 60, a: 0.35 }], ['pieno', { x: 130, y: 120, w: 60, h: 14, lum: 120 }],
-    ['figura', { x: 70, y: 230, h: 170, lum: 5, tipo: 'pompiere' }], ['pieno', { x: 220, y: 130, w: 70, h: 8, lum: 5 }]] },
+    ['figura', { x: 70, y: 300, h: 290, chi: 'pompiere', seed: 1, casco: false, posa: 'avanti', espr: 'paura', luce: 1, buio: 0.35 }], ['pieno', { x: 220, y: 130, w: 70, h: 8, lum: 5 }]] },
   'jerome/02_parabrezza': { desc: 'Jérôme, 6:48. Dall\'interno della cabina: il parabrezza stellato dal sasso, dietro le crepe il fuoco del cassonetto e le silhouette dei ragazzi.', strati: [
     notte(10, 45), ['grata', { y: 168, h: 62, insegna: false, muro: 40 }], ['cassonetto', { x: 160, y: 180, lum: 30 }], ['bagliore', { x: 160, y: 160, r: 110, a: 0.4 }], ['fuoco', { x: 160, y: 156, w: 40, h: 40 }],
     ['folla', { y: 200, n: 8, s: 1, lum: 0, braccia: 0.5, cartelli: 0 }], ['scritta', { testo: '*', x: 150, y: 50, size: 30, lum: 240, font: 'VT323' }],
     ['pieno', { x: 0, y: 0, w: 320, h: 14, lum: 15 }], ['pieno', { x: 0, y: 180, w: 320, h: 20, lum: 15 }]] },
   'jerome/03_getto': { desc: 'Jérôme, 6:50. In primo piano le mani guantate sulla lancia, il getto d\'acqua che colpisce il cassonetto in fiamme, il vapore; un sasso che vola nel controluce.', strati: [
     notte(10, 50), ['grata', { y: 168, h: 62, insegna: false, muro: 40 }], ['cassonetto', { x: 220, y: 182, lum: 30 }], ['bagliore', { x: 220, y: 160, r: 100, a: 0.4 }], ['fuoco', { x: 220, y: 158, w: 40, h: 36 }],
-    ['colonna', { x: 220, y: 150, h: 140, r: 30, lum: 170 }], ['pieno', { x: 40, y: 160, w: 6, h: 3, lum: 230 }], ['figura', { x: 70, y: 240, h: 190, lum: 5, tipo: 'pompiere', braccio: 'avanti' }]] },
+    ['colonna', { x: 220, y: 150, h: 140, r: 30, lum: 170 }], ['pieno', { x: 40, y: 160, w: 6, h: 3, lum: 230 }], ['figura', { x: 70, y: 262, h: 230, chi: 'jerome', posa: 'avanti', guanti: true, espr: 'rabbia', luce: 1, buio: 0.25 }]] },
   'jerome/04_caserma': { desc: 'Jérôme, 8:40. Il centro di soccorso di Chelles: un ufficio con un vecchio computer, il cursore nella casella «Observations», dalla finestra il camion col parabrezza rotto.', strati: [
     ['stanza', { lum: 120, pav: 80, y: 150 }], ['finestra', { x: 200, y: 25, w: 100, h: 70, lum: 190 }], ['camion', { x: 205, y: 90, s: 0.55, lum: 80, crepa: true }],
     ['tavolo', { x: 30, y: 130, w: 160 }], ['pieno', { x: 60, y: 80, w: 70, h: 50, lum: 40 }], ['pieno', { x: 65, y: 85, w: 60, h: 38, lum: 180 }], ['scritta', { testo: 'Observations: _', x: 70, y: 98, size: 10, lum: 30, font: 'VT323', align: 'left' }]] },
@@ -212,64 +212,64 @@ export const SCENE = {
     ['metro', { lum: 110 }], ['folla', { y: 210, n: 6, s: 1.8, lum: 20, tipi: ['pompiere'], cartelli: 0.3 }]] },
   'jerome/08_cordone': { desc: 'Jérôme, 16:10. Sul boulevard Voltaire un giovane agente con la visiera alzata (Mehdi) guarda il bracciale di Jérôme. I due si guardano.', strati: [
     giorno(110, 180), ['haussmann', { top: 20, y: 150, lum: 100 }], ['cordone', { y: 175, n: 6, s: 0.9, lum: 30 }], ['vignetta', { a: 0.4 }],
-    ['figura', { x: 230, y: 240, h: 200, lum: 10, tipo: 'casco', dir: -1, scudo: false, dettaglio: 200 }], ['figura', { x: 80, y: 250, h: 200, lum: 25, tipo: 'pompiere', dir: 1 }]] },
+    ['figura', { x: 238, y: 380, h: 360, chi: 'mehdi', visiera: 'su', dir: -1, espr: 'stanco', buio: 0.1 }], ['figura', { x: 78, y: 400, h: 380, chi: 'jerome', sciopero: true, dir: 1, espr: 'neutro', buio: 0.15 }]] },
   'jerome/09_vsav': { desc: 'Jérôme, 18:10. Dentro l\'ambulanza VSAV della Brigata: Nassim sulla barella con la maschera d\'ossigeno, Maxime che controlla il monitor, Jérôme seduto con gli occhi rossi.', strati: [
     ['stanza', { lum: 150, pav: 100, y: 160 }], ['luce', { x: 160, y: 0, r: 150, a: 0.4 }], ['letto', { x: 60, y: 160, persona: true, lum: 210 }], ['pieno', { x: 240, y: 40, w: 50, h: 34, lum: 30 }], ['pieno', { x: 245, y: 45, w: 40, h: 24, lum: 200 }],
-    ['figura', { x: 270, y: 200, h: 120, lum: 25, tipo: 'pompiere' }]], fx: ['lampeggianti'] },
+    ['figura', { x: 270, y: 206, h: 124, chi: 'pompiere', seed: 4, casco: false, dir: -1, espr: 'stanco', buio: 0.1 }]], fx: ['lampeggianti'] },
   'jerome/10_cucina_notte': { desc: 'Jérôme, 0:40. La cucina di casa a Chelles: Sandrine in pigiama al tavolo, un bicchiere d\'acqua, le mani fasciate di Jérôme.', strati: [
     ['stanza', { lum: 40, pav: 25, y: 150 }], ['luce', { x: 160, y: 30, r: 120, a: 0.5 }], ['tavolo', { x: 70, y: 140, w: 180 }], ['pieno', { x: 150, y: 128, w: 8, h: 12, lum: 200 }],
-    ['figura', { x: 100, y: 190, h: 110, lum: 15, tipo: 'ragazza' }], ['figura', { x: 220, y: 195, h: 120, lum: 10, tipo: 'adulto' }]] },
+    ['figura', { x: 96, y: 196, h: 112, chi: 'adulta', seed: 0, seduto: true, sedia: true, espr: 'triste', buio: 0.15 }], ['figura', { x: 222, y: 200, h: 124, chi: 'jerome', casco: false, dir: -1, espr: 'stanco', buio: 0.2 }]] },
   'jerome/11_cameretta': { desc: 'Jérôme, il giorno dopo. Mattina, il letto: Jade di quattro anni che guarda le mani fasciate del papà. Luce morbida.', strati: [
     ['stanza', { lum: 170, pav: 120, y: 150 }], ['finestra', { x: 220, y: 20, w: 80, h: 80, lum: 240 }], ['letto', { x: 30, y: 170, persona: true, lum: 220 }],
-    ['figura', { x: 170, y: 160, h: 60, lum: 20, tipo: 'ragazza' }]] },
+    ['figura', { x: 170, y: 164, h: 60, chi: 'bambina', espr: 'sorriso', buio: 0.05 }]] },
   'jerome/12_tv': { desc: 'Jérôme, notte/mattina. Il soggiorno: il televisore acceso con il video in loop di un pompiere che colpisce un poliziotto; Jade sul divano di spalle.', strati: [
     ['stanza', { lum: 30, pav: 20, y: 150 }], ['pieno', { x: 100, y: 40, w: 140, h: 90, lum: 15 }], ['pieno', { x: 106, y: 46, w: 128, h: 78, lum: 140 }],
-    ['figura', { x: 160, y: 120, h: 60, lum: 30, tipo: 'pompiere', braccio: 'avanti' }], ['figura', { x: 200, y: 124, h: 56, lum: 40, tipo: 'casco', scudo: false }],
-    ['luce', { x: 170, y: 90, r: 120, a: 0.3 }], ['pieno', { x: 60, y: 150, w: 200, h: 30, lum: 50 }], ['figura', { x: 160, y: 170, h: 50, lum: 10, tipo: 'ragazza' }]] },
+    ['figura', { x: 156, y: 120, h: 60, chi: 'jerome', posa: 'pugno', sciopero: true, buio: 0.1 }], ['figura', { x: 196, y: 124, h: 56, chi: 'poliziotto', dir: -1, scudo: false, buio: 0.2 }],
+    ['luce', { x: 170, y: 90, r: 120, a: 0.3 }], ['pieno', { x: 60, y: 150, w: 200, h: 30, lum: 50 }], ['figura', { x: 160, y: 178, h: 54, chi: 'bambina', seduto: true, espr: 'triste', buio: 0.4 }]] },
   // ---------------- ODILE ----------------
   'odile/01_thermos': { desc: 'Odile, 7:05. L\'angolo della rue de la Folie all\'alba: una donna con sciarpa e thermos che si mette a correre; in fondo alla strada il fumo nero e le luci blu.', strati: [
     ['cielo', { a: 30, b: 90 }], ['cite', { y: 150, lum: 35, finestre: 0.2, flum: 150 }], ['suolo', { y: 150, a: 40, b: 70, linee: true, lineeLum: 60 }],
-    ['colonna', { x: 170, y: 140, h: 130, r: 26, lum: 40 }], ['furgone', { x: 150, y: 152, s: 0.4, lum: 30 }], ['figura', { x: 90, y: 215, h: 160, lum: 10, tipo: 'prof' }]], fx: ['lampeggianti'] },
+    ['colonna', { x: 170, y: 140, h: 130, r: 26, lum: 40 }], ['furgone', { x: 150, y: 152, s: 0.4, lum: 30 }], ['figura', { x: 90, y: 236, h: 186, chi: 'odile', posa: 'tiene', espr: 'paura', buio: 0.2 }]], fx: ['lampeggianti'] },
   'odile/02_telefono': { desc: 'Odile: il telefono in mano, occhiali da lettura appoggiati sul naso. (Usata per le chat con la preside e l\'EHPAD.)', strati: [
     ['pieno', { lum: 30 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 50 }], ['vignetta', { a: 0.5 }]] },
   'odile/03_aula': { desc: 'Odile, 9:30. L\'aula 204 vuota: trentacinque sedie strette, la macchia d\'umido a forma di Africa sul soffitto, la lavagna dove Odile scrive (il gioco ci scrive sopra le parole scelte: lasciare la lavagna libera).', strati: [
     ['stanza', { lum: 130, pav: 90, y: 150 }], ['pieno', { x: 220, y: 4, w: 40, h: 14, lum: 100 }], ['lavagna', { x: 40, y: 26, w: 240, h: 84 }], ['banchi', { y: 150, lum: 100 }],
-    ['figura', { x: 285, y: 160, h: 110, lum: 15, tipo: 'prof', braccio: 'alto', dir: -1 }]] },
+    ['figura', { x: 285, y: 166, h: 116, chi: 'odile', posa: 'alto', dir: -1, buio: 0.1 }]] },
   'odile/04_ehpad': { desc: 'Odile, 10:30. Una stanza dell\'EHPAD di Vincennes: Lucien, 88 anni, in poltrona davanti alla finestra; Odile seduta accanto che gli tiene la mano.', strati: [
     ['stanza', { lum: 160, pav: 120, y: 150 }], ['finestra', { x: 180, y: 20, w: 110, h: 100, lum: 230 }], ['letto', { x: 10, y: 170, lum: 210 }],
-    ['figura', { x: 210, y: 175, h: 100, lum: 40, tipo: 'anziana' }], ['figura', { x: 130, y: 180, h: 110, lum: 20, tipo: 'prof' }]] },
+    ['figura', { x: 206, y: 182, h: 104, chi: 'anziano', seduto: true, sedia: true, dir: -1, espr: 'triste', buio: 0.05 }], ['figura', { x: 124, y: 186, h: 112, chi: 'odile', seduto: true, sedia: true, dir: 1, espr: 'triste', buio: 0.1 }]] },
   'odile/05_bancone': { desc: 'Odile, 20:30. Il bancone del commissariato del 12°: dietro il vetro Mehdi, senza casco, davanti a uno schermo; Odile di spalle con la borsa.', strati: [
     ['stanza', { lum: 100, pav: 60, y: 150 }], ['luce', { x: 200, y: 0, r: 140, a: 0.4 }], ['pieno', { x: 120, y: 100, w: 200, h: 60, lum: 70 }], ['pieno', { x: 120, y: 40, w: 200, h: 60, lum: 150 }],
-    ['figura', { x: 230, y: 110, h: 70, lum: 20, tipo: 'adulto' }], ['pieno', { x: 260, y: 80, w: 30, h: 22, lum: 200 }], ['figura', { x: 70, y: 230, h: 190, lum: 10, tipo: 'prof' }]] },
+    ['figura', { x: 230, y: 116, h: 74, chi: 'mehdi', casco: false, dir: -1, espr: 'stanco', buio: 0.15 }], ['pieno', { x: 260, y: 80, w: 30, h: 22, lum: 200 }], ['figura', { x: 66, y: 290, h: 260, chi: 'odile', dir: 1, espr: 'triste', luce: 1, buio: 0.3 }]] },
   'odile/06_pont': { desc: 'Odile, mezzanotte. Il ponte Saint-Michel, la Senna nera, Notre-Dame sullo sfondo; poche persone con cartelli scritti a mano; un garofano che cade nell\'acqua.', strati: [
     notte(5, 30), ['haussmann', { top: 60, y: 110, lum: 25, accese: 0.25 }], ['pieno', { x: 0, y: 110, w: 320, h: 90, lum: 15 }], ['luce', { x: 160, y: 140, r: 100, a: 0.2 }],
     ['pieno', { x: 0, y: 100, w: 320, h: 8, lum: 60 }], ['folla', { y: 102, n: 5, s: 0.7, lum: 5, x0: 40, x1: 280, cartelli: 0.5 }], ['pieno', { x: 170, y: 150, w: 4, h: 4, lum: 230 }], ['lampione', { x: 30, y: 102, h: 60 }]] },
   'odile/07_aula_dopo': { desc: 'Odile, lunedì 2 novembre. L\'aula 204 al mattino: sulla lavagna, sotto le parole di Odile, una scritta in un\'altra calligrafia.', strati: [
     ['stanza', { lum: 150, pav: 100, y: 150 }], ['finestra', { x: 250, y: 20, w: 60, h: 90, lum: 240 }], ['lavagna', { x: 20, y: 26, w: 220, h: 84, testo: ['17 OCTOBRE 2026 :', 'NOUS AUSSI', "ON S'EN SOUVIENDRA.", '(et merci madame)'] }], ['banchi', { y: 150, lum: 110 }]] },
   'odile/08_cella': { desc: 'Odile, notte. La cella del commissariato: una donna di cinquantadue anni seduta sulla panca con il braccio fasciato, la sciarpa verde persa.', strati: [
-    ['stanza', { lum: 40, pav: 25, y: 150 }], ['luce', { x: 160, y: 10, r: 90, a: 0.35 }], ['pieno', { x: 50, y: 140, w: 220, h: 10, lum: 75 }], ['figura', { x: 160, y: 146, h: 70, lum: 10, tipo: 'prof' }],
+    ['stanza', { lum: 40, pav: 25, y: 150 }], ['luce', { x: 160, y: 10, r: 90, a: 0.35 }], ['pieno', { x: 50, y: 140, w: 220, h: 10, lum: 75 }], ['figura', { x: 150, y: 252, h: 236, chi: 'odile', seduto: true, gesso: true, espr: 'triste', buio: 0.15 }],
     ['sbarre', { x0: 4, x1: 320, passo: 30, spessore: 6, lum: 5 }]] },
   'odile/09_ehpad_mattina': { desc: 'Odile, il giorno dopo. L\'EHPAD all\'alba: il padre lucido per un minuto, gli occhi aperti, la mano su quella fasciata della figlia.', strati: [
     ['stanza', { lum: 120, pav: 90, y: 150 }], ['finestra', { x: 30, y: 20, w: 110, h: 100, lum: 200 }], ['luce', { x: 80, y: 60, r: 120, a: 0.3 }],
-    ['figura', { x: 200, y: 175, h: 100, lum: 40, tipo: 'anziana' }], ['figura', { x: 250, y: 185, h: 120, lum: 15, tipo: 'prof' }], ['pieno', { x: 214, y: 130, w: 30, h: 6, lum: 230 }]] },
+    ['figura', { x: 196, y: 182, h: 104, chi: 'anziano', seduto: true, sedia: true, dir: 1, espr: 'neutro', buio: 0.05 }], ['figura', { x: 256, y: 192, h: 124, chi: 'odile', dir: -1, gesso: true, espr: 'triste', buio: 0.1 }], ['pieno', { x: 214, y: 130, w: 30, h: 6, lum: 230 }]] },
   // ---------------- MEHDI ----------------
   'mehdi/01_briefing': { desc: 'Mehdi, 6:00. La sala briefing del commissariato di Bobigny: neon, agenti in tenuta antisommossa seduti, il brigadier-chef Carrel in piedi con il tablet.', strati: [
     ['stanza', { lum: 90, pav: 50, y: 150 }], ['luce', { x: 160, y: 0, r: 160, a: 0.35 }], ['pieno', { x: 30, y: 30, w: 120, h: 70, lum: 170 }],
-    ['figura', { x: 230, y: 180, h: 130, lum: 15, tipo: 'adulto', braccio: 'avanti', dir: -1 }], ['folla', { y: 210, n: 6, s: 1.3, lum: 10, tipi: ['casco'], cartelli: 0 }]] },
+    ['figura', { x: 232, y: 186, h: 136, chi: 'carrel', posa: 'avanti', dir: -1, buio: 0.15 }], ['folla', { y: 210, n: 6, s: 1.3, lum: 10, tipi: ['casco'], cartelli: 0 }]] },
   'mehdi/02_furgone': { desc: 'Mehdi, 6:50. Dentro il furgone della CSI: caschi sulle ginocchia, Fabre che mastica la gomma, la radio sul cruscotto, le luci blu che entrano dai finestrini con la grata.', strati: [
     ['pieno', { lum: 20 }], ['pieno', { x: 30, y: 30, w: 100, h: 50, lum: 60 }], ['sbarre', { x0: 30, x1: 130, y: 30, h: 50, passo: 8, spessore: 2, lum: 10 }],
-    ['figura', { x: 90, y: 230, h: 180, lum: 5, tipo: 'casco', scudo: false, dettaglio: 120 }], ['figura', { x: 230, y: 235, h: 180, lum: 12, tipo: 'adulto' }], ['pieno', { x: 40, y: 175, w: 50, h: 20, lum: 160 }]], fx: ['lampeggianti'] },
+    ['figura', { x: 88, y: 290, h: 260, chi: 'mehdi', casco: false, posa: 'tiene', espr: 'triste', buio: 0.35 }], ['figura', { x: 234, y: 296, h: 260, chi: 'fabre', dir: -1, espr: 'sorriso', buio: 0.3 }], ['pieno', { x: 40, y: 175, w: 50, h: 20, lum: 160 }]], fx: ['lampeggianti'] },
   'mehdi/03_palazzo_c': { desc: 'Mehdi, 7:05. Dal finestrino del furgone, attraverso la grata: il palazzo C della cité della Folie, la finestra del quarto piano accesa.', strati: [
     ['cielo', { a: 30, b: 80 }], ['pieno', { x: 60, y: 20, w: 200, h: 170, lum: 50 }], ['scritta', { testo: 'C', x: 80, y: 30, size: 16, lum: 200 }],
     ['sbarre', { x0: 70, x1: 250, y: 50, h: 140, passo: 18, spessore: 10, lum: 30 }], ['pieno', { x: 160, y: 80, w: 12, h: 12, lum: 230 }], ['luce', { x: 166, y: 86, r: 30, a: 0.4 }],
     ['sbarre', { x0: 0, x1: 320, passo: 14, spessore: 3, lum: 5 }], ['vignetta', { a: 0.8 }]] },
   'mehdi/04_nassim': { desc: 'Mehdi, 7:40. Nassim, felpa grigia e mani nere di fumo, ghigna e sputa a dieci centimetri dagli stivali dell\'agente; inquadratura dal basso.', strati: [
     ['cielo', { a: 60, b: 130 }], ['grata', { y: 120, h: 60, insegna: false, muro: 80 }], ['suolo', { y: 120, a: 70, b: 100 }],
-    ['figura', { x: 170, y: 210, h: 170, lum: 15, tipo: 'cappuccio', dir: -1 }], ['pieno', { x: 20, y: 160, w: 40, h: 40, lum: 5 }], ['pieno', { x: 70, y: 166, w: 36, h: 34, lum: 5 }]] },
+    ['figura', { x: 172, y: 250, h: 220, chi: 'nassim', dir: -1, espr: 'sorriso', luce: 1, buio: 0.15 }], ['pieno', { x: 20, y: 160, w: 40, h: 40, lum: 5 }], ['pieno', { x: 70, y: 166, w: 36, h: 34, lum: 5 }]] },
   'mehdi/05_commissariato': { desc: 'Mehdi, 9:30. L\'open space del commissariato: scrivanie, schermi, Fabre in piedi con il telefono che legge ad alta voce, colleghi che ridono.', strati: [
     ['stanza', { lum: 110, pav: 70, y: 150 }], ['luce', { x: 160, y: 0, r: 160, a: 0.3 }], ['tavolo', { x: 20, y: 140, w: 120 }], ['tavolo', { x: 180, y: 140, w: 120 }],
     ['pieno', { x: 40, y: 110, w: 40, h: 30, lum: 40 }], ['pieno', { x: 220, y: 110, w: 40, h: 30, lum: 40 }],
-    ['figura', { x: 160, y: 170, h: 130, lum: 15, tipo: 'adulto', braccio: 'alto' }], ['figura', { x: 80, y: 190, h: 110, lum: 25, tipo: 'adulto' }], ['figura', { x: 260, y: 190, h: 110, lum: 25, tipo: 'adulto' }]] },
+    ['figura', { x: 160, y: 176, h: 134, chi: 'fabre', posa: 'telefono', espr: 'sorriso', buio: 0.1 }], ['figura', { x: 80, y: 194, h: 112, chi: 'poliziotto', casco: false, scudo: false, seed: 1, espr: 'sorriso', buio: 0.25 }], ['figura', { x: 262, y: 194, h: 112, chi: 'poliziotto', casco: false, scudo: false, seed: 2, dir: -1, espr: 'sorriso', buio: 0.25 }]] },
   'mehdi/06_estate': { desc: 'Mehdi, ricordo di luglio: un mortaio d\'artificio che esplode su uno scudo a mezzo metro dalla visiera, una luce verde che riempie tutto.', contrasto: 1.4, strati: [
     ['pieno', { lum: 10 }], ['bagliore', { x: 170, y: 90, r: 160, a: 0.8 }], ['luce', { x: 170, y: 90, r: 60, a: 0.9 }], ['visiera', { lum: 0 }]] },
   'mehdi/07_panino': { desc: 'Mehdi, 12:30. Dentro il furgone parcheggiato a Nation, un panino in mano; dal parabrezza la piazza vuota, le transenne, e all\'angolo il palazzo della farmacia con la signora che annaffia i gerani.', strati: [
@@ -277,19 +277,19 @@ export const SCENE = {
     ['pieno', { x: 0, y: 0, w: 320, h: 20, lum: 20 }], ['pieno', { x: 0, y: 150, w: 320, h: 50, lum: 25 }], ['pieno', { x: 0, y: 0, w: 20, h: 200, lum: 20 }], ['mano', { x: 80, y: 210, s: 0.9, lum: 10 }]] },
   'mehdi/08_cordone': { desc: 'Mehdi, 15:20. Il corteo visto da dentro il casco (soggettiva attraverso la visiera rigata): i pompieri in divisa applauditi, il cartello di Inès.', strati: [
     giorno(130, 200), ['haussmann', { top: 20, y: 150, lum: 100 }], ['suolo', { y: 150, a: 110, b: 140 }], ['folla', { y: 200, n: 14, s: 1, lum: 30, braccia: 0.5, cartelli: 0.3 }],
-    ['figura', { x: 200, y: 210, h: 100, lum: 15, tipo: 'pompiere', braccio: 'alto' }], ['visiera', { lum: 5 }]] },
+    ['figura', { x: 200, y: 214, h: 104, chi: 'jerome', posa: 'alto', sciopero: true, espr: 'sorriso', buio: 0.1 }], ['visiera', { lum: 5 }]] },
   'mehdi/09_casco': { desc: 'Mehdi, 17:38. Il mondo da dentro il casco con la maschera antigas: il respiro appannato sulla visiera, il fuoco e la folla sfocati, il bordo nero che si stringe.', strati: [
     ['cielo', { a: 70, b: 120 }], ['folla', { y: 200, n: 14, s: 1.1, lum: 20 }], ['cassonetto', { x: 250, y: 160, s: 0.8, lum: 20 }], ['fuoco', { x: 250, y: 140, w: 30, h: 30 }],
     ['luce', { x: 160, y: 150, r: 80, a: 0.3 }], ['visiera', { lum: 0 }], ['vignetta', { a: 0.9 }]], fx: ['gas'] },
   'mehdi/10_verbale': { desc: 'Mehdi, 20:00. Davanti allo schermo del verbale, la casella «Usage de la force — circonstances»; il casco appoggiato sulla scrivania.', strati: [
     ['stanza', { lum: 60, pav: 35, y: 150 }], ['luce', { x: 160, y: 80, r: 120, a: 0.4 }], ['tavolo', { x: 40, y: 140, w: 240 }], ['pieno', { x: 100, y: 60, w: 120, h: 80, lum: 30 }], ['pieno', { x: 106, y: 66, w: 108, h: 66, lum: 190 }],
-    ['scritta', { testo: 'Usage de la force', x: 112, y: 72, size: 10, lum: 30, font: 'VT323', align: 'left' }], ['scritta', { testo: '_', x: 112, y: 90, size: 10, lum: 30, font: 'VT323', align: 'left' }], ['figura', { x: 250, y: 140, h: 40, lum: 15, tipo: 'casco', scudo: false }]] },
+    ['scritta', { testo: 'Usage de la force', x: 112, y: 72, size: 10, lum: 30, font: 'VT323', align: 'left' }], ['scritta', { testo: '_', x: 112, y: 90, size: 10, lum: 30, font: 'VT323', align: 'left' }], ['figura', { x: 250, y: 140, h: 40, chi: 'poliziotto', scudo: false, buio: 0.3 }]] },
   'mehdi/11_parcheggio': { desc: 'Mehdi, notte. Il parcheggio sotterraneo del commissariato: Mehdi in macchina, il casco sul sedile, un neon che sfarfalla, un volantino sul sedile del passeggero.', strati: [
     ['pieno', { lum: 25 }], ['pieno', { x: 0, y: 0, w: 320, h: 30, lum: 15 }], ['pieno', { x: 120, y: 4, w: 80, h: 6, lum: 240 }], ['luce', { x: 160, y: 6, r: 120, a: 0.3 }],
-    ['pieno', { x: 40, y: 90, w: 240, h: 90, lum: 40 }], ['pieno', { x: 60, y: 100, w: 200, h: 50, lum: 70 }], ['figura', { x: 120, y: 190, h: 100, lum: 10, tipo: 'adulto' }], ['pieno', { x: 190, y: 140, w: 26, h: 16, lum: 220 }]] },
+    ['pieno', { x: 40, y: 90, w: 240, h: 90, lum: 40 }], ['pieno', { x: 60, y: 100, w: 200, h: 50, lum: 70 }], ['figura', { x: 120, y: 196, h: 104, chi: 'mehdi', casco: false, posa: 'tiene', espr: 'stanco', buio: 0.35 }], ['pieno', { x: 190, y: 140, w: 26, h: 16, lum: 220 }]] },
   'mehdi/12_muro': { desc: 'Mehdi, il giorno dopo. Il muro del palazzo C accanto al portone: a spray nero, una sola parola, SAÏDI.', strati: [
     ['cielo', { a: 110, b: 170 }], ['pieno', { x: 0, y: 10, w: 320, h: 190, lum: 150 }], ['pieno', { x: 230, y: 70, w: 60, h: 130, lum: 40 }],
-    ['scritta', { testo: 'SAÏDI', x: 110, y: 90, size: 24, lum: 10 }], ['figura', { x: 60, y: 210, h: 160, lum: 20, tipo: 'adulto' }]] },
+    ['scritta', { testo: 'SAÏDI', x: 110, y: 90, size: 24, lum: 10 }], ['figura', { x: 214, y: 236, h: 190, chi: 'mehdi', borghese: true, dir: -1, espr: 'triste', buio: 0.2 }]] },
   'mehdi/13_telefono': { desc: 'Mehdi: il telefono in mano, i guanti tattici sul ginocchio. (Usata per le chat con la madre.)', strati: [
     ['pieno', { lum: 12 }], ['telefono', { x: 160, y: 100, s: 1.1, mano: 15 }], ['vignetta', { a: 0.6 }]] },
   // ---------------- EPILOGO CORALE ----------------
