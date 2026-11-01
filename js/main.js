@@ -57,48 +57,37 @@ function costruisciCarte() {
   const box = $('cards'); box.innerHTML = '';
   PERSONAGGI.forEach((id) => {
     const scheda = raw(`personaggi.${id}`), s = save.personaggio(id), ok = disponibili.includes(id);
-    const c = document.createElement('div'); c.className = 'card' + (ok ? '' : ' off') + (id === selezionato ? ' sel' : ''); c.tabIndex = ok ? 0 : -1;
-    c.dataset.id = id; c.setAttribute('role', 'button'); c.setAttribute('aria-pressed', id === selezionato ? 'true' : 'false');
+    const c = document.createElement('div'); c.className = 'card' + (ok ? '' : ' off'); c.tabIndex = ok ? 0 : -1;
+    c.dataset.id = id; c.setAttribute('role', 'button');
     PALETTES[id].colori.forEach((v, i) => c.style.setProperty(`--p${i}`, v));
     const cv = document.createElement('canvas'); cv.width = 160; cv.height = 200; cv.className = 'pixel';
     renderStatico(cv, `ritratto_${id}`, id);
     const stato = !ok ? t('select.prossimamente') : s.stato ? t('select.in_corso') : s.finito ? t('select.finale', { esito: t(`end.${s.esito}`) }) : t('select.non_iniziato');
     c.appendChild(cv);
-    c.insertAdjacentHTML('beforeend', `<div class="nome">${scheda.nome}</div><div class="ruolo">${scheda.ruolo} · ${scheda.eta}</div><div class="stato">${stato}</div>`);
+    const etichetta = s.stato ? 'select.continua_di' : s.finito ? 'select.rigioca_di' : 'select.scegli';
+    c.insertAdjacentHTML('beforeend', `<div class="info"><div class="nome">${scheda.nome}</div><div class="ruolo">${scheda.ruolo} · ${scheda.eta}</div><div class="stato">${stato}</div>
+      <div class="dettaglio"><p class="frase">${scheda.frase}</p><p>${scheda.bio}</p><p class="gioca"><b>${t('select.come_si_gioca')}:</b> ${scheda.gioca}</p>
+      <div class="row"><button class="btn sch-gioca">${t(etichetta, { nome: scheda.nome.split(' ')[0] })}</button>${s.stato ? `<button class="btn small sch-reset">↺ ${t('select.ricomincia')}</button>` : ''}</div></div></div>`);
     if (ok) {
       const tocco = () => (selezionato === id ? iniziaGioco(id) : seleziona(id));
       c.onclick = tocco;
-      c.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocco(); } };
+      c.onkeydown = (e) => { if (e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); tocco(); } };
+      c.querySelector('.sch-gioca').onclick = (e) => { e.stopPropagation(); iniziaGioco(id); };
+      const r = c.querySelector('.sch-reset');
+      if (r) r.onclick = (e) => { e.stopPropagation(); if (confirm(t('gm.conferma_ricomincia'))) { save.resetPersonaggio(id); iniziaGioco(id); } };
     }
     box.appendChild(c);
   });
-  mostraScheda();
+  seleziona(selezionato, true);
 }
 
-function seleziona(id) {
-  selezionato = id; sfx('blip');
-  document.querySelectorAll('#cards .card').forEach((c) => { const on = c.dataset.id === id; c.classList.toggle('sel', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
-  mostraScheda();
-  const sc = $('scheda'); if (sc.getBoundingClientRect().top > innerHeight - 120) sc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-function mostraScheda() {
-  const box = $('scheda');
-  if (!selezionato) { box.hidden = true; $('select-hint').hidden = false; return; }
-  const id = selezionato, scheda = raw(`personaggi.${id}`), s = save.personaggio(id);
-  $('select-hint').hidden = true; box.hidden = false;
-  PALETTES[id].colori.forEach((v, i) => box.style.setProperty(`--p${i}`, v));
-  const etichetta = s.stato ? 'select.continua_di' : s.finito ? 'select.rigioca_di' : 'select.scegli';
-  box.innerHTML = `<div class="sch-testa"><span class="nome">${scheda.nome}</span><span class="ruolo">${scheda.ruolo} · ${scheda.eta}</span></div>
-    <p class="frase">${scheda.frase}</p><p>${scheda.bio}</p>
-    <p class="gioca"><b>${t('select.come_si_gioca')}:</b> ${scheda.gioca}</p>
-    <div class="row"><button class="btn" id="sch-gioca">${t(etichetta, { nome: scheda.nome.split(' ')[0] })}</button></div>`;
-  $('sch-gioca').onclick = () => iniziaGioco(id);
-  if (s.stato) {
-    const b2 = document.createElement('button'); b2.className = 'btn small'; b2.textContent = '↺ ' + t('select.ricomincia');
-    b2.onclick = () => { if (confirm(t('gm.conferma_ricomincia'))) { save.resetPersonaggio(id); iniziaGioco(id); } };
-    box.querySelector('.row').appendChild(b2);
-  }
+function seleziona(id, silenzioso) {
+  selezionato = id; if (!silenzioso) sfx('blip');
+  document.querySelectorAll('#cards .card').forEach((c) => { const on = c.dataset.id === id; c.classList.toggle('sel', on); c.setAttribute('aria-expanded', on ? 'true' : 'false'); });
+  $('cards').classList.toggle('con-sel', !!id);
+  $('select-hint').hidden = !!id;
+  const c = id && document.querySelector(`#cards .card[data-id="${id}"]`);
+  if (c && !silenzioso) requestAnimationFrame(() => c.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
 }
 
 // ---------- gioco ----------
