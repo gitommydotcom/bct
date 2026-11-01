@@ -51,30 +51,54 @@ $('opt-back').onclick = () => (ritornoOpzioni === 'game' ? riprendiGioco() : vai
 $('map-back').onclick = () => (ritornoMappa === 'game' ? riprendiGioco() : vai(ritornoMappa));
 
 // ---------- selezione ----------
+// Primo tocco: si apre la scheda del personaggio. Secondo tocco (o il pulsante): si gioca.
+let selezionato = null;
 function costruisciCarte() {
   const box = $('cards'); box.innerHTML = '';
   PERSONAGGI.forEach((id) => {
     const scheda = raw(`personaggi.${id}`), s = save.personaggio(id), ok = disponibili.includes(id);
-    const c = document.createElement('div'); c.className = 'card' + (ok ? '' : ' off'); c.tabIndex = ok ? 0 : -1;
+    const c = document.createElement('div'); c.className = 'card' + (ok ? '' : ' off') + (id === selezionato ? ' sel' : ''); c.tabIndex = ok ? 0 : -1;
+    c.dataset.id = id; c.setAttribute('role', 'button'); c.setAttribute('aria-pressed', id === selezionato ? 'true' : 'false');
     PALETTES[id].colori.forEach((v, i) => c.style.setProperty(`--p${i}`, v));
     const cv = document.createElement('canvas'); cv.width = 160; cv.height = 200; cv.className = 'pixel';
     renderStatico(cv, `ritratto_${id}`, id);
-    let stato = !ok ? t('select.prossimamente') : s.stato ? t('select.in_corso') : s.finito ? t('select.finale', { esito: t(`end.${s.esito}`) }) : t('select.non_iniziato');
+    const stato = !ok ? t('select.prossimamente') : s.stato ? t('select.in_corso') : s.finito ? t('select.finale', { esito: t(`end.${s.esito}`) }) : t('select.non_iniziato');
     c.appendChild(cv);
-    c.insertAdjacentHTML('beforeend', `<div class="nome">${scheda.nome}</div><div class="ruolo">${scheda.ruolo} · ${scheda.eta}</div><div class="frase">${scheda.frase}</div><div class="stato">${stato}</div>`);
+    c.insertAdjacentHTML('beforeend', `<div class="nome">${scheda.nome}</div><div class="ruolo">${scheda.ruolo} · ${scheda.eta}</div><div class="stato">${stato}</div>`);
     if (ok) {
-      const azioni = document.createElement('div'); azioni.className = 'row';
-      const b1 = document.createElement('button'); b1.className = 'btn small'; b1.textContent = s.stato ? t('select.continua') : s.finito ? t('select.rigioca') : t('select.nuovo');
-      b1.onclick = (e) => { e.stopPropagation(); iniziaGioco(id); };
-      azioni.appendChild(b1);
-      if (s.stato) { const b2 = document.createElement('button'); b2.className = 'btn small'; b2.textContent = '↺'; b2.title = t('select.ricomincia');
-        b2.onclick = (e) => { e.stopPropagation(); if (confirm(t('gm.conferma_ricomincia'))) { save.resetPersonaggio(id); iniziaGioco(id); } }; azioni.appendChild(b2); }
-      c.appendChild(azioni);
-      c.onclick = () => iniziaGioco(id);
-      c.onkeydown = (e) => { if (e.key === 'Enter') iniziaGioco(id); };
+      const tocco = () => (selezionato === id ? iniziaGioco(id) : seleziona(id));
+      c.onclick = tocco;
+      c.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocco(); } };
     }
     box.appendChild(c);
   });
+  mostraScheda();
+}
+
+function seleziona(id) {
+  selezionato = id; sfx('blip');
+  document.querySelectorAll('#cards .card').forEach((c) => { const on = c.dataset.id === id; c.classList.toggle('sel', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+  mostraScheda();
+  const sc = $('scheda'); if (sc.getBoundingClientRect().top > innerHeight - 120) sc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function mostraScheda() {
+  const box = $('scheda');
+  if (!selezionato) { box.hidden = true; $('select-hint').hidden = false; return; }
+  const id = selezionato, scheda = raw(`personaggi.${id}`), s = save.personaggio(id);
+  $('select-hint').hidden = true; box.hidden = false;
+  PALETTES[id].colori.forEach((v, i) => box.style.setProperty(`--p${i}`, v));
+  const etichetta = s.stato ? 'select.continua_di' : s.finito ? 'select.rigioca_di' : 'select.scegli';
+  box.innerHTML = `<div class="sch-testa"><span class="nome">${scheda.nome}</span><span class="ruolo">${scheda.ruolo} · ${scheda.eta}</span></div>
+    <p class="frase">${scheda.frase}</p><p>${scheda.bio}</p>
+    <p class="gioca"><b>${t('select.come_si_gioca')}:</b> ${scheda.gioca}</p>
+    <div class="row"><button class="btn" id="sch-gioca">${t(etichetta, { nome: scheda.nome.split(' ')[0] })}</button></div>`;
+  $('sch-gioca').onclick = () => iniziaGioco(id);
+  if (s.stato) {
+    const b2 = document.createElement('button'); b2.className = 'btn small'; b2.textContent = '↺ ' + t('select.ricomincia');
+    b2.onclick = () => { if (confirm(t('gm.conferma_ricomincia'))) { save.resetPersonaggio(id); iniziaGioco(id); } };
+    box.querySelector('.row').appendChild(b2);
+  }
 }
 
 // ---------- gioco ----------

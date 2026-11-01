@@ -44,7 +44,7 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; display
 /* ---------- TITOLO ---------- */
 #scr-titolo { justify-content: center; gap: 22px; }
 #title-canvas { width: min(100%, 960px, calc((100vh - 300px) * 1.6)); min-width: min(100%, 320px); aspect-ratio: 16/10; height: auto; }
-.menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; width: 100%; max-width: 640px; }
+.menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 100%; max-width: 640px; }
 .menu .btn { text-align: center; }
 
 /* ---------- SELEZIONE ---------- */
@@ -57,6 +57,18 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; display
 .card .stato { font-size: .85em; opacity: .9; }
 .card .frase { font-size: .9em; opacity: .85; }
 .card.off { opacity: .45; cursor: default; }
+.cards:has(.sel) .card:not(.sel) { opacity: .55; }
+.card.sel { border-color: var(--p2); box-shadow: 0 0 0 2px var(--p2); opacity: 1; }
+.hint { opacity: .6; margin-top: 14px; }
+.scheda { width: 100%; max-width: 960px; margin-top: 14px; border: 2px solid var(--p2); background: var(--p0); color: var(--p3); padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; animation: fadein .25s; }
+.scheda p { margin: 0; }
+.scheda .sch-testa { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.scheda .nome { font-family: "PressStart", monospace; font-size: 13px; }
+.scheda .ruolo { color: var(--p2); }
+.scheda .frase { color: var(--p2); }
+.scheda .gioca b { color: var(--p2); font-weight: normal; }
+.scheda .btn { border-color: var(--p2); }
+.scheda .btn:hover, .scheda .btn:focus-visible { background: var(--p2); color: var(--p0); }
 
 /* ---------- GIOCO ---------- */
 #scr-game { padding: 0; overflow: hidden; }
